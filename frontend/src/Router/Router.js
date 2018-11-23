@@ -1,59 +1,22 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, NavLink } from "react-router-dom";
-import './Router.scss';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Accueil from './Accueil';
-import Expertise from './Expertise.js';
-import Technologie from './Technologie.js';
-import Secteurs from './Secteurs.js';
-import Realisations from './Realisations.js';
-
-import Contact from './Contact.js';
-
-
+import Website from '../Pages/Website/Website';
+import Admin from '../Pages/Admin/Admin';
 
 export default class Router extends Component {
   render() {
-    return (
-      
-            <BrowserRouter>
+  return (
+    
+      <BrowserRouter>
 
-                <div>
-                    <ul className="navBar">
-                        <li>
-                            <NavLink className="onNavbar" to="/" exact>logo</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="onNavbar" to="/Expertise" exact>Expertise</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="onNavbar"to="/Technologie" exact >Technologie</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="onNavbar"to="/Secteurs" exact >Secteurs</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="onNavbar"to="/Realisations" exact >Realisations</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="onNavbar"to="/Contact" exact >Contact</NavLink>
-                        </li>
-                       
+        <Switch>
+          <Route exact path="/"  component={Website} />
+          <Route exact path="/admin"  component={Admin} />
+        </Switch>
 
-                    </ul>
+      </BrowserRouter>
 
-                    <Route exact path="/" strict component={Accueil} />
-                    <Route  path="/Expertise" strict component={Expertise} />
-                    <Route  path="/Technologie" strict component={Technologie} />
-                    <Route  path="/Secteurs" strict component={Secteurs} />
-                    <Route  path="/Realisations" strict component={Realisations} />
-                    <Route  path="/Contact" strict component={Contact} />
-                    
-
-                </div>
-
-            </BrowserRouter>
-
-        )
-    }
+    )
+  }
 }
