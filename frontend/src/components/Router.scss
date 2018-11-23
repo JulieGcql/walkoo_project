@@ -1,0 +1,27 @@
+ul{
+    position: absolute;
+   
+}
+
+
+ul li
+{
+list-style-type:none;
+display:inline;
+text-align:justify;
+padding-right:50px;
+padding-left:50px;
+font-size:20px;  
+
+text-align:center;  
+}
+.onNavbar{
+    text-decoration: none;
+    color:black;
+}
+.onNavbar:hover {
+    background-color: orange;
+    color :white;
+    padding: 10px;
+    border-radius: 10px;
+}
