@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import store from './store';
-
-import './App.css';
-import LoginForm from './components/LoginForm';
-import Profile from './components/Profile';
+import './App.scss';
+// import LoginForm from './components/LoginForm';
+// import Profile from './components/Profile';
+import Router from './Router/Router';
 
 class App extends Component {
   render() {
@@ -12,8 +12,7 @@ class App extends Component {
     return (
       <Provider store={store}>
           <div>
-            <LoginForm/>
-            <Profile />
+            <Router/>
           </div>
       </Provider>
     );
