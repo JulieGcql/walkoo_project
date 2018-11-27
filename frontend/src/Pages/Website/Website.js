@@ -1,13 +1,19 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar';
 import Expertise from '../../components/Expertise/Expertise'
+import Technologie from '../../components/Technologie/Technologie'
 
-const Website = () => (
-  <div>
-    <Navbar />
-    <Expertise/>
-  </div>
-)
+export default class Website extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar/>
+        <Expertise/>
+        <Technologie/>
+      </div>
+    )
+  }
+}
 
 export default Website;
 
