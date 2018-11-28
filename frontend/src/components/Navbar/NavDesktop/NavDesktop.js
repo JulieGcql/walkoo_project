@@ -31,9 +31,6 @@ const NavDesktop = props => (
         <li><a href={Contact} className="ContactLink">Contact</a></li>
       </ul>
     </div>
-
-    <hr/>
-
   </div>
 
 )
