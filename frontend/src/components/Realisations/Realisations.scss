@@ -1,0 +1,54 @@
+.realisations_container{
+
+    .h1{
+
+    }
+    .slick-initialized .slick-slide {
+        
+    }
+
+    .case_container{
+    height: 100vh;
+       
+    
+   
+
+    
+      
+    
+   
+
+        .case{
+          
+            background-color: grey;
+            border: .063em solid #464646;
+            border-radius: .25em;
+            list-style-image: none;
+            list-style-type: none;
+            z-index: 15;
+            position: relative;
+            margin: 10vh;
+            width: 15vw !important;
+            left: 4vw;
+            height: 15vw;
+            align-self: center;
+            display: flex !important;
+            justify-content: center;
+        
+
+            h3{
+                // position: absolute;
+                // top: 50%;
+                // left: 40%;
+                align-self: center;
+            }
+           
+        }
+
+    
+
+    }
+   
+
+
+}
