@@ -15,6 +15,7 @@ export default class Realisations extends Component {
   render() {
     const settings = {
       dots: true,
+      arrows: false,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
@@ -22,8 +23,8 @@ export default class Realisations extends Component {
       initialSlide: 0,
       rows: 2,
       // slidesPerRow: 2
- 
     };
+
     return (
       <div className="realisations_container">
         <h1>Réalisations et Projet</h1>

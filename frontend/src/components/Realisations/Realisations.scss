@@ -1,6 +1,10 @@
 .realisations_container{
+    background-image: url('./walkin.jpg');
+    background-size: cover;
+    text-align: center;
 
     .h1{
+    
 
     }
     .slick-initialized .slick-slide {
@@ -9,14 +13,8 @@
 
     .case_container{
     height: 100vh;
-       
     
-   
 
-    
-      
-    
-   
 
         .case{
           
@@ -44,10 +42,32 @@
             }
            
         }
+    .slick-arrow:before {
+    display: hidden !important;
+    }
+    .slick-next:before {
+    display: hidden !important;  
+
+    }
+
+
+    button {
+    
+        
+    }
+
+    button:before {
+    transform: scale(2);
+    color: orange !important;
+    background-color: transparent;
+    
+    }
 
     
 
     }
+
+    
    
 
 
