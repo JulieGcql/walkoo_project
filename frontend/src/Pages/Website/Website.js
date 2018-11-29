@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Navbar from '../../components/Navbar/Navbar';
 import Expertise from '../../components/Expertise/Expertise'
 import Technologie from '../../components/Technologie/Technologie'
