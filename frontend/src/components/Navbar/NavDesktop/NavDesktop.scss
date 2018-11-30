@@ -58,7 +58,8 @@
 
 @media screen and(max-width:425px){
   .Navbar {
-    margin: 1vw 3vw;
+    position: initial;
+    padding: 1vw 0 1vw 0;
     grid-template-columns: 85% 15%;
 
     .Logo {
