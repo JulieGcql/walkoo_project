@@ -1,16 +1,12 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Cards', {
+    return queryInterface.createTable('Sectors', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      title: {
-        type: Sequelize.STRING,
-        allowNull: false
       },
       mediaId: {
         type: Sequelize.INTEGER,
@@ -20,11 +16,11 @@ module.exports = {
           key: 'id'
         }
       },
+      title: {
+        type: Sequelize.STRING
+      },
       description: {
         type: Sequelize.TEXT
-      },
-      section: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Cards');
+    return queryInterface.dropTable('Sectors');
   }
 };

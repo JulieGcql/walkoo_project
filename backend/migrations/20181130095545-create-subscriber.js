@@ -1,30 +1,36 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Cards', {
+    return queryInterface.createTable('Subscribers', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      firstName: {
         type: Sequelize.STRING,
-        allowNull: false
-      },
-      mediaId: {
-        type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-          model: 'Medias',
-          key: 'id'
-        }
       },
-      description: {
-        type: Sequelize.TEXT
-      },
-      section: {
+      companyName: {
         type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      phone: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      activitySector: {
+        type: Sequelize.STRING
+      },
+      requestDemo: {
+        type: Sequelize.BOOLEAN
+      },
+      message: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +43,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Cards');
+    return queryInterface.dropTable('Subscribers');
   }
 };

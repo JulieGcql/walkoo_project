@@ -1,15 +1,26 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Sections', {
+    return queryInterface.createTable('Technologies', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fields: {
-        type: Sequelize.JSON
+      mediaId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Medias',
+          key: 'id'
+        }
+      },
+      title: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -22,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Sections');
+    return queryInterface.dropTable('Technologies');
   }
 };
