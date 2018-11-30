@@ -16,16 +16,15 @@
 
     .expertTitle {
       grid-area: Title;
+      font-size:4vw;
       margin-left:5vw;
-      color:$orange;
     }
 
     .expertDescription {
       grid-area: Description;
       margin-left:5vw;
-      color:$black;
       text-align: justify;
-      font-size:20px;
+      font-size:2vw;
 
       hr {
         margin-top:5vh;
@@ -40,9 +39,8 @@
     .expertSubtitle {
       grid-area: Subtitle;
       margin-left:5vw;
-      color:$black;
       text-align: center;
-      font-size:20px;
+      font-size:2vw;
     }
 
     .expertImage {
@@ -71,8 +69,7 @@
       margin-left:6vw;
       margin-right:6vw;
       padding-top:2vh;
-      padding-bottom:2vh;
-    
+      padding-bottom:2vh;    
       hr {
       display:none;
       }
