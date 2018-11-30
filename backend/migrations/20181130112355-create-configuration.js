@@ -22,14 +22,14 @@ module.exports = {
       phone: {
         type: Sequelize.STRING
       },
-      socialLinks: {
+      twitter: {
+        type: Sequelize.STRING
+      },
+      linkedin: {
         type: Sequelize.STRING
       },
       rgpd: {
-        type: Sequelize.STRING
-      },
-      users: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       metaTitle: {
         type: Sequelize.STRING
