@@ -1,0 +1,35 @@
+.Partenaires {
+    height:70vh;
+    
+    .titrePartenaires {
+        margin-bottom:10vh;        
+    }
+
+    button {
+        display:none;
+    }
+    
+    .slick-initialized {
+        width:100vw;
+
+        .LogoCommerce {
+            height:100%;
+        }
+        .LogoFrench {
+            height:100%;
+            transform: scale(0.7);
+        }
+        .LogoStation {
+            height:100%;
+        }
+        .LogoSud {
+            height:100%;
+        }
+        .LogoImpulse {
+            height:100%;
+        }
+        img {
+            width:20vw;
+        }
+    }
+}
