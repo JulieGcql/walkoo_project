@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'medias'
   });
   Media.associate = function(models) {
-    Media.belongsToMany(models.Tag, {through: 'MediaTags', foreignKey : 'mediaId'})
+    Media.belongsToMany(models.Tag, {through: 'MediaTags', foreignKey : 'mediaId', as: 'tags'})
   };
   return Media;
 };

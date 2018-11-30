@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Nidaigle031088",
-    "database": "my_db_name",
+    "password": "add_your_password_here",
+    "database": "walkoo_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
