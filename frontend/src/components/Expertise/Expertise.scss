@@ -6,8 +6,10 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 20% 1fr 1fr;
   grid-template-areas: "Title Image" "Description Image" "Subtitle Image";
-  height:60vh;
+  height:54vw;
   font-family:$open;
+  margin-top:100px;
+  width:100vw;
 
   p, h1, h3 {
   margin-top:0;
@@ -16,8 +18,9 @@
 
     .expertTitle {
       grid-area: Title;
-      font-size:4vw;
+      font-size:2vw;
       margin-left:5vw;
+      color:$orange;
     }
 
     .expertDescription {
@@ -58,7 +61,7 @@
     grid-template-columns:1fr;
     grid-template-rows: 5% 1fr 60% 1fr;
     grid-template-areas: "Title" "Description" "Image" "Subtitle";
-    height:100vh;
+    height:112vw;
   
 
     .expertTitle {
@@ -73,6 +76,25 @@
       hr {
       display:none;
       }
+    }
+  }
+}
+
+@media screen and(max-width:425px){
+  .expertContainer {
+    margin:0;
+    height:200vw;
+
+    .expertTitle {
+      font-size:3vw;
+    }
+
+    .expertDescription {
+      font-size:4vw;
+    }
+
+    .expertSubtitle {
+      font-size:3vw;
     }
   }
 }
