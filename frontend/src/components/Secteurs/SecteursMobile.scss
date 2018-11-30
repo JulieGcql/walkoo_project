@@ -6,7 +6,7 @@
 
 .SecteursMobileContainer{
   background-color: $orange;
-  padding: 5vw 0;
+  padding: 7vw 0;
   .SecteursMobileTitle{
     color: $white;
     text-align: center;
@@ -14,7 +14,7 @@
     margin: 0 auto 2vw;
   }
   .SecteursMobileCards{
-    display: flex;
+
     .SecteursMobileRows {
       cursor: pointer;
       margin: 12vw 6vw;
@@ -22,7 +22,10 @@
       height: 10vw;
     }    
     .SecteurMobileCard{
-      width: 80vw;
+      position: relative;
+      margin: 0 20vw;
+      width: 60vw !important;
+      height: 15vw;
       .SecteurMobilePicto{
         width: 30vw;
         display: flex;
@@ -41,4 +44,12 @@
     }
   }
 }
-  
+
+.slick-dots li button:before {
+  color: $white;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  color: $black;
+}
