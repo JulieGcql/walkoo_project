@@ -16,12 +16,14 @@ export default class Realisations extends Component {
     const settings = {
       dots: true,
       arrows: false,
+      useCSS: true, 
       infinite: false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
       initialSlide: 0,
       rows: 2,
+      adaptiveHeight: true,
       // slidesPerRow: 2
     };
 
@@ -29,13 +31,16 @@ export default class Realisations extends Component {
       <div className="realisations_container">
         <h1>Réalisations et Projet</h1>
         <div className="case_container">
-          <Slider {...settings}>
+          <Slider {...settings} >
             
             {
               this.state.datas.map((data) => { 
                 return(
                 <div className="case">
-                  <h3>{data.title}</h3>
+                  <h6>{data.title}</h6>
+                  <div className="text">
+                    <p>{data.description}</p>
+                  </div>
                 </div>
                 )
               }) 
