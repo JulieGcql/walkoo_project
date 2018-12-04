@@ -7,10 +7,10 @@ import Contact from '../../components/Contact/Contact';
 
 const Website = () => (
   <div>
-    {/* <Navbar />
+    <Navbar />
     <Expertise/>
     <Technologie/>
-    <Secteurs/> */}
+    <Secteurs/>
     <Contact/>
   </div>
 )
