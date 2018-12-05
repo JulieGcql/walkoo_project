@@ -4,6 +4,7 @@ import Expertise from '../../components/Expertise/Expertise'
 import Secteurs from '../../components/Secteurs/Secteurs'
 import Technologie from '../../components/Technologie/Technologie'
 import Realisations from '../../components/Realisations/Realisations'
+import Partenaires from '../../components/Partenaires/Partenaires'
 import Contact from '../../components/Contact/Contact'
 
 const Website = () => (
@@ -13,6 +14,7 @@ const Website = () => (
         <Technologie/>
         <Secteurs/>
         <Realisations/>
+        <Partenaires/>
         <Contact/>
       </div>
     )

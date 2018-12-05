@@ -1,0 +1,76 @@
+// Taille des logos : 567px x 200px
+
+///// IMPORT VARIABLES SCSS /////
+@import '../../Variables.scss'; 
+
+.Partenaires {
+    height:20vw;
+    
+    .titrePartenaires {
+        margin-bottom:3vw;
+        font-size:4vw;
+        margin-left:5vw;
+        color:$orange; 
+        font-family:$open;      
+    }
+
+    button {
+        display:none;
+    }
+    
+    .slick-initialized {
+        width:100vw;
+
+        .LogoCommerce {
+            height:100%;
+            width:100%;
+        }
+        .LogoFrench {
+            height:100%;
+            width:100%;
+        }
+        .LogoStation {
+            height:100%;
+            width:100%;
+        }
+        .LogoSud {
+            height:100%;
+            width:100%;
+        }
+        .LogoImpulse {
+            height:100%;
+            width:100%;
+        }
+        img {
+            width:25vw;
+        }
+    }
+}
+
+@media screen and(max-width:900px){
+    .Partenaires {
+        height:30vw;
+  
+      .titrePartenaires {
+        font-size:5vw;
+      }
+
+      img {
+          width:30vw!important;
+      }
+    }
+}
+
+@media screen and(max-width:425px){
+    .Partenaires {
+        height:30vw;
+  
+      .titrePartenaires {
+        font-size:6vw;
+      }
+
+      img {
+          width:30vw!important;
+      }
+    }
+}
