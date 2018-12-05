@@ -9,12 +9,10 @@ const defaultStates = {
     }
   }
 }
-export default (state = defaultStates, action) => {
-  switch (action.type) {
+export default (state = defaultStates, {type, payload}) => {
+  switch (type) {
     case 'AUTH_USER':
-    return {
-      user: action.payload
-    }
+    return { ...state, user: payload }
     default:
       return state
   }

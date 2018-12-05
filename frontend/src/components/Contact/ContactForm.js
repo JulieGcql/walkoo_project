@@ -44,7 +44,7 @@ class Contact extends Component {
 
               <label 
                 className="label" 
-                for="name">
+                htmlFor="name">
               Nom *
               </label>
             </div>
@@ -62,7 +62,7 @@ class Contact extends Component {
               </input>
               <label 
                 className="label" 
-                for="company">
+                htmlFor="company">
               Société
               </label>
             </div>
@@ -80,7 +80,7 @@ class Contact extends Component {
               </input>
               <label 
               className="label" 
-              for="email">
+              htmlFor="email">
               Email *
               </label>
             </div>
@@ -99,7 +99,7 @@ class Contact extends Component {
               </input>
               <label 
                 className="label" 
-                for="phone">
+                htmlFor="phone">
               Téléphone *
               </label>
             </div>
@@ -109,7 +109,7 @@ class Contact extends Component {
 
             <div className="form-group form-fields">
               <select className="custom-select">
-                <option selected="">Selectionner votre secteur</option>
+                <option defaultValue="">Selectionner votre secteur</option>
                 <option value="1">Patrimoine</option>
                 <option value="2">Evenements</option>
                 <option value="3">Forme & Bien-être</option>
@@ -129,7 +129,7 @@ class Contact extends Component {
                 id="demo" 
               ></input>
               <label 
-                for="demo">
+                htmlFor="demo">
               Je souhaite une démo
               </label>
             </div>
@@ -148,7 +148,7 @@ class Contact extends Component {
               </input>
               <label 
                 className="label" 
-                for="message">
+                htmlFor="message">
               Message
               </label>
             </div>

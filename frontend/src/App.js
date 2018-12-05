@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 import store from './store';
 import './App.scss';
 // import LoginForm from './components/LoginForm';
@@ -11,9 +12,11 @@ class App extends Component {
     console.log("default state :", store.getState())
     return (
       <Provider store={store}>
-          <div>
-            <Router/>
-          </div>
+          <BrowserRouter>
+            <div>
+              <Router/>
+            </div>
+          </BrowserRouter>
       </Provider>
     );
   }
