@@ -7,6 +7,6 @@ const authController = require('../controllers/authController')
 router.post('/signin', passport.authenticate('local', { session: false }), authController.signIn);
 
 /* POST create new user. */
-router.post('/signup', authController.signUp)
+router.post('/signup', passport.authenticate('jwt', { session: false }), authController.signUp)
 
 module.exports = router;
