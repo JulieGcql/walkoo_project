@@ -2,18 +2,17 @@ import React, {Component} from 'react'
 import Navbar from '../../components/Navbar/Navbar';
 import Expertise from '../../components/Expertise/Expertise'
 import Technologie from '../../components/Technologie/Technologie'
+import Secteurs from '../../components/Secteurs/Secteurs';
 import Partenaires from '../../components/Partenaires/Partenaires';
 
-export default class Website extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar/>
-        <Expertise/>
-        <Technologie/>
-        <Partenaires/>
-      </div>
-    )
-  }
-}
+const Website = () => (
+  <div>
+    <Navbar />
+    <Expertise/>
+    <Technologie/>
+    <Secteurs/>
+    <Partenaires/>
+  </div>
+)
 
+export default Website;

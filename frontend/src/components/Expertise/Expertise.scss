@@ -6,8 +6,9 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 20% 1fr 1fr;
   grid-template-areas: "Title Image" "Description Image" "Subtitle Image";
-  height:60vh;
-  font-family:$lane;
+  height:54vw;
+  font-family:$open;
+  width:100vw;
 
   p, h1, h3 {
   margin-top:0;
@@ -16,6 +17,7 @@
 
     .expertTitle {
       grid-area: Title;
+      font-size:2vw;
       margin-left:5vw;
       color:$orange;
     }
@@ -23,9 +25,8 @@
     .expertDescription {
       grid-area: Description;
       margin-left:5vw;
-      color:$black;
       text-align: justify;
-      font-size:20px;
+      font-size:2vw;
 
       hr {
         margin-top:5vh;
@@ -40,9 +41,8 @@
     .expertSubtitle {
       grid-area: Subtitle;
       margin-left:5vw;
-      color:$black;
       text-align: center;
-      font-size:20px;
+      font-size:2vw;
     }
 
     .expertImage {
@@ -60,7 +60,7 @@
     grid-template-columns:1fr;
     grid-template-rows: 5% 1fr 60% 1fr;
     grid-template-areas: "Title" "Description" "Image" "Subtitle";
-    height:100vh;
+    height:112vw;
   
 
     .expertTitle {
@@ -71,11 +71,28 @@
       margin-left:6vw;
       margin-right:6vw;
       padding-top:2vh;
-      padding-bottom:2vh;
-    
+      padding-bottom:2vh;    
       hr {
       display:none;
       }
+    }
+  }
+}
+
+@media screen and(max-width:425px){
+  .expertContainer {
+    height:200vw;
+
+    .expertTitle {
+      font-size:3vw;
+    }
+
+    .expertDescription {
+      font-size:4vw;
+    }
+
+    .expertSubtitle {
+      font-size:3vw;
     }
   }
 }
