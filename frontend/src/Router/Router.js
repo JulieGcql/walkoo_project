@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from 'react-redux'
 import Website from '../Pages/Website/Website';
-import Admin from '../Pages/Admin/Admin';
-import AdminHome from '../components/Admin/AdminHome';
+import Admin from '../Pages/Admin/AdminLogin';
+import AdminHome from '../Pages/Admin/AdminHome';
 
 class Router extends Component {
   render() {
