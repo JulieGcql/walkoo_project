@@ -4,18 +4,18 @@ import Expertise from '../../components/Expertise/Expertise'
 import Technologie from '../../components/Technologie/Technologie'
 import Realisations from '../../components/Realisations/Realisations'
 
-export default class Website extends Component {
-  render() {
-    return (
+const Website = () => (
       <div>
         <Navbar/>
         <Expertise/>
         <Technologie/>
+        <Secteurs/>
         <Realisations/>
+        <Contact/>
       </div>
     )
-  }
-}
+export default Website;
 
-;
+
+
 

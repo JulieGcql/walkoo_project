@@ -1,0 +1,69 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS ////
+
+@media screen and(max-width:425px){ 
+  .PopUp {
+    position: fixed;
+    width: 90vw;
+    background-color: $white;
+    border: solid 2px $orange;
+    border-radius: 5px;
+    font-size: 5vw;
+    padding: 2vw;
+    top: 60vw;
+    margin: 0 5vw;  
+    text-align: center;
+    transform: translateX(110%);
+    transition: transform 0.3s ease-out;
+    z-index: 200;
+    p{
+      margin: 3vw 0;
+    }
+  }
+  .PopUp.open{
+    transform: translateX(0)
+  }
+  .close{
+    position: fixed;
+    top:2vw;
+    right:2vw;
+    opacity: 1;
+  }
+}
+
+
+@media screen and(min-width:426px){ 
+  .PopUp {
+    position: fixed;
+    width: 40vw;
+    background-color: $white;
+    border: solid 2px $orange;
+    border-radius: 5px;
+    font-size: 1vw;
+    padding: 0.5vw;
+    top: 5vw;
+    right: 2vw;
+    text-align: center;
+    transform: translateX(110%);
+    transition: transform 0.3s ease-out;
+    z-index: 200;
+    p{
+      margin: 1vw 0;
+    }
+  }
+  .PopUp.open{
+    transform: translateX(0)
+  }
+  .backdrop{
+    display: none;
+  }
+  .close{
+    position: fixed;
+    top:1vw;
+    right:1vw;
+    opacity: 1;
+  }
+}
