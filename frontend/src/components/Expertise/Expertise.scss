@@ -6,9 +6,9 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 20% 1fr 1fr;
   grid-template-areas: "Title Image" "Description Image" "Subtitle Image";
-  height:54vw;
+  height:65vw;
   font-family:$open;
-  width:100vw;
+  width:100%;
 
   p, h1, h3 {
   margin-top:0;
