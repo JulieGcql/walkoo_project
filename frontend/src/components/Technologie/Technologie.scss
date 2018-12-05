@@ -1,5 +1,5 @@
 .technologie_container{
-    height: 100vh;
+    height: 100%;
 
     .technologie-firstpart{
         height: 15vw;
@@ -18,6 +18,7 @@
         font-family: 'Open Sans Condensed', sans-serif;
         margin: 0vw 10vw;
         font-size: 1.5vw;
+       
         
         }
 
@@ -42,8 +43,9 @@
 
 
             img{
-            transform: scale(0.5);
-            margin: -6vw 0;
+            // transform: scale(0.5);
+            // margin: -6vw 0;
+            width: 15vw;
 
             }
 
@@ -63,15 +65,16 @@
             }
         }
     }
-
 }
+
 @media screen and (max-width: 1200px) {
     .technologie_container{
+        height: 100%;
 
         .technologie-secondpart{
-        width: 26vw;
+       
             img{
-            width: 23vw;
+            width: 15vw;
             }
 
         }
@@ -79,12 +82,12 @@
     }
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 480px) {
 
     
 
     .technologie_container{
-        height: 100vh;
+        height: 100%;
     
         .technologie-firstpart{
             height: 26vw;
@@ -105,7 +108,7 @@
     
         }
         .technologie-secondpart{
-         text-align: center;
+        //  text-align: center;
          margin: 3vw 0vw;
     
             h3{
@@ -128,6 +131,7 @@
                 display: grid;
                 grid-template-columns: 40% 60%; 
                 height: 36vw; 
+                width: 100vw;
                 
 
                     
@@ -135,7 +139,8 @@
                 .avantage2{
                     display: grid;
                     grid-template-columns: 60% 40%;
-                    height: 36vw;  
+                    height: 36vw; 
+                    width: 100vw; 
                     
 
                         
@@ -178,6 +183,5 @@
     
     }
       
-  
 }
 

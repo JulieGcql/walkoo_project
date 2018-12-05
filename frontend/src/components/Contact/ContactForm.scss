@@ -1,0 +1,132 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../Variables.scss';
+
+///// SCSS /////
+
+// Mobile device
+
+@media screen and(max-width:425px) {
+  .ContactContainer {
+    h1{
+      color: $black;
+      margin-top: 5vw;
+      font-size: 8vw;
+    }
+    .contact-form {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 12vw;
+      .demo{
+        margin: auto;
+      }
+      .button {
+        justify-self: center;
+      }
+      .btn{
+        padding: 2vw 20vw;
+      }
+      .button, h1 {
+        justify-self: center;
+      }
+      .form-fields {
+        position: relative;
+        font-size: 5vw;
+        .label {
+          margin-top: -8vw;
+          position: absolute;
+          font-size: 5vw;
+          color: #666;
+          cursor: text;
+          transition: transform .2s ease-in-out;
+        }
+        .input-text {
+          display: block;
+          width: 100%;
+          height: 5vw;
+          border-width: 0 0 2px 0;
+          border-color: $black;
+          font-size: 5vw;          
+          &:focus {
+            outline: none;
+          }
+          &:focus,
+          &.not-empty {
+            + .label {
+              transform: translateY(-5vw);
+            }
+          }
+        }
+      }
+    } 
+  }
+}
+
+// Other device
+
+@media screen and(min-width:426px) {
+  .ContactContainer {
+    h1{
+      color: $black;
+      margin-top: 1vw;
+      font-size: 2vw;
+      justify-self: center;
+    }
+    .contact-form {
+      width: 60vw;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3vw;
+      .demo{
+        margin: auto 0;
+      }
+      .button {
+        justify-self: center;
+      }
+      .message, .button, h1{
+        grid-column: 1 / 3;
+      }
+      .message{
+        margin-top: -1vw;
+      }
+      .btn{
+        padding: 1vw 5vw;
+      }
+      .form-fields {
+        position: relative;
+        font-size: 1vw;
+        .label {
+          margin-top: -1.6vw;
+          position: absolute;
+          font-size: 1vw;
+          color: #666;
+          cursor: text;
+          transition: transform .2s ease-in-out;
+        }
+        .custom-select{
+          height: 3vw;
+        }
+        .input-text {
+          display: block;
+          width: 100%;
+          height: 1.5vw;
+          border-width: 0 0 2px 0;
+          border-color: $black;
+          font-size: 1vw;          
+          &:focus {
+            outline: none;
+          }
+          &:focus,
+          &.not-empty {
+            + .label {
+              transform: translateY(-1.6vw);
+            }
+          }
+        }
+      }
+    } 
+  }
+}
