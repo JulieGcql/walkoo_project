@@ -26,7 +26,7 @@ class LoginAdmin extends Component {
         alert("Vous n'avez pas les droits d'administrateur")
       }
     })
-    .catch((err) => alert("Erreur lors le l'authentification"))
+    .catch((err) => alert("Erreur lors de l'authentification"))
   }
   
   handleChange = (event) => {
