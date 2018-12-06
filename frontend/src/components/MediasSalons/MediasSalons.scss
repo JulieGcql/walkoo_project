@@ -1,0 +1,39 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;  
+    height:25vw;
+}
+.msTitle{
+    color:#f79646;
+    text-align: center;
+}
+
+.ListeSalons{
+    text-align: center;
+    
+    border-right: 1px solid black; 
+    width:50vw;
+    line-height: 2.5;
+}
+.ListeMedia{
+    text-align: center;
+    list-style-type: none;
+    width:50vw;
+    line-height: 2.5;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 425px) {
+
+.grid-container {
+   
+    margin-top: 25vw;
+}
+
+}
