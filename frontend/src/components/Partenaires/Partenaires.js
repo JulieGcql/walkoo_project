@@ -20,7 +20,8 @@ export default class Partenaires extends Component {
       cssEase: "linear",
       arrows: false,
       pauseOnHover: false,
-      accessibility: false
+      accessibility: false,
+      draggable: false
     };
     return (
       <div className="Partenaires">
