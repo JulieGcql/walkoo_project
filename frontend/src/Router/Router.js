@@ -11,10 +11,10 @@ class Router extends Component {
 
         <Switch>
           <Route exact path="/"  component={Website} />
-          <Route exact path="/admin"  component={Admin} />
+          <Route exact path="/admin/login"  component={Admin} />
           {
             this.props.authentification.user.userData.user.isAdmin && 
-            <Route exact path="/adminhome" component={AdminHome}/>
+              <Route exact path="/admin/home" component={AdminHome}/>
           }
         </Switch>
 

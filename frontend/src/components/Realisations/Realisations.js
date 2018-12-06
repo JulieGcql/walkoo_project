@@ -34,9 +34,9 @@ export default class Realisations extends Component {
           <Slider {...settings} >
             
             {
-              this.state.datas.map((data) => { 
+              this.state.datas.map((data, index) => { 
                 return(
-                <div className="case">
+                <div className="case" key={index}>
                   <h6>{data.title}</h6>
                   <div className="text">
                     <p>{data.description}</p>

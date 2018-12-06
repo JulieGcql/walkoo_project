@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import './AdminMenu.scss'
 
 export default class AdminMenu extends Component {
@@ -6,10 +7,12 @@ export default class AdminMenu extends Component {
     return (
       <div className="MenuAdmin">
         
+        <NavLink to="/admin/home">
         <button className="ButtonMenuAdmin">
           <i className="fas fa-home"></i>
           <h5>Accueil</h5>
         </button>
+        </NavLink>
 
         <button className="ButtonMenuAdmin">
           <i className="far fa-newspaper"></i>
@@ -26,10 +29,12 @@ export default class AdminMenu extends Component {
           <h5>Statistiques</h5>
         </button>
 
+        <NavLink to="/admin/contacts">
         <button className="ButtonMenuAdmin">
           <i className="fas fa-users"></i>
           <h5>Contacts</h5>
         </button>
+        </NavLink>
 
         <button className="ButtonMenuAdmin">
           <i className="fab fa-whmcs"></i>
