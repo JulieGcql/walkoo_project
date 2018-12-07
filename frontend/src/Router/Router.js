@@ -2,21 +2,16 @@ import React, { Component } from 'react'
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from 'react-redux'
 import Website from '../Pages/Website/Website';
-import Admin from '../Pages/Admin/AdminLogin';
-import AdminHome from '../Pages/Admin/AdminHome';
+import PageLogin from '../Pages/Admin/PageLogin';
 
 class Router extends Component {
   render() {
   return (
 
-        <Switch>
-          <Route exact path="/"  component={Website} />
-          <Route exact path="/admin/login"  component={Admin} />
-          {
-            this.props.authentification.user.userData.user.isAdmin && 
-              <Route exact path="/admin/home" component={AdminHome}/>
-          }
-        </Switch>
+      <Switch>
+        <Route exact path="/"  component={Website} />
+        <Route exact path="/admin/login"  component={PageLogin} />
+      </Switch>
 
     )
   }

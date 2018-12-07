@@ -1,16 +1,16 @@
 import React from 'react'
 import AdminNav from '../../components/AdminNav/AdminNav'
 import AdminMenu from '../../components/AdminMenu/AdminMenu';
-import AdminContacts from '../../components/AdminContacts/AdminContacts';
+import AdminStatistiques from '../../components/AdminStatistiques/AdminStatistiques';
 
-const AdminHome = () => {
+const PageStatistique = () => {
   return (
     <div>
       <AdminNav/>
       <AdminMenu/>
-      <AdminContacts/>
+      <AdminStatistiques/>
     </div>
   )
 }
 
-export default AdminHome
+export default PageStatistique

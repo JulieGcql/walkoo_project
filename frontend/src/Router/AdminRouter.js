@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import AdminContact from '../Pages/Admin/AdminContact'
 import { Switch, Route, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import PageHome from '../Pages/Admin/PageHome';
+import PageArticles from '../Pages/Admin/PageArticle'
+import PageMedias from '../Pages/Admin/PageMedia'
+import PageStatistiques from '../Pages/Admin/PageStatistique'
+import PageContacts from '../Pages/Admin/PageContact'
+import PageConfigurations from '../Pages/Admin/PageConfiguration'
 
 
 export class AdminRouter extends Component {
@@ -11,11 +16,15 @@ export class AdminRouter extends Component {
       <div>
 
         <Switch>
-          {
+          {/* {
             this.props.authentification.user.userData.user.isAdmin && 
-              <Route exact path="/admin/contacts"  component={AdminContact} />
-              // <Route exact path="/admin/Articles" component={AdminArticles}/>
-          }
+          } */}
+          <Route exact path="/admin/home" component={PageHome}/>
+          <Route exact path="/admin/articles" component={PageArticles}/>
+          <Route exact path="/admin/medias" component={PageMedias} />
+          <Route exact path="/admin/statistiques" component={PageStatistiques} />
+          <Route exact path="/admin/contacts" component={PageContacts} />
+          <Route exact path="/admin/configuration" component={PageConfigurations} />
         </Switch>
 
       </div>
