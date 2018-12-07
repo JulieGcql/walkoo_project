@@ -1,0 +1,254 @@
+@import '../../Variables.scss'; 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.containerAnim{
+  height: 25vw;
+  justify-items: center;  
+
+
+
+  .Text1 { 
+    text-align: center;
+    height: 30vw;
+    background-color: rgb(247, 150, 70);
+    display: inline-flex;
+    font-size: 2vw;
+    color:white;
+    width: 100vw;
+    position:absolute;
+    top:0;
+    
+    .first{
+      
+      // visibility:hidden;
+      font-size:5vw;
+        width: auto;
+        height: auto;
+        color:white;
+        position: absolute;
+        -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
+        animation: mymove 20s infinite;
+        z-index:1;
+        left: 33vw;
+    }
+    
+    .second{
+    
+      visibility:hidden;
+      font-size:5vw;
+        width: auto;
+        height: auto;
+        color:white;
+        left:0px;
+        position: absolute;
+        -webkit-animation: mymove2 20s infinite; /* Safari 4.0 - 8.0 */
+        animation: mymove2 20s infinite;
+        animation-delay: 5s;
+        z-index:2;
+        left: 33vw;
+    }   
+    
+    .third{
+    
+    visibility:hidden;
+      font-size:5vw;
+        width: auto;
+        height: auto;
+        color:white;
+        left:0px;
+        position: absolute;
+        -webkit-animation: mymove3 20s infinite; /* Safari 4.0 - 8.0 */
+        animation: mymove3 20s infinite;
+        animation-delay:10s;
+        z-index:3;
+        left: 33vw;
+    }
+  }
+}
+  .secondContainer{
+    margin-top: 34vw;
+    height:20vw;
+  }
+    .Text2 { 
+      text-align: center;
+      height: 6vw;
+      bottom: 2vw;
+      margin-left: 15vw;
+      margin-right: 15vw;
+    }
+    
+    .Bouton { 
+      text-align: center;
+      background-color: rgb(247, 150, 70);
+      height: 5vw;
+      border-radius: 90px;
+      font-size: 2vw;
+      color: white;
+      width: 40%;
+      line-height: 5vw;
+      margin-left: 30vw;
+      bottom: 2vw;    
+     
+    }
+    
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes mymove 
+    {
+        0%   {bottom: 0vw;opacity:1}
+        10%  {bottom: 7vw;visibility:visible;}
+        46% {bottom: 1vw;opacity:1;}
+        51%{bottom:25vw;opacity:0.2;}
+        100%{bottom:25vw;opacity:0;}
+    }
+    
+    /* Standard syntax */
+    @keyframes mymove 
+    {
+      
+      0%   {bottom: 0vw;opacity:1}
+      10%  {bottom: 7vw;visibility:visible;}
+      46% {bottom: 15vw;opacity:1;}
+      51%{bottom:25vw;opacity:0.2;}
+      100%{bottom:25vw;opacity:0;}
+    }
+    
+    @-webkit-keyframes mymove2 
+    {
+      
+      0%   {bottom: 0vw;opacity:1}
+        10%  {bottom: 7vw;visibility:visible;}
+        46% {bottom: 15vw;opacity:1;}
+        51%{bottom:25vw;opacity:0.2;}
+        100%{bottom:25vw;opacity:0;}
+  }
+    /* Standard syntax */
+    @keyframes mymove2 
+    {
+      
+      0%   {bottom: 0vw;opacity:1}
+        10%  {bottom: 7vw;visibility:visible;}
+        46% {bottom: 15vw;opacity:1;}
+        51%{bottom:25vw;opacity:0.2;}
+        100%{bottom:25vw;opacity:0;}
+  }
+    @-webkit-keyframes mymove3 
+    {
+      0%   {bottom: 0vw;opacity:1}
+        10%  {bottom: 7vw;visibility:visible;}
+        46% {bottom: 15vw;opacity:1;}
+        51%{bottom:25vw;opacity:0.2;}
+        100%{bottom:25vw;opacity:0;}
+  }
+    
+    /* Standard syntax */
+    @keyframes mymove3 
+    {
+      0%   {bottom: 0vw;opacity:1}
+      10%  {bottom: 7vw;visibility:visible;}
+      46% {bottom: 15vw;opacity:1;}
+      51%{bottom:25vw;opacity:0.2;}
+      100%{bottom:25vw;opacity:0;}
+  }
+        
+     
+
+  
+/*telport*/
+@media screen and (max-width: 425px) {
+
+  .secondContainer{
+    margin-top: 50vw;
+    height:33vw;
+  }
+  
+  .Text1 {
+    text-align: center;
+    height: 50vw;
+    background-color: #f79646;
+    display: inline-flex;
+    font-size: 6vw;
+    color: white;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+  }
+
+  .Text2 {
+    text-align: center;
+    height: 6vw;
+    bottom: 2vw;
+    margin-left: 11vw;
+    margin-right: 11vw;
+}
+  .Bouton {
+    text-align: center;
+    background-color: #f79646;
+    height: 7vw;
+    border-radius: 90px;
+    font-size: 4vw;
+    color: white;
+    width: 52%;
+    line-height: 6vw;
+    margin-left: 25vw;
+    top: 62vw;
+    position: absolute;
+}
+
+}
+  
+
+/*Ecran Moyen desktop*/
+
+@media screen and (max-width: 768px) {
+  
+  .secondContainer{
+    margin-top: 50vw;
+    height:33vw;
+  }
+  
+  .Text1 {
+    text-align: center;
+    height: 50vw;
+    background-color: #f79646;
+    display: inline-flex;
+    font-size: 6vw;
+    color: white;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+  }
+
+  .Text2 {
+    text-align: center;
+    height: 6vw;
+    bottom: 2vw;
+    margin-left: 11vw;
+    margin-right: 11vw;
+}
+  .Bouton {
+    text-align: center;
+    background-color: #f79646;
+    height: 7vw;
+    border-radius: 90px;
+    font-size: 4vw;
+    color: white;
+    width: 52%;
+    line-height: 6vw;
+    margin-left: 25vw;
+    top: 62vw;
+    position: absolute;
+}
+}
+
+/*Ecran Large desktop*/
+
+@media screen and (min-width: 1200px) {
+  
+  
+  }
+        
+
+      
+    
+  
