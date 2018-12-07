@@ -1,18 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Navbar from '../../components/Navbar/Navbar';
 import Expertise from '../../components/Expertise/Expertise'
-import Accueil from '../../components/Accueil/Accueil'
-import MediasSalons from '../../components/MediasSalons/MediasSalons'
+import Secteurs from '../../components/Secteurs/Secteurs'
+import Technologie from '../../components/Technologie/Technologie'
+import Realisations from '../../components/Realisations/Realisations'
+import Partenaires from '../../components/Partenaires/Partenaires'
+import Contact from '../../components/Contact/Contact'
 
-export default class Website extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar/>
-        <Expertise/>
-        <Accueil/>
-        <MediasSalons/>
-      </div>
-    )
-  }
-}
+const Website = () => (
+  <div>
+    <Navbar/>
+    <Expertise/>
+    <Technologie/>
+    <Secteurs/>
+    <Realisations/>
+    <Partenaires/>
+    <Contact/>
+  </div>
+)
+export default Website;
+
+
+
+

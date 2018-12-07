@@ -1,0 +1,34 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../Variables.scss';
+
+///// SCSS /////
+
+.MenuAdmin {
+  position: fixed;
+  height: 100%;
+  margin-top: 4.5vw;
+  width: 10%;
+  border-right: $black solid 1px;
+  .ButtonMenuAdmin{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:$white;
+    padding: 0.2vw 0;
+    margin: 0.5vw 0;
+    i {
+      font-size: 2vw;
+    }
+    h5 {
+      font-size: 1.2vw;
+    }
+  }
+  .ButtonMenuAdmin:hover {
+    background-color:$orange;
+    color: $white;
+    border-radius: 5px;
+  }
+}

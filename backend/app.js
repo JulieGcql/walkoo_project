@@ -8,6 +8,7 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var tagsRouter = require('./routes/tags');
 var mediasRouter = require('./routes/medias');
+var subscriberRouter = require('./routes/subscriber')
 
 const passport = require('passport');
 const {localAuthStrategy} = require("./routes/strategies/local");
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static('uploads'));
 
 // Initialize auth strategies config
-localAuthStrategy;
+localAuthStrategy;  
 jwtAuthStrategy
 
 app.use('/', indexRouter);
@@ -33,5 +34,6 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/tags', passport.authenticate('jwt', { session: false }), tagsRouter);
 app.use('/medias', passport.authenticate('jwt', { session: false }), mediasRouter);
+app.use('/subscribers', subscriberRouter);
 
 module.exports = app;

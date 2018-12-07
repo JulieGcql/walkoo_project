@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-
+import { Switch, Route, withRouter } from "react-router-dom";
+import { connect } from 'react-redux'
 import Website from '../Pages/Website/Website';
-import Admin from '../Pages/Admin/Admin';
+import Admin from '../Pages/Admin/AdminLogin';
+import AdminHome from '../Pages/Admin/AdminHome';
 
-export default class Router extends Component {
+class Router extends Component {
   render() {
   return (
-    
-      <BrowserRouter>
 
         <Switch>
           <Route exact path="/"  component={Website} />
-          <Route exact path="/admin"  component={Admin} />
+          <Route exact path="/admin/login"  component={Admin} />
+          {
+            this.props.authentification.user.userData.user.isAdmin && 
+              <Route exact path="/admin/home" component={AdminHome}/>
+          }
         </Switch>
-
-      </BrowserRouter>
 
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  ...state
+})
+
+
+export default withRouter(connect(mapStateToProps)(Router))

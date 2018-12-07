@@ -1,11 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
+import SecteursMobile from './SecteursMobile';
+import SecteursPc from './SecteursPc';
+import Media from 'react-media'
 
-export default class Secteurs extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-}
+const Secteurs  = () => (
+  <div>
+    <Media query="(max-width: 425px)">
+      {matches =>
+        matches ? (
+          <SecteursMobile/>
+        ) : (
+          <SecteursPc/>
+        )
+      }
+    </Media>
+  </div>
+)
+
+export default Secteurs;
