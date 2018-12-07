@@ -12,7 +12,6 @@ export default class Contact extends Component {
   }
 
   drawerToggleClickHandler = (e) => {
-    e.preventDefault()
     this.setState((prevState) => {
       return {popUpOpen : !prevState.popUpOpen}
     })

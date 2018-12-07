@@ -17,7 +17,7 @@ export default class Technologie extends Component {
          <div className="grid_container_avantage">
           <div className="avantage avantage1">
             <div className='title1'>
-              <img src={require('./link.png')}/>
+              <img src={require('./link.png')} alt="Link"/>
               <h6>Lien direct avec <br/>
               votre audience</h6>
             </div>
@@ -25,7 +25,7 @@ export default class Technologie extends Component {
           </div>
           <div className="avantage avantage2">
             <div className='title2'>
-              <img src={require('./notification.png')}/>
+              <img src={require('./notification.png')} alt="Notif"/>
               <h6>Contextualisation <br/>
               des notifications</h6>
             </div>            
@@ -33,7 +33,7 @@ export default class Technologie extends Component {
           </div>
           <div className="avantage avantage1">
             <div className='title1'>
-              <img src={require('./ux.png')}/>
+              <img src={require('./ux.png')} alt="UX"/>
               <h6>Ux <br/>
                 Design</h6>
             </div>
@@ -41,7 +41,7 @@ export default class Technologie extends Component {
           </div>
           <div className="avantage avantage2">
             <div className='title2'>
-              <img src={require('./performance.png')}/>
+              <img src={require('./performance.png')} alt="Perf"/>
               <h6>Notre <br/>
                 Efficacité</h6>
             </div>

@@ -1,19 +1,52 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './ContactForm.scss'
+import Axios from 'axios';
 
 class Contact extends Component {
   state = {
-    nameCompleted : 'input-text',
-    companyCompleted : 'input-text',
+    firstNameCompleted : 'input-text',
+    companyNameCompleted : 'input-text',
     emailCompleted : 'input-text',
     phoneCompleted : 'input-text',
-    messageCompleted : 'input-text'
+    messageCompleted : 'input-text',
+    firstName : '',
+    companyName : '',
+    email : '',
+    phone : '',
+    activitySector : '',
+    requestDemo: false,
+    message : '',
   }
-  
-  changeClassName = (event) => {
-    const currentFieldName = event.target.name
-    if(event.target.value !== ''){
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    Axios.post('/subscribers/create', {
+      firstName : this.state.firstName,
+      companyName : this.state.companyName,
+      email : this.state.email,
+      phone : this.state.phone,
+      activitySector : this.state.activitySector,
+      requestDemo : this.state.requestDemo,
+      message : this.state.message
+    })
+    .then((res) => {
+      console.log(res)
+      return this.props.click(e)
+    })
+    .catch((err) => console.log("Erreur lors de l'envoie des données du formulaire", err))
+  }
+
+  handleChange = (e) => {
+    console.log(e.target.value);
+    const currentFieldName = e.target.name
+
+    this.setState({[currentFieldName]: e.target.value})
+    if (e.target.name === 'requestDemo'){
+      this.setState({requestDemo: !this.state.requestDemo})
+    }
+
+    if(e.target.value !== ''){
       this.setState({[`${currentFieldName}Completed`] : 'input-text not-empty'})
     } else {
       this.setState({[`${currentFieldName}Completed`] : 'input-text'})
@@ -26,7 +59,7 @@ class Contact extends Component {
 
           <form 
           className="contact-form"
-          onSubmit={this.props.click}>
+          onSubmit={(e) => this.handleSubmit(e)}>
 
             <h1>Contact</h1>
 
@@ -35,16 +68,17 @@ class Contact extends Component {
             <div className="form-fields">
               <input 
                 type="text" 
-                name="name" 
-                id="name" 
-                onChange={(e) => this.changeClassName(e)} 
-                className={this.state.nameCompleted} 
+                name="firstName" 
+                id="firstName" 
+                value={this.state.firstName}
+                onChange={(e) => this.handleChange(e)} 
+                className={this.state.firstNameCompleted} 
                 required>
               </input>
 
               <label 
                 className="label" 
-                htmlFor="name">
+                htmlFor="firstName">
               Nom *
               </label>
             </div>
@@ -54,15 +88,16 @@ class Contact extends Component {
             <div className="form-fields">
               <input 
                 type="text" 
-                name="company"
-                id="company"
-                onChange={(e) => this.changeClassName(e)} 
-                className={this.state.companyCompleted} 
+                name="companyName"
+                id="companyName"
+                value={this.state.companyName}
+                onChange={(e) => this.handleChange(e)} 
+                className={this.state.companyNameCompleted} 
               >
               </input>
               <label 
                 className="label" 
-                htmlFor="company">
+                htmlFor="companyName">
               Société
               </label>
             </div>
@@ -74,7 +109,8 @@ class Contact extends Component {
                 type="email" 
                 name="email" 
                 id="email" 
-                onChange={(e) => this.changeClassName(e)} 
+                value={this.state.email}
+                onChange={(e) => this.handleChange(e)} 
                 className={this.state.emailCompleted} 
                 required>
               </input>
@@ -93,7 +129,8 @@ class Contact extends Component {
                 type="tel" 
                 name="phone" 
                 id="phone" 
-                onChange={(e) => this.changeClassName(e)} 
+                value={this.state.phone}
+                onChange={(e) => this.handleChange(e)} 
                 className={this.state.phoneCompleted} 
                 required>
               </input>
@@ -108,14 +145,17 @@ class Contact extends Component {
 
 
             <div className="form-group form-fields">
-              <select className="custom-select">
+              <select 
+              className="custom-select" 
+              name="activitySector"
+              onChange={(e) => this.handleChange(e)}>
                 <option defaultValue="">Selectionner votre secteur</option>
-                <option value="1">Patrimoine</option>
-                <option value="2">Evenements</option>
-                <option value="3">Forme & Bien-être</option>
-                <option value="4">SmartCampus</option>
-                <option value="5">Médias</option>
-                <option value="6">Autre</option>
+                <option value="Patrimoine">Patrimoine</option>
+                <option value="Evenements">Evenements</option>
+                <option value="Forme et Bien-être">Forme & Bien-être</option>
+                <option value="SmartCampus">SmartCampus</option>
+                <option value="Médias">Médias</option>
+                <option value="Autre">Autre</option>
               </select>
             </div>
 
@@ -125,11 +165,13 @@ class Contact extends Component {
             <div className="form-fields demo">
               <input 
                 type="checkbox"
-                name="demo"
-                id="demo" 
+                name="requestDemo"
+                id="requestDemo" 
+                value={this.state.requestDemo}
+                onClick={(e) => this.handleChange(e)}
               ></input>
               <label 
-                htmlFor="demo">
+                htmlFor="requestDemo">
               Je souhaite une démo
               </label>
             </div>
@@ -142,7 +184,8 @@ class Contact extends Component {
                 type="text" 
                 name="message" 
                 id="message" 
-                onChange={(e) => this.changeClassName(e)} 
+                value={this.state.message}
+                onChange={(e) => this.handleChange(e)} 
                 className={this.state.messageCompleted} 
               >
               </input>
