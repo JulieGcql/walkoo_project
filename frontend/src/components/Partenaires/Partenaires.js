@@ -18,6 +18,10 @@ export default class Partenaires extends Component {
       speed: 4000,
       autoplaySpeed: 4000,
       cssEase: "linear",
+      arrows: false,
+      pauseOnHover: false,
+      accessibility: false,
+      draggable: false
     };
     return (
       <div className="Partenaires">
