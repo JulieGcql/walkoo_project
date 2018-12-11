@@ -17,7 +17,9 @@ export default class Accueil extends Component {
         <div className="secondContainer">
 
           <p className="Text2">Walkoo combine la géolocalisation et les sciences du comportement pour renforcer l'engagement de l'utilisateur en maîtrisant le sens du contexte</p>
-          <p className="Bouton">Demander une Demo</p>
+          <button 
+              className="btn btn-warning Bouton"
+              >Demander une Demo</button> 
         </div>
 
 

@@ -50,6 +50,7 @@
     a:hover{
       background-color: $orange;
       color: $white;
+      border-radius: 90px;
     }
 
     .ContactLink{
@@ -73,6 +74,9 @@
         width: 35vw;
         margin: 0 5vw;
       }
+    }
+    .Navbar-toggle-button{
+      margin: auto;
     }
     
     .NavLinks {

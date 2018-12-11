@@ -13,12 +13,13 @@
     text-align: center;
     font-size: 3vw;
     margin: 0 auto 2vw;
+    font-family: $open;
   }
 
   .SecteursCards {
     display: flex;
-    justify-content: space-between;
-    margin: 0 10vw;  
+    justify-content: space-around;
+    margin: 0 6vw;  
     
     .SecteurCard{
       display: flex;
@@ -26,14 +27,15 @@
       width: 18vw;
 
       .SecteurPicto{
-        width: 8vw;
+        width: 12vw;
         margin: 0 auto;
       }
 
       .SecteurTitle{
         color: $white;
         text-align: center;
-        font-size: 1.7vw;
+        font-size: 1.5vw;
+        font-family: $open;
       }
 
       .SecteurPictoMore{
@@ -52,7 +54,8 @@
       .SecteurDescription{
         color:$white;
         text-align: justify;
-        font-size: 0.8vw;
+        font-size: 1.15vw;
+        font-family: $condensed;
       }
       
     }

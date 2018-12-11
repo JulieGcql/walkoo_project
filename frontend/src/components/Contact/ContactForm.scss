@@ -9,7 +9,8 @@
 @media screen and(max-width:425px) {
   .ContactContainer {
     h1{
-      color: $black;
+      font-family: $open;
+      color: $orange;
       margin-top: 5vw;
       font-size: 8vw;
     }
@@ -27,6 +28,9 @@
       }
       .btn{
         padding: 2vw 20vw;
+        background-color: $orange;
+        border-radius: 90px;
+        font-family: $open;
       }
       .button, h1 {
         justify-self: center;
@@ -34,10 +38,12 @@
       .form-fields {
         position: relative;
         font-size: 5vw;
+        font-family: $open;
         .label {
           margin-top: -8vw;
           position: absolute;
           font-size: 5vw;
+          font-family: $open;
           color: #666;
           cursor: text;
           transition: transform .2s ease-in-out;
@@ -69,10 +75,11 @@
 @media screen and(min-width:426px) {
   .ContactContainer {
     h1{
-      color: $black;
+      color: $orange;
       margin-top: 1vw;
-      font-size: 2vw;
+      font-size: 3vw;
       justify-self: center;
+      font-family: $open;
     }
     .contact-form {
       width: 60vw;
@@ -94,17 +101,26 @@
       }
       .btn{
         padding: 1vw 5vw;
+        font-size: 1.15vw;
+        background-color: $orange;
+        border-radius: 90px;
+        font-family: $open;
       }
       .form-fields {
         position: relative;
-        font-size: 1vw;
+        font-size: 1.15vw;
+        font-family: $open;
+        .checkbox{
+          width: 4vw;
+        }
         .label {
-          margin-top: -1.6vw;
+          margin-top: -1.7vw;
           position: absolute;
-          font-size: 1vw;
-          color: #666;
+          font-size: 1.15vw;
+          color: $black;
           cursor: text;
           transition: transform .2s ease-in-out;
+          font-family: $open;
         }
         .custom-select{
           height: 3vw;
@@ -115,7 +131,7 @@
           height: 1.5vw;
           border-width: 0 0 2px 0;
           border-color: $black;
-          font-size: 1vw;          
+          font-size: 1.15vw;          
           &:focus {
             outline: none;
           }
