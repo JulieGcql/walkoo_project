@@ -3,7 +3,7 @@ import Media from 'react-media'
 import LoginAdmin from '../../components/LoginAdmin/LoginAdmin'
 import Indisponible from '../../components/Indisponible/Indisponible'
 
-const Admin = () => {
+const PageLogin = () => {
   return (
     <div>
       <Media query="(max-width: 425px)">
@@ -19,4 +19,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default PageLogin

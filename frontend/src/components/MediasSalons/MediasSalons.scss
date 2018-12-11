@@ -1,0 +1,56 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;  
+    height:26vw;
+    margin-bottom: 10vw;
+}
+.msTitle{
+    color:#f79646;
+    text-align: center;
+}
+
+.ListeSalons{
+    text-align: center;
+    max-height:fit-content;
+    border-right: 1px solid black; 
+    width:50vw;
+    line-height: 2.5;
+}
+.ListeMedia{
+    text-align: center;
+    list-style-type: none;
+    width:50vw;
+    line-height: 2.5;
+}
+
+
+
+@media screen and (max-width: 360px) {
+
+    .grid-container {
+        max-height:fit-content;
+        margin-top: 25vw;
+         height: 75vw;
+        margin-bottom: 10vw;
+    }
+    }
+
+@media screen and (max-width: 425px) {
+
+.grid-container {
+    max-height:fit-content;
+    margin-top: 25vw;
+    height: 80vw;
+    margin-bottom: 10vw;
+}
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        
+        margin-top: 10vw;
+        height: 45vw;
+        margin-bottom: 10vw;
+    }
+}
