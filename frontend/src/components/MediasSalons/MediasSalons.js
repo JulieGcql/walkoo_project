@@ -24,7 +24,7 @@ export default class Medias extends Component {
          
 
           <div className="ListeMedia">
-          <h1 className="msTitle" >Médias</h1>
+          <h1 className="msTitle" >Média</h1>
             {MediaData.map((media, index) => {
               return (
                 <p  key={index}>{media.media}</p>)

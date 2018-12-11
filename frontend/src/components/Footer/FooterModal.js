@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import "./FooterModal.scss";
 
@@ -48,5 +47,3 @@ export default class FooterModal extends React.Component {
     );
   }
 }
-
-const props = {};

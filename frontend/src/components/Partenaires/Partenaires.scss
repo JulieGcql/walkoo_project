@@ -4,12 +4,10 @@
 @import '../../Variables.scss'; 
 
 .Partenaires {
-    height:20vw;
     
     .titrePartenaires {
         margin-bottom:3vw;
-        font-size:4vw;
-        margin-left:5vw;
+        font-size:3vw;
         color:$orange; 
         font-family:$open;  
         text-align: center;    
@@ -50,10 +48,10 @@
 
 @media screen and(max-width:900px){
     .Partenaires {
-        height:30vw;
+        margin-bottom: 2vw;
   
       .titrePartenaires {
-        font-size:5vw;
+        font-size:3vw;
       }
 
       img {
@@ -64,10 +62,9 @@
 
 @media screen and(max-width:425px){
     .Partenaires {
-        height:30vw;
   
       .titrePartenaires {
-        font-size:6vw;
+        font-size:8vw;
       }
 
       img {

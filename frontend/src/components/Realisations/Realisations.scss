@@ -1,3 +1,6 @@
+///// IMPORT VARIABLES SCSS /////
+@import '../../Variables.scss'; 
+
 
 * {
     outline: none !important;  
@@ -14,8 +17,9 @@
 
     h1{
     padding-top: 2vw;
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
+    font-family: $open;
 
     }
    
@@ -40,7 +44,7 @@
             align-self: center;
             display: flex !important;
             justify-content: center;
-            opacity: 0.8;
+            opacity: 0.95;
             // margin-left: auto;
             // margin-right: auto;
             margin: 2vw auto;
@@ -50,8 +54,9 @@
 
             h6{
                 align-self: center;
-                font-size: 2vw;
+                font-size: 1.5vw;
                 margin: 0 1.5vw;
+                font-family: $open;
             }
             .text {
                 // display: flex !important;
@@ -68,9 +73,9 @@
                 
 
                 p{  
-                    font-size: 1vw;
+                    font-size: 1.15vw;
                     color: white;
-                    text-align: initial;
+                    text-align: justify;
                     margin: 0 2px;
                     opacity: 0;
                     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -81,6 +86,8 @@
                     transform: translate3d(0%, 30%, 0);
                     -webkit-transition-delay: 0s;
                     transition-delay: 0s;
+                    font-family: $condensed;
+                    
 
 
                 }
@@ -135,7 +142,7 @@
       }
    
       .case:hover {
-        opacity: 0.95;
+        opacity: 1;
     
       }
       .case:hover h6 {
