@@ -4,6 +4,8 @@ import "./Realisations.scss"
 import datas from './datas.json'
 
 
+
+
 export default class Realisations extends Component {
  
 
@@ -13,6 +15,7 @@ export default class Realisations extends Component {
   }
 
   render() {
+
     const settings = {
       dots: true,
       arrows: false,
@@ -25,7 +28,18 @@ export default class Realisations extends Component {
       rows: 2,
       adaptiveHeight: true,
       // slidesPerRow: 2
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            
+          }
+        }
+      ]   
+      
     };
+    
 
     return (
       <div className="realisations_container">

@@ -22,18 +22,13 @@
     overflow-y: hidden;
   }
 
-  Button {
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #39BEEB;
-    color: #39BEEB;
-    background-color: rgba(0, 0, 0, 0.7);
-    font-size: 18px;
-    justify-content: center;
+  .exit_btn {
+
     display: flex;
     margin: auto;
     padding: 1vw 5vw;
-    font-size: 1.15vw
+    width: 12vw;
+        
 }
 
 .container_modal{

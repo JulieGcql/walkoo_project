@@ -41,7 +41,7 @@ export default class FooterModal extends React.Component {
            overlayClassName="Overlay"
         >
           <p className="text">{text}</p>
-          <button onClick={this.handleCloseModal}>Revenir au site</button>
+          <img className="exit_btn" onClick={this.handleCloseModal} src={require('./Pictures/exit.png')} alt="exit modal button"/>
         </Modal>
       </div>
     );
