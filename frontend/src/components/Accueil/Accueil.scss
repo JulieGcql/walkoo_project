@@ -1,8 +1,12 @@
 @import '../../Variables.scss'; 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+
+body{
+  overflow-x: hidden;
+}
+
 .containerAnim{
-  height: 25vw;
   justify-items: center;  
 
 
@@ -13,6 +17,7 @@
     background-color: rgb(247, 150, 70);
     display: inline-flex;
     font-size: 2vw;
+    font-family: $open;
     color:white;
     width: 100vw;
     position:absolute;
@@ -68,27 +73,31 @@
   .secondContainer{
     
     margin-top: 38vw;
-    height:20vw;
+    height:auto;
   }
     .Text2 { 
       text-align: center;
-      height: 4vw;
-      bottom: 2vw;
+      height: 6vw;
+      bottom: 1vw;
       margin-left: 15vw;
       margin-right: 15vw;
+      font-size: 1.5vw;
+      font-family: $condensed;      
     }
-    
+    .btn{
+      margin: auto;
+      display: flex;
+    }
     .Bouton { 
       text-align: center;
       background-color: rgb(247, 150, 70);
-      height: 5vw;
       border-radius: 90px;
-      font-size: 2vw;
+      font-size: 1.5vw;
+      font-family: $open;
       color: white;
-      width: 40%;
-      line-height: 5vw;
-      margin-left: 30vw;
       bottom: 2vw;    
+      padding: 1vw 5vw;
+    font-size: 1.15vw;
      
     }
     
@@ -157,10 +166,15 @@
   
 /*telport*/
 @media screen and (max-width: 425px) {
+  .containerAnim{
+    .Text1{
+      top: 25vw;
+    }
+    margin-bottom: 50vw;
+  }
 
   .secondContainer{
-    margin-top: 50vw;
-    height:33vw;
+    margin-top: 45vw;
   }
   
   .Text1 {
@@ -169,6 +183,7 @@
     background-color: #f79646;
     display: inline-flex;
     font-size: 6vw;
+    font-family: $open;
     color: white;
     width: 100vw;
     position: absolute;
@@ -177,79 +192,25 @@
 
   .Text2 {
     text-align: center;
-    height: 6vw;
-    bottom: 2vw;
-    margin-left: 11vw;
-    margin-right: 11vw;
-}
-  .Bouton {
-    text-align: center;
-    background-color: #f79646;
-    height: 7vw;
-    border-radius: 90px;
-    font-size: 4vw;
-    color: white;
-    width: 52%;
-    line-height: 6vw;
-    margin-left: 25vw;
-    top: 62vw;
-    position: absolute;
-}
-
-}
-  
-
-/*Ecran Moyen desktop*/
-
-@media screen and (max-width: 768px) {
-  
-  .secondContainer{
-    margin-top: 50vw;
-    height:33vw;
-  }
-  
-  .Text1 {
-    text-align: center;
-    height: 50vw;
-    background-color: #f79646;
-    display: inline-flex;
     font-size: 6vw;
-    color: white;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-  }
-
-  .Text2 {
-    text-align: center;
-    height: 6vw;
-    bottom: 2vw;
     margin-left: 11vw;
     margin-right: 11vw;
 }
   .Bouton {
     text-align: center;
     background-color: #f79646;
-    height: 7vw;
+    padding: 2vw 20vw;
     border-radius: 90px;
     font-size: 4vw;
+    font-family: $open;
     color: white;
-    width: 52%;
+    width: 50%;
+    bottom: inherit;
     line-height: 6vw;
     margin-left: 25vw;
-    top: 62vw;
     position: absolute;
+    margin-top: 30vw;
 }
+
+
 }
-
-/*Ecran Large desktop*/
-
-@media screen and (min-width: 1200px) {
-  
-  
-  }
-        
-
-      
-    
-  

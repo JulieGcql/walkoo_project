@@ -168,6 +168,7 @@ class Contact extends Component {
                 name="requestDemo"
                 id="requestDemo" 
                 value={this.state.requestDemo}
+                className="checkbox"
                 onClick={(e) => this.handleChange(e)}
               ></input>
               <label 
