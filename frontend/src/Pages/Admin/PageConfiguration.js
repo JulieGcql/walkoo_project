@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNav from '../../components/AdminNav/AdminNav'
-import AdminMenu from '../../components/AdminMenu/AdminMenu';
-import AdminConfigurations from '../../components/AdminConfigurations/AdminConfigurations';
+import AdminNav from '../../components/BackOffice/AdminNav/AdminNav'
+import AdminMenu from '../../components/BackOffice/AdminMenu/AdminMenu';
+import AdminConfigurations from '../../components/BackOffice/AdminConfigurations/AdminConfigurations';
 
 const PageConfiguration = () => {
   return (

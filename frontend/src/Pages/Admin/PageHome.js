@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNav from '../../components/AdminNav/AdminNav'
-import AdminMenu from '../../components/AdminMenu/AdminMenu';
-import AdminAccueil from '../../components/AdminAccueil/AdminAccueil';
+import AdminNav from '../../components/BackOffice/AdminNav/AdminNav'
+import AdminMenu from '../../components/BackOffice/AdminMenu/AdminMenu';
+import AdminAccueil from '../../components/BackOffice/AdminAccueil/AdminAccueil';
 
 const PageHome = () => {
   return (

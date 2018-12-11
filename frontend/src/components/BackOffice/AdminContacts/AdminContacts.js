@@ -31,7 +31,7 @@ export default class AdminContacts extends Component {
       <div className="ContactAdmin">
         <h1>Contacts</h1>
 
-      <table class="table table-hover">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">Nom</th>
@@ -50,26 +50,28 @@ export default class AdminContacts extends Component {
         this.state.subscribers.map((subscriber, index) => {
           return (
 
-            <tr key={index}>
+            <tbody key={index}>
+              <tr>
 
-              <th scope="row">{subscriber.firstName}</th>
-              <td>{subscriber.companyName}</td>
-              <td>{subscriber.email}</td>
-              <td>{subscriber.phone}</td>
-              <td>{subscriber.activitySector}</td>
-              {subscriber.requestDemo ?
-                <td>Oui</td>
-              : 
-                <td>Non</td>
-              }
-              <td>{subscriber.message}</td>
-              <td><button 
-                className="btn btn-outline-danger"
-                onClick={() => this.handleDelete(subscriber.id)}>
-                  <i class="fas fa-trash-alt"></i>
-              </button></td>
+                <th scope="row">{subscriber.firstName}</th>
+                <td>{subscriber.companyName}</td>
+                <td>{subscriber.email}</td>
+                <td>{subscriber.phone}</td>
+                <td>{subscriber.activitySector}</td>
+                {subscriber.requestDemo ?
+                  <td>Oui</td>
+                  : 
+                  <td>Non</td>
+                }
+                <td>{subscriber.message}</td>
+                <td><button 
+                  className="btn btn-outline-danger"
+                  onClick={() => this.handleDelete(subscriber.id)}>
+                    <i className="fas fa-trash-alt"></i>
+                </button></td>
 
-            </tr>
+              </tr>
+            </tbody>
 
           )
         })
