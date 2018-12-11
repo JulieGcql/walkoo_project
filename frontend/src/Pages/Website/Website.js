@@ -8,6 +8,7 @@ import Realisations from '../../components/Realisations/Realisations'
 import MediasSalons from '../../components/MediasSalons/MediasSalons'
 import Partenaires from '../../components/Partenaires/Partenaires'
 import Contact from '../../components/Contact/Contact'
+import Footer from '../../components/Footer/Footer'
 
 const Website = () => (
   <div>
@@ -20,6 +21,7 @@ const Website = () => (
     <MediasSalons/>
     <Partenaires/>
     <Contact/>
+    <Footer/>
   </div>
 )
 export default Website;
