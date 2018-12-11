@@ -15,7 +15,7 @@ export default class Medias extends Component {
         <h1 className="msTitle">Salons</h1>
           {SalonsData.map((salon, index) => {
             return (
-              <p className="media" key={index}>{salon.salon}</p>)
+              <p key={index}>{salon.salon}</p>)
           })}
 
         </div>
@@ -27,7 +27,7 @@ export default class Medias extends Component {
           <h1 className="msTitle" >Médias</h1>
             {MediaData.map((media, index) => {
               return (
-                <p className="media" key={index}>{media.media}</p>)
+                <p  key={index}>{media.media}</p>)
             })}
 
 
