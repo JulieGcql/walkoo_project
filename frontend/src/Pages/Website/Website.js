@@ -6,6 +6,7 @@ import Technologie from '../../components/Technologie/Technologie'
 import Realisations from '../../components/Realisations/Realisations'
 import Partenaires from '../../components/Partenaires/Partenaires'
 import Contact from '../../components/Contact/Contact'
+import Footer from '../../components/Footer/Footer'
 
 const Website = () => (
   <div>
@@ -16,6 +17,7 @@ const Website = () => (
     <Realisations/>
     <Partenaires/>
     <Contact/>
+    <Footer/>
   </div>
 )
 export default Website;
