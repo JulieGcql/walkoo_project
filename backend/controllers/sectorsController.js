@@ -4,7 +4,7 @@ const Sector = models.Sector
 module.exports = {
 
   index : function(req, res, next) {
-    Sector.findAll()
+    Sector.findAll({include : ["picto"]})
     .then((sectors) => {
       res.json({sectors})
     })
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Sector.findByPk(req.params.id, {include: [Media]})
+    Sector.findByPk(req.params.id, {include: ["picto"]})
     .then((secteur) => {
       if(secteur){
         res.json({secteur})
@@ -30,7 +30,7 @@ module.exports = {
       description: req.body.description
     })
     .then((newSector) => {
-      res.json({newSector})
+      res.json({message: "Le secteur a été créé.", newSector})
     })
     .catch((err) => res.json("Erreur lors de la création d'un secteur", err))
   },

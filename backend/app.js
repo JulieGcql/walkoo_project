@@ -33,9 +33,12 @@ jwtAuthStrategy
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
-app.use('/tags', passport.authenticate('jwt', { session: false }), tagsRouter);
-app.use('/medias', passport.authenticate('jwt', { session: false }), mediasRouter);
+app.use('/tags', tagsRouter);
+app.use('/medias', mediasRouter);
 app.use('/subscribers', subscriberRouter);
 app.use('/sectors', sectorsRouter);
 
 module.exports = app;
+
+
+// passport.authenticate('jwt', { session: false }),
