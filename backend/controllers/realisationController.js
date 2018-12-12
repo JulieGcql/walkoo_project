@@ -15,7 +15,7 @@ module.exports = {
         Realisation.create({
           title: req.body.title,
           description: req.body.description,
-        //   url: req.body.url,
+          url: req.body.url,
         })
         .then((newRealisation) => {
           res.json({newRealisation})
@@ -40,10 +40,10 @@ module.exports = {
         Realisation.findByPk(req.params.id)
         .then((realisation) => {
           if(realisation){
-            if(req.body.title && req.body.description){
+            if(req.body.title && req.body.description && req.body.url){
               realisation.title = req.body.title;
               realisation.description = req.body.description;
-              // realisation.url = req.body.url;
+              realisation.url = req.body.url;
               realisation.save()
               .then((updatedRealisation) => {
                 res.json({realisation: updatedRealisation})

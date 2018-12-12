@@ -12,7 +12,7 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Media.findByPk(req.params.id, {include: [ Tag ]})
+    Media.findByPk(req.params.id, {include: [ "tag" ]})
     .then((media) => {
       if(media){
         res.json({media})

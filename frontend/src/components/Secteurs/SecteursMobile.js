@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import SectorsData from './Secteurs.json'
 import Slider from 'react-slick'
 import './SecteursMobile.scss'
 
 export default class SecteursMobile extends Component {
-  state = {
-    sectors : SectorsData
-  }
-
+  
   render() {
-    const { sectors } = this.state;
+    const {  } = this.state;
     const settings = {
       dots: true,
       arrows: false,
@@ -23,11 +19,11 @@ export default class SecteursMobile extends Component {
 
         <Slider {...settings}>
 
-          {sectors.map((secteur, index) => {
+          {this.props.sectors.map((secteur, index) => {
             return (
               <div className="SecteurMobileCard" key={index}>
 
-                <img className="SecteurMobilePicto" src={secteur.media} alt={`Logo ${secteur.title}`}/>
+                <img className="SecteurMobilePicto" src={`http://${secteur.picto.url}`} alt={`Logo ${secteur.picto.name}`}/>
                 <h3 className="SecteurMobileTitle">{secteur.title}</h3>
                 <p className="SecteurMobileDescription">{secteur.description}</p>
                 
