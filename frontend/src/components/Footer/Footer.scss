@@ -8,6 +8,7 @@
     background-color: #707070;
     margin-top: 5vw;
     padding:1vw 2vw;
+    font-family: "Open Sans", sans-serif;
 
 
     .footer_menu{
@@ -16,9 +17,12 @@
         justify-content: center;
         color: white;
         text-align: center;
+        font-family: "Open Sans", sans-serif;
 
         p{
             font-size: 2vw;
+            font-family: "Open Sans", sans-serif;
+        
         }
 
         ul{
@@ -48,8 +52,13 @@
        flex-direction: column;
        justify-content: flex-end;
 
+       p{
+        font-family: "Open Sans", sans-serif;
+       }
+
        .walkoo_c{
         font-size: 1vw;
+        font-family: "Open Sans", sans-serif;
 
        }
 
@@ -79,3 +88,49 @@
   .footer_rgpd { grid-area: footer_rgpd; }
   
   .footer_social_icon { grid-area: footer_social_icon; }
+
+
+
+  @media screen and(max-width:480px) {
+
+    .footer_container {
+        
+        .footer_menu{
+            
+            p{
+                font-size: 3vw;
+            }
+            ul{
+                font-size: 2.5vw; 
+            }
+        }
+    
+        .footer_app_logo {
+              
+            img{
+                width: 15vw;
+                
+            }
+    
+        }
+        .footer_rgpd {
+           
+    
+           p{
+            font-size: 1.8vw;
+            margin-bottom: 2.5vw;
+           }
+    
+           .walkoo_c{
+            font-size: 2vw;
+           }
+
+        }
+        .footer_social_icon {
+            
+            img{
+                width: 6vw;
+            }
+        }
+    } 
+  }

@@ -1,44 +1,39 @@
-// .Modal {
-//     position: absolute;
-//     top: 10vw;
-//     left: 10vw;
-//     right: 10vw;
-//     bottom: 5vw;
-//     background-color: white;
-//     overflow: scroll;
-//   }
+.Modal {
+    position: absolute;
+    top: 10vw;
+    left: 10vw;
+    right: 10vw;
+    bottom: 5vw;
+    background-color: white;
+    overflow: scroll;
+  }
 
-//   .Overlay {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-color: rgba(0,0,0,0.5);
-//     overflow-y: hidden;
-//   }
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    overflow-y: hidden;
+  }
 
-//   .ReactModal__Body--open {
-//     overflow-y: hidden;
-//   }
+  .ReactModal__Body--open {
+    overflow-y: hidden;
+  }
 
-//   Button {
-//     margin-top: 10px;
-//     border-radius: 5px;
-//     border: 1px solid #39BEEB;
-//     color: #39BEEB;
-//     background-color: rgba(0, 0, 0, 0.7);
-//     font-size: 18px;
-//     justify-content: center;
-//     display: flex;
-//     margin: auto;
-//     padding: 1vw 5vw;
-//     font-size: 1.15vw
-// }
+  .exit_btn {
 
-// .container_modal{
-//   align-self: center;
-//   max-width: 100%;    
-//   height: auto;
-// }
+    display: flex;
+    margin: auto;
+    padding: 1vw 5vw;
+    width: 12vw;
+        
+}
+
+.container_modal{
+  align-self: center;
+  max-width: 100%;    
+  height: auto;
+}
 
