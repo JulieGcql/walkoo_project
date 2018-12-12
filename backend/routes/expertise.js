@@ -7,6 +7,6 @@ router.get("/", expertiseController.index);
 
 router.post("/create", expertiseController.create);
 
-router.put("/edit", expertiseController.edit);
+router.put("/edit/:id", expertiseController.edit);
 
 module.exports = router
