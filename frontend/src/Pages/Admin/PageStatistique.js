@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNav from '../../components/AdminNav/AdminNav'
-import AdminMenu from '../../components/AdminMenu/AdminMenu';
-import AdminStatistiques from '../../components/AdminStatistiques/AdminStatistiques';
+import AdminNav from '../../components/BackOffice/AdminNav/AdminNav'
+import AdminMenu from '../../components/BackOffice/AdminMenu/AdminMenu';
+import AdminStatistiques from '../../components/BackOffice/AdminStatistiques/AdminStatistiques';
 
 const PageStatistique = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminNav from '../../components/AdminNav/AdminNav'
-import AdminMenu from '../../components/AdminMenu/AdminMenu';
-import AdminMedias from '../../components/AdminMedias/AdminMedias';
+import AdminNav from '../../components/BackOffice/AdminNav/AdminNav'
+import AdminMenu from '../../components/BackOffice/AdminMenu/AdminMenu';
+import AdminMedias from '../../components/BackOffice/AdminMedias/AdminMedias';
 
 const PageMedia = () => {
   return (

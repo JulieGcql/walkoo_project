@@ -95,9 +95,9 @@
 
         .text::before {
             position: absolute;
-            top: 30px;
+            top: 2vw;
             right: 30px;
-            bottom: 30px;
+            bottom: 2vw;
             left: 100%;
             border-left: 4px solid rgba(255, 255, 255, 0.8);
             content: '';
@@ -165,9 +165,61 @@
         transition-delay: 0s;
       }
 
-      
+}
+
+
+@media screen and(max-width:480px) {
+    .realisations_container{
+
+        h1{
     
-   
+            font-size: 6vw;
+            font-family: "Open Sans", sans-serif;
+        
+            }
+
+        .case_container{
+
+            slick-list {
+                height: auto !important;
+            }
 
 
+
+            .case{
+            
+                width: 30vw !important;
+                height: 30vw;
+
+                h6{
+                    font-size: 2.8vw;
+                }
+
+            
+
+                .text::before {
+                    
+                    border-left: 2px solid rgba(255, 255, 255, 0.8);
+                    top: 3vw;
+                    
+                    bottom: 3vw;
+                    
+                }
+                .text{
+                    // height: 40vw;
+                    padding: 2vw 2.5vw;
+                
+                    p{
+                        font-size: 1.8vw;
+                    }
+        
+                    
+                }
+                
+            }
+
+        }
+
+
+    }
 }
