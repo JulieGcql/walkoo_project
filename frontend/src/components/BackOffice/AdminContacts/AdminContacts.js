@@ -12,18 +12,20 @@ export default class AdminContacts extends Component {
   }
 
   handleDelete = (id) => {
-    axios.delete(`/subscribers/delete/${id}`)
-    .then((res) => {
-      alert(res.data.message)
-      this.getSubscribers()
-    })
-    .catch((err) => console.log(err))
+    if(window.confirm("Voulez-vous supprimer le contact ?")){
+      axios.delete(`/subscribers/delete/${id}`)
+      .then((res) => {
+        alert(res.data.message)
+        this.getSubscribers()
+      })
+      .catch((err) => console.log(err))
+    }
   }
 
   getSubscribers = () => {
     axios.get('/subscribers')
     .then((res) => this.setState({subscribers: res.data.subscribers}))
-    .catch((err) => console.log("Erreur lors de l'obtention des subscribers"))
+    .catch((err) => console.log("Erreur lors de l'obtention des contacts"))
   }
 
   render() {

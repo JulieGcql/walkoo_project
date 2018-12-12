@@ -9,7 +9,7 @@ router.get("/:id", sectorsController.show);
 
 router.post("/create", sectorsController.create);
 
-router.put("edit/:id", sectorsController.edit);
+router.put("/edit/:id", sectorsController.edit);
 
 router.delete('/delete/:id', sectorsController.delete);
 
