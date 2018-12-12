@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import './Secteurs.scss'
 import axios from 'axios'
 import SecteurModal from './SecteurModal';
@@ -219,14 +218,6 @@ export default class Secteurs extends Component {
 
         </div>
 
-=======
-
-export default class Secteurs extends Component {
-  render() {
-    return (
-      <div>
-        <p>Secteurs</p>
->>>>>>> dev
       </div>
     )
   }
