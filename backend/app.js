@@ -8,8 +8,9 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var tagsRouter = require('./routes/tags');
 var mediasRouter = require('./routes/medias');
-var subscriberRouter = require('./routes/subscriber')
-var sectorsRouter = require('./routes/sectors')
+var subscriberRouter = require('./routes/subscriber');
+var sectorsRouter = require('./routes/sectors');
+var eventsRouter = require('./routes/events');
 
 const passport = require('passport');
 const {localAuthStrategy} = require("./routes/strategies/local");
@@ -37,5 +38,6 @@ app.use('/tags', passport.authenticate('jwt', { session: false }), tagsRouter);
 app.use('/medias', passport.authenticate('jwt', { session: false }), mediasRouter);
 app.use('/subscribers', subscriberRouter);
 app.use('/sectors', sectorsRouter);
+app.use('/events', eventsRouter);
 
 module.exports = app;
