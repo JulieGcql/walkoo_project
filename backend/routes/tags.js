@@ -6,6 +6,8 @@ const tagsController = require('../controllers/tagsController')
 router.get('/', tagsController.index);
 
 /* GET tag by id. */
+router.get('/secteur', tagsController.getSecteurMedia);
+
 router.get('/:id', tagsController.show);
 
 /* POST new tag. */
