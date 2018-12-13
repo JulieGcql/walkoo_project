@@ -29,7 +29,7 @@ module.exports = {
       Media.create({
         name: req.body.name,
         type: 'file',
-        url: `${req.get('Host')}/uploads/${req.file.originalname}`
+        url: `${window.location.protocol}//${req.get('Host')}/uploads/${req.file.originalname}`
       })
       .then((newMedia) => {
         // si une liste d'id à été fourni alors on lie les tags correspondants au média

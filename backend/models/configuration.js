@@ -10,16 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     metaTitle: DataTypes.STRING,
     metaDescription: DataTypes.STRING,
     metaKeyword: DataTypes.STRING,
-    metaImage: DataTypes.STRING,
-    catchPhrase: DataTypes.STRING,
-    homeBackId: DataTypes.INTEGER,
-    homeSubtitle: DataTypes.TEXT,
-    expertiseParagraph1: DataTypes.TEXT,
-    expertiseParagraphe2: DataTypes.TEXT,
-    expertiseImageId: DataTypes.INTEGER,
-    technologieSubtitle: DataTypes.TEXT,
-    technologieDescription: DataTypes.TEXT,
-    realisationBackId: DataTypes.INTEGER,
+    metaImage: DataTypes.STRING
   }, {});
   Configuration.associate = function(models) {
     Configuration.belongsTo(models.Media, {foreignKey: 'mediaId', as: 'logo'})

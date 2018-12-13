@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import './Secteurs.scss'
+// import './Secteurs.scss'
 import axios from 'axios'
 import RealisationModal from './RealisationModal';
 
 export default class Secteurs extends Component {
   state = {
-    realisation: [],
+    realisations: [],
     title:"",
     description:"",
     url:"",
@@ -14,11 +14,11 @@ export default class Secteurs extends Component {
     idSelected:"",
     titleSelected:"",
     descriptionSelected:"",
-    url:"",
+    urlSelected:"",
   }
 
   componentDidMount() {
-    this.getRealisation()
+    this.getRealisations()
   }
   
   handleChange = (e) => {
@@ -29,7 +29,7 @@ export default class Secteurs extends Component {
     if(window.confirm("Voulez-vous supprimer de la realisation ?")){
       axios.delete(`/realisation/delete/${id}`)
       .then((res) => {
-        this.getRealisation()
+        this.getRealisations()
       })
       .catch((err) => console.log(err))
     }
@@ -37,13 +37,25 @@ export default class Secteurs extends Component {
 
   handleClick = (id, title, description) => {
     this.setState({modal: !this.state.modal, idSelected: id,  titleSelected: title, descriptionSelected: description})
-    this.getRealisation()
+    this.getRealisations()
   }
 
-  getRealisation = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
+      axios.post('/realisation/create', this.state)
+      .then((res) => {
+        this.getRealisations()
+      })
+      .catch((err) => console.log(err))
+    } 
+    
+  
+
+  getRealisations = () => {
     axios.get('/realisation')
     .then((res) => {
-      this.setState({realisation: res.data.realisations})
+      console.log(res.data)
+      this.setState({realisations: res.data.realisations})
     })
     .catch((err) => console.log("Erreur lors de l'obtention des realisations"))
   }
@@ -100,12 +112,12 @@ export default class Secteurs extends Component {
 
              <label 
               className="col-form-label"
-              >Description :
+              >Lien:
             </label>
 
             <input 
               type="text" 
-              name="description" 
+              name="url" 
               value={this.state.url}
               onChange={(e) => this.handleChange(e)}
               className="form-control" 
@@ -153,9 +165,9 @@ export default class Secteurs extends Component {
               </tr>
             </thead>
 
-            {this.state.realisation &&
+            {this.state.realisations &&
 
-            this.state.realisation.map((realisation, index) => {
+            this.state.realisations.map((realisation, index) => {
               return (
 
                 <tbody key={index}>
@@ -163,12 +175,14 @@ export default class Secteurs extends Component {
 
                     <th scope="row">{realisation.title}</th>
                     <td>{realisation.description}</td>
-                    <td>{url.description}</td>
+                    <td>{realisation.url}</td>
+
                     <td><button 
                       className="btn btn-outline-primary"
-                      onClick={() => this.handleClick(realisation.id,realisation.title, realisation.description)}>
+                      onClick={() => this.handleClick(realisation.id,realisation.title, realisation.description, realisation.url)}>
                         <i class="fas fa-pen"></i>
                     </button></td>
+
                     <td><button 
                       className="btn btn-outline-danger"
                       onClick={() => this.handleDelete(realisation.id)}>

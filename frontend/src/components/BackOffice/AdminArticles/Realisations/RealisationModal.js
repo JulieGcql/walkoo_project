@@ -9,7 +9,7 @@ export default class RealisationModal extends Component {
   }
 
   componentDidMount = () => {
-    this.setState({title: this.props.title, description: this.props.description, description: this.props.url})
+    this.setState({title: this.props.title, description: this.props.description, url: this.props.url})
   }
   
   handleChange = (e) => {
@@ -79,7 +79,7 @@ export default class RealisationModal extends Component {
                 <input 
                   type="text" 
                   name="url" 
-                  value={this.state.title}
+                  value={this.state.url}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
                   required 
