@@ -5,8 +5,8 @@ module.exports = {
 
     index : function(req, res, next) {
         Realisation.findAll()
-        .then((realisation) => {
-          res.json({realisation})
+        .then((realisations) => {
+          res.json({realisations})
         })
         .catch((err) => res.json("Erreur lors de l'index des realisation", err))
       },
