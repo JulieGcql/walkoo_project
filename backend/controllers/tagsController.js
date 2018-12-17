@@ -73,8 +73,12 @@ module.exports = {
     Tag.findByPk(req.params.id)
     .then((tag) => {
       if(tag){
-        tag.destroy()
-        .then((tag) => res.json({message: 'Tag has been deleted'}))
+        tag.setMedias([])
+        .then((result) => {
+          tag.destroy()
+          .then((result) => res.json({message: 'Tag has been deleted'}))
+          .catch((error) => res.status(500).json({message: error}))
+        })
         .catch((error) => res.status(500).json({message: error}))
       } else {
         res.status(404).json({message: `Tag does not exist with id: ${req.params.id}`})

@@ -23,7 +23,7 @@ export default class SecteursMobile extends Component {
             return (
               <div className="SecteurMobileCard" key={index}>
 
-                <img className="SecteurMobilePicto" src={`http://${secteur.picto.url}`} alt={`Logo ${secteur.picto.name}`}/>
+                <img className="SecteurMobilePicto" src={`${secteur.picto.url}`} alt={`Logo ${secteur.picto.name}`}/>
                 <h3 className="SecteurMobileTitle">{secteur.title}</h3>
                 <p className="SecteurMobileDescription">{secteur.description}</p>
                 

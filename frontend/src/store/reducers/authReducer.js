@@ -1,10 +1,10 @@
 const defaultStates = {
   user: {
     userData: {
+      token: '',
       user: '',
       isAdmin: false,
       id: 0,
-      token: '',
       isConnected: false
     }
   }
@@ -12,7 +12,9 @@ const defaultStates = {
 export default (state = defaultStates, {type, payload}) => {
   switch (type) {
     case 'AUTH_USER':
-    return { ...state, user: payload }
+      return { ...state, user: payload }
+    case 'LOGOUT_USER' :
+      return {...state, user: defaultStates}
     default:
       return state
   }
