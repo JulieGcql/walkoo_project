@@ -8,6 +8,7 @@
 
 @media screen and(max-width:425px) {
   .ContactContainer {
+    scroll-margin-top: 0px;
     h1{
       font-family: $open;
       color: $orange;
@@ -39,6 +40,9 @@
         position: relative;
         font-size: 5vw;
         font-family: $open;
+        .checkbox{
+          width: 10vw;
+        }
         .label {
           margin-top: -8vw;
           position: absolute;
@@ -74,6 +78,8 @@
 
 @media screen and(min-width:426px) {
   .ContactContainer {
+    scroll-margin-top: 85px;
+
     h1{
       color: $orange;
       margin-top: 1vw;

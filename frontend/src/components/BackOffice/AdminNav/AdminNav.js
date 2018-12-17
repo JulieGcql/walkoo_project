@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { logOutAction } from '../../../store/actions/logOut'
 import Logo from './pictures/logo_small.png';
-import { Redirect, withRouter, NavLink } from 'react-router-dom'
+import { withRouter, NavLink } from 'react-router-dom'
 import "./AdminNav.scss"
 
 export class AdminNav extends Component {

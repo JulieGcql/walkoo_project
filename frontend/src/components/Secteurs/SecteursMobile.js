@@ -5,7 +5,6 @@ import './SecteursMobile.scss'
 export default class SecteursMobile extends Component {
   
   render() {
-    const {  } = this.state;
     const settings = {
       dots: true,
       arrows: false,

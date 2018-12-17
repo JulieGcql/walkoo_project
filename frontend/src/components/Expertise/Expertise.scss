@@ -2,6 +2,7 @@
 @import '../../Variables.scss'; 
 
 .expertContainer {
+  scroll-margin-top: 85px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 6vw 1fr 1fr;
@@ -65,6 +66,7 @@
 
 @media only screen and (max-device-width:425px) {
   .expertContainer{
+    scroll-margin-top: 0px;
     display: grid;
     grid-template-columns:1fr;
     grid-template-rows: auto auto 25vh auto;
