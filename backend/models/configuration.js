@@ -14,9 +14,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Configuration.associate = function(models) {
     Configuration.belongsTo(models.Media, {foreignKey: 'mediaId', as: 'logo'})
-    Configuration.belongsTo(models.Media, {foreignKey: 'homeBackId', as: 'homeBackground'})
-    Configuration.belongsTo(models.Media, {foreignKey: 'expertiseImageId', as: 'expertiseImage'})
-    Configuration.belongsTo(models.Media, {foreignKey: 'realisationBackId', as: 'realisationBackground'})
   };
   return Configuration;
 };

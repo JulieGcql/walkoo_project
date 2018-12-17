@@ -14,7 +14,6 @@ module.exports = {
     res.json({user, token});
   },
   signUp: function(req, res, next) {
-    console.log(req.body);
     User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,

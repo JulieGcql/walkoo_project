@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { logOutAction } from '../../../store/actions/logOut'
 import Logo from './pictures/logo_small.png';
+import { Redirect, withRouter, NavLink } from 'react-router-dom'
 import "./AdminNav.scss"
 
-export default class AdminNav extends Component {
-  render() {
+export class AdminNav extends Component {
+  
+  logOut = () => {
+    this.props.logOutAction()
+  }
+
+  render(){
+
     return (
       <div className="NavbarAdmin">
-        {/* <button className="toggle-button-admin">
-          <div className="toggle-button_line"></div>
-          <div className="toggle-button_line"></div>
-          <div className="toggle-button_line"></div>
-        </button> */}
 
         <div className="LogoAdmin">
           <i className="fas fa-map-marker-alt"></i>
@@ -18,11 +22,24 @@ export default class AdminNav extends Component {
           <h1>Administrateur</h1>
         </div>
 
-        <button className="LogOutAdmin">
+        <NavLink 
+        to="/"
+        onClick={() => this.logOut()}
+        className="LogOutAdmin">
           <p>Déconnexion</p>
           <i className="fas fa-sign-out-alt"></i>
-        </button>
+        </NavLink>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  ...state
+})
+
+const mapDispatchToProps = {
+  logOutAction
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AdminNav))

@@ -10,7 +10,6 @@ export default class Secteurs extends Component {
     mediaId:"",
     title:"",
     description:"",
-    selected: "",
     modal: false,
     idSelected:"",
     mediaIdSelected:"",
@@ -27,8 +26,8 @@ export default class Secteurs extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  getMediaId = (id, name) => {
-    this.setState({mediaId: id, selected: name})
+  getMediaId = (id) => {
+    this.setState({mediaId: id})
   }
 
   handleDelete = (id) => {
@@ -63,7 +62,6 @@ export default class Secteurs extends Component {
   getMedias = () => {
     axios.get('/tags/secteur')
     .then((res) => {
-      console.log(res);
       this.setState({medias : res.data.tag.medias})
     })
     .catch((err) => console.log(err))
@@ -96,9 +94,9 @@ export default class Secteurs extends Component {
                 onClick={() => this.getMediaId(media.id, media.name)}>
 
                   <img 
-                    src={`http://${media.url}`} 
+                    src={`${media.url}`} 
                     alt={media.name}/>
-                  <p>{media.id}: {media.name}</p>
+                  <p>{media.id}</p>
 
                 </button>
 
@@ -142,7 +140,7 @@ export default class Secteurs extends Component {
               required 
               ></textarea>
 
-              <p className="IconeSelected">Icône selectionnée : {this.state.selected} </p>
+              <p className="IconeSelected">Icône selectionnée : {this.state.mediaId} </p>
               
 
             <input 
