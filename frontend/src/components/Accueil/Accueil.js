@@ -5,7 +5,7 @@ import './Accueil.scss';
 export default class Accueil extends Component {
   render() {
     return (
-      <div class="containerAnim">
+      <div className="containerAnim">
 
         <div className="Text1 ">
 

@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
 import './MediasSalons.scss';
-import MediaData from './Media.json';
-import SalonsData from './Salons.json';
+import Axios from 'axios'
+
 export default class Medias extends Component {
+  
+  state = {
+    events : []
+  }
+  
+componentDidMount = () => {
+  Axios.get ('/events/')
+  .then ((res)=> {console.log (res.data.events);this.setState({events:res.data.events})})
+.catch((err)=> {console.log(err)});
+}
+    
   render() {
+    console.log(this.state);
     return (
+
+
+
 
       <div className="grid-container">
 
@@ -13,10 +28,14 @@ export default class Medias extends Component {
         
         <div className="ListeSalons">
         <h1 className="msTitle">Salons</h1>
-          {SalonsData.map((salon, index) => {
-            return (
-              <p key={index}>{salon.salon}</p>)
-          })}
+          {
+            this.state.events.filter((event) => {
+              return event.type == 'salon'
+            }).map((event, index) => {
+              return (
+                <p key={index}>{event.title  }</p>)
+            })
+          }
 
         </div>
 
@@ -25,10 +44,14 @@ export default class Medias extends Component {
 
           <div className="ListeMedia">
           <h1 className="msTitle" >Média</h1>
-            {MediaData.map((media, index) => {
+          {
+            this.state.events.filter((event) => {
+              return event.type == 'media'
+            }).map((event, index) => {
               return (
-                <p  key={index}>{media.media}</p>)
-            })}
+                <p key={index}>{event.title  }</p>)
+            })
+          }
 
 
           </div>
