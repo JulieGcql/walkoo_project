@@ -8,6 +8,7 @@
 
 
 .realisations_container{
+    scroll-margin-top: 85px;
     background-image: url('./walking.png');
     background-size: cover;
     text-align: center;
@@ -170,6 +171,8 @@
 
 @media screen and(max-width:480px) {
     .realisations_container{
+    scroll-margin-top: 0px;
+
 
         h1{
     

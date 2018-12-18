@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import {demoAction} from '../../store/actions/demo'
 import './ContactForm.scss'
 import Axios from 'axios';
 
 class Contact extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     firstNameCompleted : 'input-text',
     companyNameCompleted : 'input-text',
     emailCompleted : 'input-text',
@@ -15,8 +18,8 @@ class Contact extends Component {
     email : '',
     phone : '',
     activitySector : '',
-    requestDemo: false,
     message : '',
+    }
   }
 
   handleSubmit = (e) => {
@@ -27,18 +30,16 @@ class Contact extends Component {
       email : this.state.email,
       phone : this.state.phone,
       activitySector : this.state.activitySector,
-      requestDemo : this.state.requestDemo,
+      requestDemo : this.props.shared.requestDemo,
       message : this.state.message
     })
     .then((res) => {
-      console.log(res)
       return this.props.click(e)
     })
     .catch((err) => console.log("Erreur lors de l'envoie des données du formulaire", err))
   }
 
   handleChange = (e) => {
-    console.log(e.target.value);
     const currentFieldName = e.target.name
 
     this.setState({[currentFieldName]: e.target.value})
@@ -55,7 +56,7 @@ class Contact extends Component {
   
   render() {
     return (
-      <div className="ContactContainer">
+      <div className="ContactContainer" id="contact">
 
           <form 
           className="contact-form"
@@ -167,9 +168,11 @@ class Contact extends Component {
                 type="checkbox"
                 name="requestDemo"
                 id="requestDemo" 
-                value={this.state.requestDemo}
+                value={this.props.shared.requestDemo}
+                checked={this.props.shared.requestDemo}
                 className="checkbox"
-                onClick={(e) => this.handleChange(e)}
+                onClick={(e) => this.props.demoAction()}
+
               ></input>
               <label 
                 htmlFor="requestDemo">
@@ -216,7 +219,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  
+  demoAction
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact); 

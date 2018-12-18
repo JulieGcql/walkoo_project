@@ -41,3 +41,6 @@ app.use('/sectors', sectorsRouter);
 app.use('/technology', technologyRouter);
 
 module.exports = app;
+
+
+// passport.authenticate('jwt', { session: false }),
