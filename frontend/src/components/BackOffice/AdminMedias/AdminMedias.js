@@ -25,19 +25,29 @@ export default class AdminMedias extends Component {
         </div>
         <h1>Médias</h1>
         <div className="MediasContainer">
+          <div className="formUpload">
 
-          <form
-            onSubmit={(e) => this.uploadFile(e)}
-            className="addMedias">
+            <form
+              onSubmit={(e) => this.uploadFile(e)}
+              className="addMedias">
 
-            {/* Uploader un média */}
+              {/* Uploader un média */}
 
-            <div class="form-group">
-              <label for="InputFile">Uploader un média</label>
-              <input 
-                type="file" 
-                onChange={(e) => this.setState({file: e.target.files[0]})}></input>
-            </div>
+              <div class="form-group">
+                <label for="InputFile">Uploader un média</label>
+                <input 
+                  type="file" 
+                  onChange={(e) => this.setState({file: e.target.files[0]})}></input>
+              </div>
+
+              <button
+                type="submit"
+                className="btn btn-outline-dark">
+                Upload
+              </button>
+            </form>
+          </div>
+
 
             {/* Checkbox des tags */}
 
@@ -58,7 +68,6 @@ export default class AdminMedias extends Component {
               value="Créer un média"
             ></input>
 
-          </form>
 
         </div>
         <div className="mediasList">
