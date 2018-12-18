@@ -5,19 +5,80 @@ import axios from 'axios'
 
 export default class AdminMedias extends Component {
   state = {
-    selectTags: [],
-    medias: []
+    tags: [],
+    mediasList: [],
+    tagIdSelected:[],
+    mediaName: ''
+  }
+
+  componentDidMount(){
+    this.getMedias()
+    this.getTags()
   }
 
   uploadFile(e) {
     e.preventDefault();
     let data = new FormData()
-    data.append('file', this.state.file, this.state.file.filename)
-    axios.post('/upload', data)
-      .then((res) => console.log(res))
+    data.append('name', this.state.mediaName)
+    data.append('file', this.state.file, this.state.mediaName + '.' +this.state.file.name.split('.').pop())
+    data.append('tagIds', this.state.tagIdSelected.map(tag => tag.id))
+    console.log(this.state.tagIdSelected);
+    if (this.state.tagIdSelected.length == 0){
+      alert("Selectionnez un tag")
+    }
+    else {
+    axios.post('/medias/create', data)
+      .then((res) => {
+        this.setState({mediaName:""})
+        console.log(res)
+        this.getMedias()
+      })
       .catch((err) => console.log(err))
+    }
   }
+
+
+  getTagsSelected = (tag) => {
+    let currentSelectedIds = this.state.tagIdSelected;
+    if(currentSelectedIds.includes(tag)){
+      const index = currentSelectedIds.indexOf(tag)
+      currentSelectedIds.splice(index, 1)
+    } else {
+      currentSelectedIds.push(tag)
+    }
+    this.setState({tagIdSelected: currentSelectedIds})
+  }
+
+
+  handleDelete = (id) => {
+    if(window.confirm("Voulez-vous supprimer le media ?")){
+      axios.delete(`/medias/${id}`)
+      .then((res) => {
+        this.getMedias()
+      })
+      .catch((err) => console.log(err))
+    }
+  }
+
+  getTags = () => {
+    axios.get('/tags')
+    .then((res) => {
+      console.log(res);
+      this.setState({tags : res.data.tags})
+    })
+    .catch((err) => console.log(err))
+  }
+
+  getMedias = () => {
+    axios.get('/medias')
+    .then((res) => {
+      this.setState({mediasList: res.data.medias})
+    })
+    .catch((err) => console.log("Erreur lors de l'obtention des medias"))
+  }
+
   render() {
+    console.log('FROM ADMIN MEDIA', this.state);
     return (
       <div className="MediasTagContainer">
         <div>
@@ -33,23 +94,34 @@ export default class AdminMedias extends Component {
             {/* Uploader un média */}
 
             <div class="form-group">
-              <label for="InputFile">Uploader un média</label>
+              <label for="InputFile">Ajoutez une image</label>
               <input 
                 type="file" 
-                onChange={(e) => this.setState({file: e.target.files[0]})}></input>
+                onChange={(e) => this.setState({file: e.target.files[0]})}/>
+                <label for="InputFile">Renomez l'image</label>
+                <input required value={this.state.mediaName} type="text" name="mediaName" onChange={(e) => this.setState({mediaName: e.target.value}) } />
             </div>
+            
 
             {/* Checkbox des tags */}
 
+            <div className="check-tag">
             <div class="form-group">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck1" checked=""></input>
-                <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck2" disabled=""></input>
-                <label class="custom-control-label" for="customCheck2">Disabled custom checkbox</label>
-              </div>
+            {
+            this.state.tags && 
+            this.state.tags.map((tag, index) => {
+              return(
+               
+                <div class="custom-control custom-checkbox" key={index}>
+                  <input  onClick={() => this.getTagsSelected(tag)} type="checkbox" class="custom-control-input" id={index}></input>
+                  <label class="custom-control-label" for={index}>{tag.name}</label>
+                </div>
+              
+              )
+            })
+              
+            }
+            </div>
             </div>
 
             <input
@@ -60,16 +132,18 @@ export default class AdminMedias extends Component {
 
           </form>
 
+
+
+          {/* *****Media List***** */}
+
         </div>
         <div className="mediasList">
           <h3>Liste des médias :</h3>
-          {this.state.medias && 
-          this.state.medias.map((media) => {
+          {this.state.mediasList && 
+          this.state. mediasList.map((media) => {
             return (
               
-              <button 
-              onClick={() => this.getMediaId(media.id, media.name)}>
-
+              <div className="Media">
                 <img 
                   src={`http://${media.url}`} 
                   alt={media.name}/>
@@ -79,9 +153,7 @@ export default class AdminMedias extends Component {
                   onClick={() => this.handleDelete(media.id)}>
                     <i className="fas fa-trash-alt"></i>
                 </button>
-
-              </button>
-
+              </div>
             )
           })}
         </div>
