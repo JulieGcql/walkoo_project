@@ -98,6 +98,10 @@ body{
       bottom: 2vw;    
       padding: 1vw 5vw;
     font-size: 1.15vw;
+    a{
+      color: white;
+      text-decoration: none;
+    }
      
     }
     
@@ -199,7 +203,7 @@ body{
   .Bouton {
     text-align: center;
     background-color: #f79646;
-    padding: 2vw 20vw;
+    padding: 2vw 5vw;
     border-radius: 90px;
     font-size: 4vw;
     font-family: $open;
@@ -210,6 +214,10 @@ body{
     margin-left: 25vw;
     position: absolute;
     margin-top: 30vw;
+    a{
+      color: white;
+      text-decoration: none;
+    }
 }
 
 
