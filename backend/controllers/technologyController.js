@@ -15,11 +15,8 @@ module.exports = {
         Technology.create({
           title : req.body.title,
           description: req.body.description,
-          // subtitle:req.body.description,
+          url: req.body.url,
           mediaId : req.body.mediaId,
-          // advantageTitle: req.body.advantageTitle,
-          // advantageDescription: req.body.advantageDescription,
-
         })
         .then((newTechnology) => {
           res.json({newTechnology})
@@ -31,10 +28,11 @@ module.exports = {
         Technology.findByPk(req.params.id)
         .then((technology) => {
           if(technology){
-            if(req.body.mediaId && req.body.title && req.body.description){
+            if(req.body.mediaId && req.body.title && req.body.description && req.body.url){
               technology.mediaId = req.body.mediaId;
               technology.title = req.body.title;
               technology.description = req.body.description;
+              technology.url = req.body.url;
               technology.save()
               .then((updatedTechnology) => {
                 res.json({technology: updatedTechnology})
