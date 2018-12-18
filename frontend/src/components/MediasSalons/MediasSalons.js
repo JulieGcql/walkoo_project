@@ -32,15 +32,17 @@ componentDidMount = () => {
             this.state.events.filter((event) => {
               return event.type == 'salon'
             }).map((event, index) => {
-              return (
-                <p key={index}>{event.title  }</p>)
+              return (<div key={index}>
+                <p >{event.title}</p>
+                <p className="Descrip">{event.description}</p>
+                </div>)
+                
             })
           }
 
         </div>
 
-        
-         
+               
 
           <div className="ListeMedia">
           <h1 className="msTitle" >Média</h1>
@@ -48,9 +50,12 @@ componentDidMount = () => {
             this.state.events.filter((event) => {
               return event.type == 'media'
             }).map((event, index) => {
-              return (
-                <p key={index}>{event.title  }</p>)
+              return (<div key={index}>
+                <p >{event.title}</p>
+                <p className="Descrip">{event.description}</p>
+                </div>)
             })
+            
           }
 
 
