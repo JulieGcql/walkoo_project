@@ -31,14 +31,12 @@ class Contact extends Component {
       message : this.state.message
     })
     .then((res) => {
-      console.log(res)
       return this.props.click(e)
     })
     .catch((err) => console.log("Erreur lors de l'envoie des données du formulaire", err))
   }
 
   handleChange = (e) => {
-    console.log(e.target.value);
     const currentFieldName = e.target.name
 
     this.setState({[currentFieldName]: e.target.value})

@@ -20,7 +20,7 @@ export default class Secteurs extends Component {
             return (
               <div className="SecteurCard" key={index}>
 
-                <img className="SecteurPicto" src={`http://${secteur.picto.url}`} alt={`Logo ${secteur.picto.name}`}/>
+                <img className="SecteurPicto" src={`${secteur.picto.url}`} alt={`Logo ${secteur.picto.name}`}/>
                 <h3 className="SecteurTitle">{secteur.title}</h3>
 
                 {currentSelected === secteur.title ? 

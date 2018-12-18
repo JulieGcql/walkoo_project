@@ -40,7 +40,6 @@ class LoginAdmin extends Component {
   }    
   
   render() {
-    console.log(this.props);
     if (this.props.authentification.user.userData.user.isAdmin){
       return <Redirect to="/admin/home"/>
     }
