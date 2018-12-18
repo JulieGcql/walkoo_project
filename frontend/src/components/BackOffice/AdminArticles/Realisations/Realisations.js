@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import './Secteurs.scss'
 import axios from 'axios'
 import RealisationModal from './RealisationModal';
+import './Realisations.scss'
 
 export default class Secteurs extends Component {
   state = {
@@ -44,6 +45,7 @@ export default class Secteurs extends Component {
     e.preventDefault()
       axios.post('/realisation/create', this.state)
       .then((res) => {
+        this.setState({title:"" , description:"", url:""})
         this.getRealisations()
       })
       .catch((err) => console.log(err))
@@ -71,7 +73,7 @@ export default class Secteurs extends Component {
             onSubmit={(e) => this.handleSubmit(e)} 
             className="RealisationForm">
 
-            <h3>Création d'un secteur :</h3>
+            <h3>Création d'une réalisation :</h3>
 
               {/* *******Title******* */}
 
