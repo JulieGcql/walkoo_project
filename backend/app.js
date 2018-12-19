@@ -11,6 +11,7 @@ var mediasRouter = require('./routes/medias');
 var subscriberRouter = require('./routes/subscriber')
 var sectorsRouter = require('./routes/sectors')
 var technologyRouter= require('./routes/technology')
+var realisationRouter = require('./routes/realisation')
 
 const passport = require('passport');
 const {localAuthStrategy} = require("./routes/strategies/local");
@@ -39,6 +40,8 @@ app.use('/medias', mediasRouter);
 app.use('/subscribers', subscriberRouter);
 app.use('/sectors', sectorsRouter);
 app.use('/technology', technologyRouter);
+app.use('/realisation', realisationRouter);
+
 
 module.exports = app;
 

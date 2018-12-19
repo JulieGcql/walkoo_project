@@ -1,0 +1,33 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS /////
+
+.TagsContainer {
+  // margin-top: 4.5vw;
+  margin-left: 10%;
+  height: 100vh;
+  padding-top:  5vw;
+  h1{
+    // text-align: center;
+    padding-bottom: 2vw;
+    padding-left: 1vw;
+  }
+  form {
+    padding-left: 1vw;
+    width: 25vw;
+    .form-control {
+      margin-bottom: 1vw;
+    }
+    .btn-outline-dark {
+      margin-bottom: 1vw;
+    }
+  }
+  h3 {
+    padding-left: 2vw;
+  }
+  td {
+    padding-left: 2vw;
+  }
+}
