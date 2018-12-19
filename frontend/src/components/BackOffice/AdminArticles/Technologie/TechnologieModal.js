@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 
-export default class SecteurModal extends Component {
+export default class TechnologieModal extends Component {
   state = {
     title:"",
     description:"",
-    url:"",
 
   }
 
   componentDidMount = () => {
-    this.setState({title: this.props.title, description: this.props.description, url: this.props.url})
+    this.setState({title: this.props.title, description: this.props.description})
   }
   
   handleChange = (e) => {
@@ -18,10 +17,9 @@ export default class SecteurModal extends Component {
   }
 
   handleModify = (id) => {
-    Axios.put(`/sectors/edit/${id}`, {
+    Axios.put(`/technology/edit/${id}`, {
       title: this.state.title,
       description: this.state.description,
-      url: this.state.url,
       mediaId: this.props.mediaId
     })
     .then((res) => {
@@ -73,21 +71,8 @@ export default class SecteurModal extends Component {
                   required 
                   ></textarea>    
 
-                <label 
-                  className="col-form-label"
-                  >Nouvel url :
-                </label>
-                <input 
-                  type="text" 
-                  name="url" 
-                  value={this.state.url}
-                  onChange={(e) => this.handleChange(e)}
-                  className="form-control" 
-                  required 
-                  ></input>
-
                 </form>
-                
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary" onClick={() => this.handleModify(this.props.id)}>Modifier</button>

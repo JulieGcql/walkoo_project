@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import './Secteurs.scss'
+import './Technologie.scss'
 import axios from 'axios'
 import TechnologieModal from './TechnologieModal';
 
@@ -10,7 +10,6 @@ export default class Secteurs extends Component {
     mediaId:"",
     title:"",
     description:"",
-    url:"",
     modal: false,
     idSelected:"",
     mediaIdSelected:"",
@@ -43,7 +42,7 @@ export default class Secteurs extends Component {
   }
 
   handleClick = (id, mediaId, title, description, url) => {
-    this.setState({modal: !this.state.modal, idSelected: id, mediaIdSelected:mediaId, titleSelected: title, descriptionSelected: description, urlSelected: url})
+    this.setState({modal: !this.state.modal, idSelected: id, mediaIdSelected:mediaId, titleSelected: title, descriptionSelected: description})
     this.getTechnology()
   }
 
@@ -62,8 +61,9 @@ export default class Secteurs extends Component {
   }
 
   getMedias = () => {
-    axios.get('/tags/technology')
+    axios.get('/tags/technologie')
     .then((res) => {
+      console.log(res)
       this.setState({medias : res.data.tag.medias})
     })
     .catch((err) => console.log(err))
@@ -79,12 +79,13 @@ export default class Secteurs extends Component {
 
   render() {
     return (
-      <div className="technologyContainer">
+      <div className="technologieContainer">
 
-        {/* CREATION SECTEUR  */}
-        <div className="CreateTechnology">
+        {/* CREATION TECHNOLOGIE  */}
 
-          <div className="MediaList">
+        <div className="CreateTechnologie">
+
+        <div className="MediaList">
 
           <h3>Selectionnez une icône :</h3>
 
@@ -109,9 +110,9 @@ export default class Secteurs extends Component {
 
           <form 
             onSubmit={(e) => this.handleSubmit(e)} 
-            className="TechnologyForm">
+            className="TechnologieForm">
 
-            <h3>Création d'un secteur :</h3>
+            <h3>Création des avantages :</h3>
 
             <label 
               className="col-form-label"
@@ -142,20 +143,6 @@ export default class Secteurs extends Component {
               required 
               ></textarea>
 
-              <label 
-              className="col-form-label"
-              >Url :
-              </label>
-
-            <input 
-              type="text" 
-              name="url" 
-              value={this.state.url}
-              onChange={(e) => this.handleChange(e)}
-              className="form-control" 
-              required 
-              ></input>
-
               <p className="IconeSelected">Icône selectionnée : {this.state.mediaId} </p>
               
 
@@ -178,14 +165,13 @@ export default class Secteurs extends Component {
             mediaId={this.state.mediaIdSelected}
             title={this.state.titleSelected} 
             description={this.state.descriptionSelected}
-            url={this.state.urlSelected}
           />
 
         }
         
-        {/* LISTE SECTEURS  */}
+        {/* LISTE TECHNOLOGIE  */}
 
-        <div className="TechnologyList">
+        <div className="TechnologieList">
           
           <h3>Liste des avantages :</h3>
 
@@ -195,7 +181,6 @@ export default class Secteurs extends Component {
                 <th scope="col">Titre</th>
                 <th scope="col">Media</th>
                 <th scope="col">Description</th>
-                <th scope="col">URL</th>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
               </tr>
@@ -214,7 +199,7 @@ export default class Secteurs extends Component {
                     <td>{technology.description}</td>
                     <td><button 
                       className="btn btn-outline-primary"
-                      onClick={() => this.handleClick(technology.id,technology.mediaId,technology.title, technology.description, technology.url)}>
+                      onClick={() => this.handleClick(technology.id,technology.mediaId,technology.title, technology.description,)}>
                         <i class="fas fa-pen"></i>
                     </button></td>
                     <td><button 
