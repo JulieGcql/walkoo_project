@@ -1,101 +1,90 @@
 import React, { Component } from 'react'
-import axios from 'axios';
-import './Expertise.scss';
+import './Expertise.scss'
+import axios from 'axios'
+import ExpertiseModal from './ExpertiseModal';
 
 export default class Expertise extends Component {
   state = {
-    subtitle:"",
-    paragraph:"",
-    medias: []
+    expertise: [],
+    medias: [],
+    mediaId:"",
+    paragraphOne:"",
+    paragraphTwo:"",
+    modal: false,
+    idSelected:"",
+    mediaIdSelected:"",
+    paragraphOneSelected:"",
+    paragraphTwoSelected:""
   }
 
-  componentDidMount = () => {
-    this.setState({subtitle: this.props.subtitle, paragraph: this.props.paragraph})
+  componentDidMount() {
+    this.getExpertise()
+    this.getMedias()
   }
   
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  handleModify = (id) => {
-    axios.put(`/expertise/edit/${id}`, {
-      subtitle: this.state.subtitle,
-      paragraph: this.state.paragraph,
-      mediaId: this.props.mediaId
-    })
-    .then((res) => {
-      this.props.close()
-    })
-    .catch((err) => alert("Erreur lors de la modification"))
+  getMediaId = (id) => {
+    this.setState({mediaId: id})
+  }
+
+  handleDelete = (id) => {
+    if(window.confirm("Voulez-vous supprimer l'expertise ?")){
+      axios.delete(`/expertise/delete/${id}`)
+      .then((res) => {
+        this.getExpertise()
+      })
+      .catch((err) => console.log(err))
+    }
+  }
+
+  handleClick = (id, mediaId, paragraphOne, paragraphTwo) => {
+    this.setState({modal: !this.state.modal, idSelected: id, mediaIdSelected:mediaId, paragraphOneSelected: paragraphOne, paragraphTwoSelected: paragraphTwo})
+    this.getExpertise()
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    if (this.state.mediaId){
+      axios.post('/expertise/create', this.state)
+      .then((res) => {
+        alert(res.data.message)
+        this.getExpertise()
+      })
+      .catch((err) => console.log(err))
+    } else {
+      alert("Selectionnez une image.")
+    }
   }
 
   getMedias = () => {
     axios.get('/tags/expertise')
     .then((res) => {
-      console.log(res);
       this.setState({medias : res.data.tag.medias})
     })
-    .catch((err) => console.log(err))
+    .catch((err) => console.log("Erreur getMedias"))
   }
 
-  
+  getExpertise = () => {
+    axios.get('/expertise')
+    .then((res) => {
+      this.setState({expertise: res.data.expertise})
+    })
+    .catch((err) => console.log("Erreur lors de l'obtention de l'expertise"))
+  }
 
   render() {
     return (
-      <div className="expertContainer">
-    {/* Edit expertise  */}
+      <div className="expertiseContainer">
 
-        <div className="editExpertise">
+        {/* CREATION EXPERTISE */}
+        <div className="CreateExpertise">
 
-          <form 
-            onSubmit={(e) => this.handleSubmit(e)} 
-            className="ExpertForm">
+          <div className="MediaList">
 
-            <h3>Modification</h3>
-
-            <label 
-              className="col-form-label"
-            >Nouveau sous-titre :
-            </label>
-
-            <input 
-              type="text" 
-              name="subtitle" 
-              value={this.state.subtitle}
-              onChange={(e) => this.handleChange(e)}
-              className="form-control" 
-              rows="8"
-              required 
-              ></input>
-
-            <label 
-              className="col-form-label"
-              >Nouveau paragraphe:
-            </label>
-
-            <textarea 
-              type="text" 
-              name="paragraph2" 
-              value={this.state.paragraph}
-              onChange={(e) => this.handleChange(e)}
-              className="form-control" 
-              rows="8"
-              required 
-              ></textarea>     
-          </form>
-
-          <button 
-              type="button" 
-              class="btn btn-outline-primary" 
-              onClick={() => this.handleModify(this.props.id)}
-              >Modifier
-            </button>
-
-        </div>
-
-        <div className="MediaList">
-
-          <h3>Selectionnez une image :</h3>
+          <h3>Selectionnez une icône :</h3>
 
             {this.state.medias && 
             this.state.medias.map((media) => {
@@ -105,9 +94,9 @@ export default class Expertise extends Component {
                 onClick={() => this.getMediaId(media.id, media.name)}>
 
                   <img 
-                    src={`http://${media.url}`} 
+                    src={`${media.url}`} 
                     alt={media.name}/>
-                  <p>{media.id}: {media.name}</p>
+                  <p>{media.id}</p>
 
                 </button>
 
@@ -115,6 +104,118 @@ export default class Expertise extends Component {
             })}
           
           </div>
+
+          <form 
+            onSubmit={(e) => this.handleSubmit(e)} 
+            className="ExpertiseForm">
+
+            <h3>Création d'une expertise :</h3>
+
+            <label 
+              className="col-form-label"
+            >Premier paragraphe :
+            </label>
+
+            <input 
+              type="text" 
+              name="paragraphOne" 
+              value={this.state.paragraphOne}
+              onChange={(e) => this.handleChange(e)}
+              className="form-control" 
+              required 
+              ></input>
+
+            <label 
+              className="col-form-label"
+              >Second paragraphe :
+            </label>
+
+            <textarea 
+              type="text" 
+              name="paragraphTwo" 
+              value={this.state.paragraphTwo}
+              onChange={(e) => this.handleChange(e)}
+              className="form-control" 
+              rows="5"
+              required 
+              ></textarea>
+
+              <p className="ImageSelected">Image selectionnée : {this.state.mediaId} </p>
+              
+
+            <input 
+              type="submit" 
+              value="Créer une expertise" 
+              className="btn btn-outline-dark"
+              ></input>
+
+          </form>
+        </div>
+
+        <hr/>
+
+        {this.state.modal && 
+
+          <ExpertiseModal 
+            close={this.handleClick}
+            id={this.state.idSelected}
+            mediaId={this.state.mediaIdSelected}
+            paragraphOne={this.state.paragraphOneSelected} 
+            paragraphTwo={this.state.paragraphTwoSelected}
+          />
+
+        }
+        
+        {/* LISTE EXPERTISE */}
+
+        <div className="ExpertiseList">
+          
+          <h3>Liste de l'expertise :</h3>
+
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Premier paragraphe</th>
+                <th scope="col">Second paragraphe</th>
+                <th scope="col">Média</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+              </tr>
+            </thead>
+
+            {this.state.expertise &&
+
+            this.state.expertise.map((expertise, index) => {
+              return (
+
+                <tbody key={index}>
+                  <tr>
+
+                    <th scope="row">{expertise.paragraphOne}</th>
+                    <td>{expertise.paragraphTwo}</td>
+                    <td>{expertise.mediaId}</td>
+                    <td><button 
+                      className="btn btn-outline-primary"
+                      onClick={() => this.handleClick(expertise.id,expertise.mediaId,expertise.paragraphOne, expertise.paragraphTwo)}>
+                        <i class="fas fa-pen"></i>
+                    </button></td>
+                    <td><button 
+                      className="btn btn-outline-danger"
+                      onClick={() => this.handleDelete(expertise.id)}>
+                        <i className="fas fa-trash-alt"></i>
+                    </button></td>
+
+                  </tr>
+                  
+                </tbody>
+
+              )
+            })}
+
+          </table>
+
+        </div>
+
       </div>
     )
   }

@@ -9,4 +9,7 @@ router.post("/create", expertiseController.create);
 
 router.put("/edit/:id", expertiseController.edit);
 
+router.delete("/delete/:id", expertiseController.delete);
+
+
 module.exports = router

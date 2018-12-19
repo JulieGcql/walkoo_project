@@ -1,10 +1,10 @@
 const models = require("../models")
-const Expertise = models.Configuration
+const Expertise = models.Expertise
 
 module.exports = {
 
   index : function(req, res, next) {
-    Expertise.findAll()
+    Expertise.findAll({include : ["image"]})
     .then((expertise) => {
       res.json({expertise})
     })
@@ -13,9 +13,9 @@ module.exports = {
 
   create: function(req, res, next) {
     Expertise.create({
-      expertiseParagraph1 : req.body.expertiseParagraph1,
-      expertiseParagraphe2 : req.body.expertiseParagraphe2,
-      expertiseImageId: req.body.expertiseImageId
+      paragraphOne : req.body.paragraphOne,
+      paragraphTwo : req.body.paragraphTwo,
+      mediaId: req.body.mediaId
     })
     .then((newExpertise) => {
       res.json({newExpertise})
@@ -24,13 +24,13 @@ module.exports = {
   },
 
   edit: function(req, res, next) {
-    Expertise.findByPk(req.params.id)
+    Expertise.findByPk(req.params.id, {include : ["image"]})
     .then((expertise) => {
       if(expertise){
-        if(req.body.expertiseParagraph1 && req.body.expertiseParagraphe2 && req.body.expertiseImageId){
-          expertise.expertiseParagraph1 = req.body.expertiseParagraph1;
-          expertise.expertiseParagraphe2 = req.body.expertiseParagraphe2;
-          expertise.expertiseImageId = req.body.expertiseImageId;
+        if(req.body.paragraphOne && req.body.paragraphTwo && req.body.mediaId){
+          expertise.paragraphOne = req.body.paragraphOne;
+          expertise.paragraphTwo = req.body.paragraphTwo;
+          expertise.mediaId = req.body.mediaId;
           expertise.save()
           .then((updatedExpertise) => {
             res.json({expertise: updatedExpertise})
@@ -44,5 +44,19 @@ module.exports = {
       }
     })
     .catch((error) => res.status(500).json({message: "Erreur lors de la recherche d'un expertise avant modification"}))
+  },
+
+  delete: function(req, res, next) {
+    Expertise.findByPk(req.params.id)
+    .then((expertise) => {
+      if(expertise){
+        expertise.destroy()
+        .then((expertise) => res.json({message: "L'expertise a été supprimé."}))
+        .catch((err) => res.status(500).json({message: "Erreur lors de la suppression de l'expertise."}))
+      } else {
+        res.status(404).json({message : `L'expertise correspondant à l'id : ${req.params.id} n'existe pas.`})
+      }
+    })
+    .catch((err) => res.status(500).json({message: "Erreur lors de la recherche de l'expertise avant suppression."}))
   }
 }
