@@ -10,6 +10,7 @@ var tagsRouter = require('./routes/tags');
 var mediasRouter = require('./routes/medias');
 var subscriberRouter = require('./routes/subscriber')
 var sectorsRouter = require('./routes/sectors')
+var technologyRouter= require('./routes/technology')
 var realisationRouter = require('./routes/realisation')
 
 const passport = require('passport');
@@ -38,7 +39,9 @@ app.use('/tags', tagsRouter);
 app.use('/medias', mediasRouter);
 app.use('/subscribers', subscriberRouter);
 app.use('/sectors', sectorsRouter);
+app.use('/technology', technologyRouter);
 app.use('/realisation', realisationRouter);
+
 
 module.exports = app;
 
