@@ -6,6 +6,7 @@ export default class AdminAccueil extends Component {
     return (
       <div className="AccueilAdmin">
         <h1>Accueil</h1>
+        <h1 className="hello">Bonjour Walkoo !</h1>
       </div>
     )
   }
