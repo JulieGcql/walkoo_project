@@ -18,7 +18,7 @@ module.exports = {
       email : req.body.email,
       phone : req.body.phone,
       activitySector : req.body.activitySector,
-      requestDemo : req.body.requestDemo,
+      requestDemo : req.body.requestDemo || false,
       message : req.body.message
     })
     .then((newSubscriber) => {

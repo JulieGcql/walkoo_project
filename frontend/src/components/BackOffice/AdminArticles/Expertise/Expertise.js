@@ -76,6 +76,7 @@ export default class Expertise extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="expertiseContainer">
 

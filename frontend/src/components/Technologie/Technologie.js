@@ -7,7 +7,7 @@ const text = "The entire starfleet couldn't destroy the whole planet. It'd take 
 export default class Technologie extends Component {
   render() {
     return (
-      <div className="technologie_container">
+      <div className="technologie_container" id="technologie">
         <div className="technologie-firstpart">
          <h1>Technologie</h1>
          <p>La solution numérique développée par Walkoo se compose d’une plateforme personnalisée que vous administrez à partir de comptes dédiés et d’une application mobile spécialement désignée, téléchargeable sur smartphone.</p>
