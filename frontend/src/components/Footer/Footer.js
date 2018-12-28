@@ -9,7 +9,7 @@ export default class Footer extends Component {
       <div>
         <div className="footer_container">
           <div className="footer_menu">
-          <p>WALKOO</p>
+          <img src={require('./Pictures/LogoWalkoo.png')} alt="logo google play"/>
             <ul>
               <li>Expertise</li>
               <li>Technologie</li>

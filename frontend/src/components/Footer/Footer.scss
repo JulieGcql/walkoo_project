@@ -94,26 +94,30 @@
   @media screen and(max-width:480px) {
 
     .footer_container {
+        padding-top: 5vw;
         
         .footer_menu{
             
-            p{
-                font-size: 3vw;
+            img{
+                width: 18vw;
             }
             ul{
-                font-size: 2.5vw; 
+                font-size: 2.7vw; 
+                margin-top: 3vw;
             }
         }
     
         .footer_app_logo {
               
             img{
-                width: 15vw;
+                width: 20vw;
+                align-self: start;
                 
             }
     
         }
         .footer_rgpd {
+            margin-bottom: 2vw;
            
     
            p{
@@ -127,9 +131,10 @@
 
         }
         .footer_social_icon {
+            margin-bottom: 2vw;
             
             img{
-                width: 6vw;
+                width: 7vw;
             }
         }
     } 
