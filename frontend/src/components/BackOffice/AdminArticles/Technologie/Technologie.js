@@ -41,7 +41,7 @@ export default class Secteurs extends Component {
     }
   }
 
-  handleClick = (id, mediaId, title, description, url) => {
+  handleClick = (id, mediaId, title, description) => {
     this.setState({modal: !this.state.modal, idSelected: id, mediaIdSelected:mediaId, titleSelected: title, descriptionSelected: description})
     this.getTechnology()
   }
