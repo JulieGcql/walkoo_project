@@ -10,7 +10,8 @@ export default class Realisations extends Component {
  
 
     state={
-      datas: datas
+      datas: datas,
+      // realisations:[],
    
   }
 
@@ -39,10 +40,19 @@ export default class Realisations extends Component {
       ]   
       
     };
+
+    // getRealisations = () => {
+    //   axios.get('/realisation')
+    //   .then((res) => {
+    //     console.log(res.data)
+    //     this.setState({realisations: res.data.realisations})
+    //   })
+    //   .catch((err) => console.log("Erreur lors de l'obtention des realisations"))
+    // }
     
 
     return (
-      <div className="realisations_container">
+      <div className="realisations_container" id="realisations">
         <h1>Réalisations et Projet</h1>
         <div className="case_container">
           <Slider {...settings} >
