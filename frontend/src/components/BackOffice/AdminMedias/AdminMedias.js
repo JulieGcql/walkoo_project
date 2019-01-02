@@ -81,53 +81,51 @@ export default class AdminMedias extends Component {
     console.log('FROM ADMIN MEDIA', this.state);
     return (
       <div className="MediasTagContainer">
-        <div>
-          <AdminTags />
-        </div>
-        <h1>Médias</h1>
+
+        <h1>Galerie</h1>
+
+        <AdminTags />
+
+
+        {/* Création d'un média */}
+
         <div className="MediasContainer">
-          <div className="formUpload">
 
-            <form
-              onSubmit={(e) => this.uploadFile(e)}
-              className="addMedias">
+          <form
+            onSubmit={(e) => this.uploadFile(e)}
+            className="addMedias">
 
-              {/* Uploader un média */}
+            {/* Uploader un média */}
+            <h3> Création d'un média :</h3>
 
-              <div class="form-group">
-                <label for="InputFile">Uploader un média</label>
-                <input 
-                  type="file" 
-                  onChange={(e) => this.setState({file: e.target.files[0]})}></input>
-              </div>
-
-              <button
-                type="submit"
-                className="btn btn-outline-dark">
-                Upload
-              </button>
-            </form>
-          </div>
-
-            <div class="form-group">
-              <label for="InputFile">Ajouter une image</label>
+            <div class="uploadImage">
+            
               <input 
                 type="file" 
                 onChange={(e) => this.setState({file: e.target.files[0]})}/>
-                <label for="InputFile">Renommer l'image</label>
-                <input required value={this.state.mediaName} type="text" name="mediaName" onChange={(e) => this.setState({mediaName: e.target.value}) } />
+              
+              <label for="InputFile">Renommer l'image : </label>
+              
+              <input 
+                required
+                className="form-control"
+                value={this.state.mediaName} 
+                type="text" 
+                name="mediaName" 
+                onChange={(e) => this.setState({mediaName: e.target.value}) } />
+
             </div>
-            
 
             {/* Checkbox des tags */}
 
+            <h3>Sélectionner un tag :</h3>
+
             <div className="check-tag">
-            <div class="form-group">
+              
             {
             this.state.tags && 
             this.state.tags.map((tag, index) => {
-              return(
-               
+              return(               
                 <div class="custom-control custom-checkbox" key={index}>
                   <input  onClick={() => this.getTagsSelected(tag)} type="checkbox" class="custom-control-input" id={index}></input>
                   <label class="custom-control-label" for={index}>{tag.name}</label>
@@ -138,40 +136,55 @@ export default class AdminMedias extends Component {
               
             }
             </div>
+
+            <div className="buttonMedia">
+              <input
+                type="submit"
+                className="btn btn-outline-dark"
+                value="Créer un média"
+              ></input>
             </div>
 
-            <input
-              type="submit"
-              className="btn btn-outline-dark"
-              value="Créer un média"
-            ></input>
-
-
-
-
-          {/* *****Media List***** */}
+          </form>
 
         </div>
-        <div className="mediasList">
+
+
+        {/* Liste des médias */}
+
+        <div className="mediasListContainer">
+
           <h3>Liste des médias :</h3>
+
+          <div className="mediasList">
+
           {this.state.mediasList && 
           this.state. mediasList.map((media) => {
             return (
               
               <div className="Media">
+
                 <img 
                   src={`http://${media.url}`} 
                   alt={media.name}/>
+
                 <p>{media.id}: {media.name}</p>
+
                 <button 
                   className="btn btn-outline-danger"
                   onClick={() => this.handleDelete(media.id)}>
                     <i className="fas fa-trash-alt"></i>
                 </button>
+
               </div>
+              
             )
           })}
+
+          </div>
+
         </div>
+
       </div>
     )
   }
