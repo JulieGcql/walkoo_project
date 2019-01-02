@@ -34,6 +34,18 @@ module.exports = {
     .catch((error) => res.status(500).json({message: error}))
   },
 
+  getTechnologyMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "technologie"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name technologie`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
+
   getExpertiseMedia: function(req, res, next) {
     Tag.findOne({where :{name: "expertise"}, include: ["medias"]})
     .then((tag) => {
