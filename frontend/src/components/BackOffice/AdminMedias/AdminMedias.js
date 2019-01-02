@@ -115,6 +115,7 @@ export default class AdminMedias extends Component {
                 onChange={(e) => this.setState({mediaName: e.target.value}) } />
 
             </div>
+            
 
             {/* Checkbox des tags */}
 
@@ -147,6 +148,10 @@ export default class AdminMedias extends Component {
 
           </form>
 
+
+
+          {/* *****Media List***** */}
+
         </div>
 
 
@@ -163,7 +168,6 @@ export default class AdminMedias extends Component {
             return (
               
               <div className="Media">
-
                 <img 
                   src={`http://${media.url}`} 
                   alt={media.name}/>
