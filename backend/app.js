@@ -8,6 +8,9 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var tagsRouter = require('./routes/tags');
 var mediasRouter = require('./routes/medias');
+var subscriberRouter = require('./routes/subscriber');
+var eventsRouter = require('./routes/events');
+var homesRouter = require('./routes/home');
 var subscriberRouter = require('./routes/subscriber')
 var sectorsRouter = require('./routes/sectors')
 var technologyRouter= require('./routes/technology')
@@ -40,10 +43,11 @@ app.use('/tags', tagsRouter);
 app.use('/medias', mediasRouter);
 app.use('/subscribers', subscriberRouter);
 app.use('/sectors', sectorsRouter);
+app.use('/events', eventsRouter);
+app.use('/homes', homesRouter);
 app.use('/technology', technologyRouter);
 app.use('/realisation', realisationRouter);
 app.use('/configurations', configurationRouter);
-
 
 module.exports = app;
 
