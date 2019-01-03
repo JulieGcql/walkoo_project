@@ -43,55 +43,65 @@ componentDidMount = () => {
 
   render() {
     return (
-      <div className="TagsContainer">
-        <div className="addTags">
-          <h1>Tags</h1>
-          <form 
-            onSubmit={() => this.createTag()} 
-            className="TagForm">
+      <div className="tagsContainer">
 
-            <label Medias
-              className="col-form-label"
-            >Création d'un tag:
-            </label>
+        {/* Création d'un tag  */}
 
-            <input 
-              type="text" 
-              name="tagName" 
-              value={this.state.name}
-              onChange={(e) => this.addTags(e)}
-              className="form-control" 
-              required 
-              ></input>
+        <div className="createTags">
 
-            <input 
-              type="submit" 
-              value="Créer un tag" 
-              className="btn btn-outline-dark"
-              ></input>
+          <div className="addTags">
+
+            <h3> Création d'un tag :</h3>
+
+            <form 
+              onSubmit={() => this.createTag()} 
+              className="TagForm">
+
+              <input 
+                type="text" 
+                name="tagName" 
+                value={this.state.name}
+                onChange={(e) => this.addTags(e)}
+                className="form-control" 
+                required 
+                ></input>
+
+              <input 
+                type="submit" 
+                value="Créer un tag" 
+                className="btn btn-outline-dark"
+                ></input>
+              
+            </form>
+
+          </div>
+
+          {/* Liste des tags */}
+
+          <div className="listTags">
+
+            <h3>Liste des tags :</h3>
             
-          </form>
-        </div>
+            {this.state.tags.map((tag, index) => {
+              return(
+                <tbody key={`tag_${index}`}>
+                  <tr>
+                    <td className="tagName">{tag.name}</td>
+                    <td className="tagButton"><button 
+                      className="btn btn-outline-danger"
+                      onClick={() => this.deleteTags(tag.id)}>
+                        <i className="fas fa-trash-alt"></i>
+                    </button></td>
+                  </tr>
+                </tbody>
+              )
+            })}
+          </div>
 
-        <div clasName="tagsList">
-          <h3>Liste des tags :</h3>
-          
-          {this.state.tags.map((tag, index) => {
-            return(
-              <tbody key={`tag_${index}`}>
-                <tr>
-                  <td>{tag.name}</td>
-                  <td><button 
-                    className="btn btn-outline-danger"
-                    onClick={() => this.deleteTags(tag.id)}>
-                      <i className="fas fa-trash-alt"></i>
-                  </button></td>
-                </tr>
-              </tbody>
-            )
-          })}
-        </div>
+        </div>  
+        <hr/>
       </div>
+
     )
   }
 }

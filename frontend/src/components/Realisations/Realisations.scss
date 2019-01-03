@@ -45,6 +45,7 @@
             // margin-left: auto;
             // margin-right: auto;
             margin: 2vw auto;
+            padding-bottom: 0.5vw;
 
             
         
@@ -56,17 +57,15 @@
                 font-family: $open;
             }
             .text {
-                // display: flex !important;
-                // justify-content: center;
-                // position: relative;
+              
                 width: 15vw;
                 align-self: center;
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                padding: 30px 2.5vw;
                 width: 100%;
                 height: 100%;
+                padding: 1.5vw 2.5vw;
                 
 
                 p{  
@@ -77,18 +76,37 @@
                     opacity: 0;
                     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
                     transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
-
                     font-weight: 200;
                     -webkit-transform: translate3d(0%, 30%, 0);
                     transform: translate3d(0%, 30%, 0);
                     -webkit-transition-delay: 0s;
                     transition-delay: 0s;
                     font-family: $condensed;
-                    
-
-
                 }
+
+               
         }
+        a{
+            display: flex;
+            position: absolute;
+            align-self: flex-end;
+
+            img{
+                width: 3vw;
+                height: 3vw;
+                align-self: flex-end;
+                opacity: 0;
+                -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
+                -webkit-transform: translate3d(0%, 30%, 0);
+                    transform: translate3d(0%, 30%, 0);
+                    -webkit-transition-delay: 0s;
+                    transition-delay: 0s;
+                    
+            }
+
+        }
+      
 
         .text::before {
             position: absolute;
@@ -105,7 +123,8 @@
             -webkit-transition-delay: 0.6s;
             transition-delay: 0.6s;
         }
-          
+
+        
         }
 
 
@@ -147,13 +166,22 @@
     
       }
       
-      .case:hover .text p {
+      .case:hover .text p  {
         opacity: 0.9;
+        -webkit-transform: translate3d(0%, 0%, 0);
+        transform: translate3d(0%, 0%, 0);
+        -webkit-transition-delay: 0.6s ;
+        transition-delay: 0.6s;
+      }
+      .case:hover a img  {
+        opacity: 0.4;
         -webkit-transform: translate3d(0%, 0%, 0);
         transform: translate3d(0%, 0%, 0);
         -webkit-transition-delay: 0.6s;
         transition-delay: 0.6s;
       }
+
+
       .case:hover .text::before {
         background: rgba(255, 255, 255, 0);
         left: 1vw;
@@ -161,6 +189,10 @@
         -webkit-transition-delay: 0s;
         transition-delay: 0s;
       }
+     
+     
+      
+      
 
 }
 
@@ -187,18 +219,19 @@
 
             .case{
             
-                width: 30vw !important;
-                height: 30vw;
+                width: 45vw !important;
+                height: 45vw;
+                padding-bottom: 1vw;
 
                 h6{
-                    font-size: 2.8vw;
+                    font-size: 3.5vw;
                 }
 
             
 
                 .text::before {
                     
-                    border-left: 2px solid rgba(255, 255, 255, 0.8);
+                    border-left: 1px solid rgba(255, 255, 255, 0.8);
                     top: 3vw;
                     
                     bottom: 3vw;
@@ -209,11 +242,20 @@
                     padding: 2vw 2.5vw;
                 
                     p{
-                        font-size: 1.8vw;
+                        font-size: 2.9vw;
                     }
-        
-                    
                 }
+        
+                a{
+                    img{
+                        width: 6vw;
+                        height: 6vw;
+                        
+                    }
+                    
+                }    
+                
+                
                 
             }
 

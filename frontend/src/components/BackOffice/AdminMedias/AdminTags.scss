@@ -4,30 +4,44 @@
 
 ///// SCSS /////
 
-.TagsContainer {
-  // margin-top: 4.5vw;
-  margin-left: 10%;
-  height: 100vh;
-  padding-top:  5vw;
-  h1{
-    // text-align: center;
-    padding-bottom: 2vw;
-    padding-left: 1vw;
-  }
-  form {
-    padding-left: 1vw;
-    width: 25vw;
-    .form-control {
-      margin-bottom: 1vw;
+.tagsContainer {
+  margin-bottom:5vw;
+  width:100vw;
+  .createTags {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 5vw;
+    h3{
+      grid-column: 2;
+      grid-row: 1;
+      width: 100%;
     }
-    .btn-outline-dark {
-      margin-bottom: 1vw;
+    .addTags {
+      .TagForm {
+        padding-left: 1vw;
+        width: 25vw;
+        .form-control {
+          margin-bottom: 1vw;
+        }
+        .btn-outline-dark {
+          margin-bottom: 1vw;
+        }
+      }
+    }
+
+    .listTags {
+      grid-column: 2;
+      grid-row: 1;
+      .tagName {
+        padding-left: 1vw;
+      }
+      .tagButton {
+        padding-left:2vw;
+      }
+      
     }
   }
-  h3 {
-    padding-left: 2vw;
-  }
-  td {
-    padding-left: 2vw;
+  hr {
+    margin-top:5vw;
   }
 }
