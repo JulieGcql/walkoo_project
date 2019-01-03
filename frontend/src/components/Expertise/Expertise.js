@@ -4,7 +4,7 @@ import './Expertise.scss';
 export default class Expertise extends Component {
   render() {
     return (
-      <div className="expertContainer">
+      <div className="expertContainer" id="expertise">
         <h1 className="expertTitle">Expertise</h1>
         <div className="expertDescription">
           <p className="expertParagraph">À l’ère du Mobile first, la maîtrise de l’approche contextuelle est décisive pour renforcer efficacement l’engagement d’une audience.</p>

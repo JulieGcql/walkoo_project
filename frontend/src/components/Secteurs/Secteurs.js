@@ -18,17 +18,19 @@ class Secteurs extends Component {
 
   render() {
     return (
-      <div>
-        <Media query="(max-width: 425px)">
+      <Media query="(max-width: 425px)">
           {matches =>
             matches ? (
-              <SecteursMobile sectors={this.state.sectors}/>
+              <div id="secteurs" style={{scrollMarginTop: '0px'}}>
+                <SecteursMobile sectors={this.state.sectors}/>
+              </div>
             ) : (
-              <SecteursPc sectors={this.state.sectors}/>
+              <div id="secteurs" style={{scrollMarginTop: '85px'}}>            
+                <SecteursPc sectors={this.state.sectors}/>
+              </div>
             )
-          }
+            }
         </Media>
-      </div>
     )
   }
 }

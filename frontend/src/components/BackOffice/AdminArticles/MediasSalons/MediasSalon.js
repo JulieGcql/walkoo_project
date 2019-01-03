@@ -69,10 +69,10 @@ export default class MediasSalon extends Component {
           onSubmit={(e) => this.createEvent(e)}
           className="SecteurForm">
 
-          <h3>Création d'un évènement :</h3>
+          <h3 className="hugoTitleMS">Création d'un évènement :</h3>
 
           <label
-            className="col-form-label"
+            className="col-form-label createEventMargin"
           >Titre :
             </label>
 
@@ -81,12 +81,12 @@ export default class MediasSalon extends Component {
             name="title"
             value={this.state.title}
             onChange={(e) => this.handleChange(e)}
-            className="form-control"
+            className="form-control "
             required
           ></input>
 
           <label
-            className="col-form-label"
+            className="col-form-label createEventMargin"
           >Description :
             </label>
 
@@ -99,8 +99,10 @@ export default class MediasSalon extends Component {
             rows="5"
           ></textarea>
 
-          <div class="form-group">
-            <label htmlFor="type">Type :</label>
+          <div className="form-group">
+            <label htmlFor="type"
+            className="createEventMargin"
+            >Type :</label>
             <select className="form-control" onChange={(e) => this.handleChange(e)} name="type" id="type">
               <option value="">Selectionnez le type</option>
               <option value="media">Media</option>
@@ -151,8 +153,7 @@ export default class MediasSalon extends Component {
                   </tr>
                 </tbody>
 
-              )
-            })}
+              )})}
             </table>
           </div>
         

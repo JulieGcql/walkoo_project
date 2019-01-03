@@ -1,11 +1,5 @@
 import React from 'react';
 import './SideDrawer.scss'
-import Expertise from '../../Expertise/Expertise';
-import Technologie from '../../Technologie/Technologie';
-import Secteurs from '../../Secteurs/Secteurs';
-import Realisations from '../../Realisations/Realisations';
-import Contact from '../../Contact/Contact';
-
 // MOBILE MENU
 
 const SideDrawer = props => {
@@ -22,11 +16,22 @@ const SideDrawer = props => {
       </div>
 
       <ul>
-        <li><a href={Expertise}>Expertise</a></li>
-          <li><a href={Technologie}>Technologie</a></li>
-          <li><a href={Secteurs}>Secteurs</a></li>
-          <li><a href={Realisations}>Réalisations</a></li>
-          <li><a href={Contact} className="ContactLink">Contact</a></li>
+          <li><a 
+          onClick={props.close} 
+          href="/#expertise">Expertise</a></li>
+          <li><a 
+          onClick={props.close} 
+          href="/#technologie">Technologie</a></li>
+          <li><a 
+          onClick={props.close} 
+          href="/#secteurs">Secteurs</a></li>
+          <li><a 
+          onClick={props.close} 
+          href="/#realisations">Réalisations</a></li>
+          <li><a 
+          onClick={props.close} 
+          href="/#contact" 
+          className="ContactLink">Contact</a></li>
         </ul>
 
     </nav>

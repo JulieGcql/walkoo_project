@@ -15,17 +15,18 @@ export class AdminRouter extends Component {
     return (
       <div>
 
-        <Switch>
-          {/* {
-            this.props.authentification.user.userData.user.isAdmin && 
-          } */}
-          <Route exact path="/admin/home" component={PageHome}/>
-          <Route exact path="/admin/articles" component={PageArticles}/>
-          <Route exact path="/admin/medias" component={PageMedias} />
-          <Route exact path="/admin/statistiques" component={PageStatistiques} />
-          <Route exact path="/admin/contacts" component={PageContacts} />
-          <Route exact path="/admin/configuration" component={PageConfigurations} />
-        </Switch>
+        {/* {this.props.authentification.user.userData.user.isAdmin &&  */}
+
+          <Switch>
+            <Route exact path="/admin/home" component={PageHome}/>
+            <Route exact path="/admin/articles" component={PageArticles}/>
+            <Route exact path="/admin/medias" component={PageMedias} />
+            <Route exact path="/admin/statistiques" component={PageStatistiques} />
+            <Route exact path="/admin/contacts" component={PageContacts} />
+            <Route exact path="/admin/configuration" component={PageConfigurations} />
+
+          </Switch>
+        {/* } */}
 
       </div>
     )

@@ -4,6 +4,10 @@
 
 ///// SCSS /////
 
+html {
+  scroll-behavior: smooth;
+}
+
 .Navbar {
   display: grid;
   grid-template-columns: 40% 60%;
@@ -14,10 +18,15 @@
   z-index: 100;
   top: 0;
 
+
   .Logo {
     font-size: 2.3vw;
     margin: auto 2vw;
     grid-column: 1;
+    a{
+      color: $black;
+      text-decoration: none;
+    }
     
     .Logo_Walkoo{
       width: 6vw;
@@ -41,6 +50,8 @@
 
     a{
       font-family: $open;
+      color: $black;
+      text-decoration: none;
       border-radius: 5px;
       align-self: center;
       padding: 0.7vw 2vw;
@@ -63,7 +74,7 @@
   .Navbar {
     position: initial;
     padding: 1vw 0 1vw 0;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 80% 15%;
 
     .Logo {
       font-size: 15vw;
