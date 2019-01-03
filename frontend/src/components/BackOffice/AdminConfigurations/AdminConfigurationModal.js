@@ -14,7 +14,7 @@ export default class AdminConfigurationModal extends Component {
     }
   }
 
-  handleModify = (id) => {
+  handleModify = () => {
     if(this.state.password === this.state.confirmPassword){
       Axios.put(`/users/`, {
         password: this.state.password
@@ -74,7 +74,7 @@ export default class AdminConfigurationModal extends Component {
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary" onClick={() => this.handleModify(this.props.id)}>Modifier</button>
+                <button type="button" class="btn btn-outline-primary" onClick={() => this.handleModify()}>Modifier</button>
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onClick={this.props.close}>Quitter</button>
               </div>
             </div>
