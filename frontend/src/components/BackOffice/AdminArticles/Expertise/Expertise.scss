@@ -5,25 +5,16 @@
 
 ///// SCSS /////
 
-// .modal{
-//   display: initial;
-//   padding-top: 10%;
-//   top:0;
-//   background: rgba(0, 0, 0, 0.3);
-//   .modal-dialog{
-//     max-width: none;
-//     width: 50vw;
-//     height: 50vw;
-//   }
-// }
 .expertiseContainer{
-  margin: 2vw 0;
+  margin: 2vw 5vw;
   h3{
-    text-align: center;
+    padding-bottom: 2vw;
+    padding-left: 1vw;
   }
   .CreateExpertise{
     display: grid;
     grid-template-columns: 1fr 1fr; 
+    grid-gap: 3vw;
     margin: 0 5vw;
     h3{
       grid-column: 2;
@@ -32,12 +23,8 @@
     }
     
     .MediaList{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       grid-column: 2;
       grid-row: 1;
-      align-content: flex-start;
       button{
         background-color: white;
         border: none;
@@ -69,20 +56,16 @@
       
     }
     .ExpertiseForm{
-      grid-column: 1;
-      grid-row: 1;
+      width:35vw;
+      .paragraphOne {
+        margin-bottom:3vw;
+      }
       .btn{
         margin: 1vw auto;
       }
       .ImageSelected{
         margin-top: 1vw;
       }
-    }
-  }
-  .ExpertiseList{
-
-    h3{
-      margin: 3vw 0;
     }
   }
 }
