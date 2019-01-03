@@ -96,46 +96,50 @@ export default class AdminMedias extends Component {
             className="addMedias">
 
             {/* Uploader un média */}
-            <h3> Création d'un média :</h3>
+            <div className="mediaCreate">
+              <h3> Création d'un média :</h3>
 
-            <div class="uploadImage">
-            
-              <input 
-                type="file" 
-                onChange={(e) => this.setState({file: e.target.files[0]})}/>
+              <div class="uploadImage">
               
-              <label for="InputFile">Renommer l'image : </label>
-              
-              <input 
-                required
-                className="form-control"
-                value={this.state.mediaName} 
-                type="text" 
-                name="mediaName" 
-                onChange={(e) => this.setState({mediaName: e.target.value}) } />
+                <input 
+                  type="file" 
+                  onChange={(e) => this.setState({file: e.target.files[0]})}/>
+                
+                <label for="InputFile">Renommer l'image : </label>
+                
+                <input 
+                  required
+                  className="form-control"
+                  value={this.state.mediaName} 
+                  type="text" 
+                  name="mediaName" 
+                  onChange={(e) => this.setState({mediaName: e.target.value}) } />
 
+              </div>
             </div>
             
 
             {/* Checkbox des tags */}
 
-            <h3>Sélectionner un tag :</h3>
+            <div className="tagCreate">
+              <h3>Sélectionner un tag :</h3>
 
-            <div className="check-tag">
-              
-            {
-            this.state.tags && 
-            this.state.tags.map((tag, index) => {
-              return(               
-                <div class="custom-control custom-checkbox" key={index}>
-                  <input  onClick={() => this.getTagsSelected(tag)} type="checkbox" class="custom-control-input" id={index}></input>
-                  <label class="custom-control-label" for={index}>{tag.name}</label>
-                </div>
-              
-              )
-            })
-              
-            }
+              <div className="check-tag">
+                
+              {
+              this.state.tags && 
+              this.state.tags.map((tag, index) => {
+                return(               
+                  <div class="custom-control custom-checkbox" key={index}>
+                    <input  onClick={() => this.getTagsSelected(tag)} type="checkbox" class="custom-control-input" id={index}></input>
+                    <label class="custom-control-label" for={index}>{tag.name}</label>
+                  </div>
+                
+                )
+              })
+                
+              }
+              </div>
             </div>
 
             <div className="buttonMedia">
@@ -147,12 +151,10 @@ export default class AdminMedias extends Component {
             </div>
 
           </form>
-
-
-
-          {/* *****Media List***** */}
-
+          
         </div>
+
+        <hr/>
 
 
         {/* Liste des médias */}
