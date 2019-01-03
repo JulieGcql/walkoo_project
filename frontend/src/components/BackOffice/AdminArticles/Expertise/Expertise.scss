@@ -1,15 +1,21 @@
 
-.modal{
-  display: initial;
-  padding-top: 10%;
-  top:0;
-  background: rgba(0, 0, 0, 0.3);
-  .modal-dialog{
-    max-width: none;
-    width: 50vw;
-    height: 50vw;
-  }
-}
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../../Variables.scss';
+
+///// SCSS /////
+
+// .modal{
+//   display: initial;
+//   padding-top: 10%;
+//   top:0;
+//   background: rgba(0, 0, 0, 0.3);
+//   .modal-dialog{
+//     max-width: none;
+//     width: 50vw;
+//     height: 50vw;
+//   }
+// }
 .expertiseContainer{
   margin: 2vw 0;
   h3{
