@@ -21,7 +21,7 @@ router.post('/create', tagsController.create);
 router.put('/edit/:id', tagsController.edit);
 
 /* DELETE existing tag. */
-router.delete('/:id', tagsController.delete);
+router.delete('/delete/:id', tagsController.delete);
 
 
 module.exports = router;

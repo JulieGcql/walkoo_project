@@ -24,7 +24,7 @@ const AdminMenu = () => {
       <NavLink to="/admin/medias">
         <button className="ButtonMenuAdmin">
           <i className="far fa-image"></i>
-          <h5>Médias</h5>
+          <h5>Galerie</h5>
         </button>
       </NavLink>
 
