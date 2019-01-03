@@ -46,14 +46,15 @@ export default class SecteurModal extends Component {
                   >Nouveau titre :
                 </label>
 
-                <input 
+                <textarea 
                   type="text" 
                   name="title" 
                   value={this.state.title}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
+                  rows="5"
                   required 
-                  ></input>
+                  ></textarea>
 
                 <label 
                   className="col-form-label"
@@ -66,7 +67,7 @@ export default class SecteurModal extends Component {
                   value={this.state.description}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="8"
+                  rows="5"
                   required 
                   ></textarea>    
                 </form>

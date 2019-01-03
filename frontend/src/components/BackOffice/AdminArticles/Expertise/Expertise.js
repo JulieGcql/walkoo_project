@@ -50,7 +50,6 @@ export default class Expertise extends Component {
     if (this.state.mediaId){
       axios.post('/expertise/create', this.state)
       .then((res) => {
-        alert(res.data.message)
         this.getExpertise()
       })
       .catch((err) => console.log(err))
@@ -117,14 +116,15 @@ export default class Expertise extends Component {
             >Premier paragraphe :
             </label>
 
-            <input 
+            <textarea 
               type="text" 
               name="paragraphOne" 
               value={this.state.paragraphOne}
               onChange={(e) => this.handleChange(e)}
               className="form-control" 
+              rows="5"
               required 
-              ></input>
+              ></textarea>
 
             <label 
               className="col-form-label"
