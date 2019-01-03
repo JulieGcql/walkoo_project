@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import './Secteurs.scss'
 import axios from 'axios'
 import RealisationModal from './RealisationModal';
 import './Realisations.scss'
 
-export default class Secteurs extends Component {
+export default class Realisations extends Component {
   state = {
     realisations: [],
     title:"",
@@ -16,7 +15,7 @@ export default class Secteurs extends Component {
     titleSelected:"",
     descriptionSelected:"",
     urlSelected:"",
-  }
+  };
 
   componentDidMount() {
     this.getRealisations()
@@ -63,6 +62,7 @@ export default class Secteurs extends Component {
   }
 
   render() {
+
     return (
       <div className="realisationContainer">
 
@@ -150,7 +150,7 @@ export default class Secteurs extends Component {
 
         }
         
-        {/* LISTE SECTEURS  */}
+        {/* Liste Realisations  */}
 
         <div className="RealisationList">
           
