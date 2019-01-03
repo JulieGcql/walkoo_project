@@ -1,36 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './NavDesktop.scss'
-import Logo from '../pictures/logo_small.png';
 import DrawerToggleButton from '../DrawerToggleButton/DrawerToggleButton';
+import axios from 'axios'
 
 // COMPUTER NAVBAR 
 
-const NavDesktop = props => (
+class NavDesktop extends Component {
+  state = {
+    logo: ""
+  }
 
-  <div className="Navbar">
+  componentDidMount = () => {
+    this.getLogo()
+  }
+
+
+  getLogo = () => {
+    axios.get('/tags/logo')
+    .then((res) => this.setState({logo : res.data.tag.medias[0].url}))
+    .catch((err) => console.log("Erreur lors de l'obtention du logo Walkoo"))
+  }
+
+
+  render() {
+    return(
+
+      
+      <div className="Navbar">
   
-    <div className="Logo">
-      <a href='/#home'>
-      <i className="fas fa-map-marker-alt"></i>
-      <img src={Logo} className="Logo_Walkoo" alt="Logo Walkoo"/>
-      </a>
-    </div>
-    <div className="Navbar-toggle-button">
-      <DrawerToggleButton click={props.drawerClickHandler}/>
-    </div>
-    
-    <div className="NavLinks">
-      <ul>
-        <li><a href="/#expertise">Expertise</a></li>
-        <li><a href="/#technologie">Technologie</a></li>
-        <li><a href="/#secteurs">Secteurs</a></li>
-        <li><a href="/#realisations">Réalisations</a></li>
-        <li><a href="/#contact" className="ContactLink">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+        <div className="Logo">
+          <a href='/#home'>
+            <img src={this.state.logo} className="Logo_Walkoo" alt="Logo Walkoo"/>
+          </a>
+        </div>
 
-)
+        <div className="Navbar-toggle-button">
+          <DrawerToggleButton click={this.props.drawerClickHandler}/>
+        </div>
+        
+        <div className="NavLinks">
+          <ul>
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#technologie">Technologie</a></li>
+            <li><a href="/#secteurs">Secteurs</a></li>
+            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/#contact" className="ContactLink">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default NavDesktop;
 

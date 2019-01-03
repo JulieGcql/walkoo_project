@@ -12,7 +12,7 @@ class Secteurs extends Component {
 
   componentDidMount = () => {
     Axios.get('/sectors/')
-    .then((res) => { console.log(res.data.sectors); this.setState({sectors : res.data.sectors})})
+    .then((res) => this.setState({sectors : res.data.sectors}))
     .catch((err) => { console.log(err)});
   }
 

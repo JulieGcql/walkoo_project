@@ -18,6 +18,10 @@
         color: white;
         text-align: center;
         font-family: "Open Sans", sans-serif;
+        .LogoFooter{
+            width: 12vw;
+            margin-bottom: 1vw;
+        }
 
         p{
             font-size: 2vw;
@@ -70,9 +74,12 @@
         flex-direction: column;
         justify-content: space-evenly;
         
-        img{
-            width: 4vw;
+        a{
             align-self: center;
+
+            img{
+                width: 4vw;
+            }
         }
       
 
