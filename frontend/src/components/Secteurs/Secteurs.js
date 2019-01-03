@@ -12,11 +12,12 @@ class Secteurs extends Component {
 
   componentDidMount = () => {
     Axios.get('/sectors/')
-    .then((res) => { console.log(res.data.sectors); this.setState({sectors : res.data.sectors})})
+    .then((res) => this.setState({sectors : res.data.sectors}))
     .catch((err) => { console.log(err)});
   }
 
   render() {
+    console.log(this.state)
     return (
       <Media query="(max-width: 425px)">
           {matches =>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Slider from "react-slick";
-import "./Realisations.scss"
-import datas from './datas.json'
+import "./Realisations.scss";
+// import  realisations from '.  realisations.json';
+import axios from 'axios';
 
 
 
@@ -10,9 +11,22 @@ export default class Realisations extends Component {
  
 
     state={
-      datas: datas
+      realisations: []
+    
    
   }
+
+
+    
+  componentDidMount = () => {
+    axios.get('/realisation')
+    .then((res) => {
+      console.log(res.data)
+      this.setState({realisations: res.data.realisations})
+    })
+    .catch((err) => console.log("Erreur lors de l'obtention des realisations"))
+  }
+  
 
   render() {
 
@@ -39,7 +53,7 @@ export default class Realisations extends Component {
       ]   
       
     };
-    
+
 
     return (
       <div className="realisations_container" id="realisations">
@@ -48,13 +62,16 @@ export default class Realisations extends Component {
           <Slider {...settings} >
             
             {
-              this.state.datas.map((data, index) => { 
+              this.state.realisations.map((realisation, index) => { 
                 return(
                 <div className="case" key={index}>
-                  <h6>{data.title}</h6>
+                  <h6>{realisation.title}</h6>
                   <div className="text">
-                    <p>{data.description}</p>
+                    <p>{realisation.description}</p> 
                   </div>
+
+                  <a href={realisation.url} target="_blank"><img src={require('./more.png')} alt="Lien"/></a>
+                  
                 </div>
                 )
               }) 
@@ -66,3 +83,4 @@ export default class Realisations extends Component {
     );
   }
 }
+

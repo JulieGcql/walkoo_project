@@ -25,7 +25,6 @@ module.exports = {
   },
 
   create: function(req, res, next) {
-    console.log(req)
     if(req.body.name && req.file){
       Media.create({
         name: req.body.name,

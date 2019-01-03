@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { logOutAction } from '../../../store/actions/logOut'
-import Logo from './pictures/logo_small.png';
 import { withRouter, NavLink } from 'react-router-dom'
 import "./AdminNav.scss"
+import Axios from 'axios';
 
 export class AdminNav extends Component {
+  state = {
+    logo : ""
+  }
+
+  componentDidMount() {
+    this.getLogo()
+  }
+
+  getLogo = () => {
+    Axios.get('/tags/logo')
+    .then((res) => this.setState({logo: res.data.tag.medias[0].url}))
+    .catch((err) => console.log("Erreur lors de l'obtention du logo"))
+  }
   
   logOut = () => {
     this.props.logOutAction()
@@ -17,8 +30,7 @@ export class AdminNav extends Component {
       <div className="NavbarAdmin">
 
         <div className="LogoAdmin">
-          <i className="fas fa-map-marker-alt"></i>
-          <img src={Logo} className="Logo_WalkooAdmin" alt="Logo Walkoo"/>
+          <img src={this.state.logo} className="Logo_WalkooAdmin" alt="Logo Walkoo"/>
           <h1>Administrateur</h1>
         </div>
 

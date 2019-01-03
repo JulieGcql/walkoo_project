@@ -18,6 +18,16 @@
         color: white;
         text-align: center;
         font-family: "Open Sans", sans-serif;
+        .LogoFooter{
+            width: 12vw;
+            margin-bottom: 1vw;
+        }
+
+        img{
+          width: 10vw;
+          margin: auto;
+          margin-bottom: 1vw;
+        }
 
         p{
             font-size: 2vw;
@@ -28,7 +38,7 @@
         ul{
             list-style-type: none;
             align-self: center;
-            font-size: 1.5vw;
+            font-size: 1.2vw;
             padding: 0;
         }
     }
@@ -47,7 +57,7 @@
     .footer_rgpd {
        text-align: center;      
        color: white;
-       font-size: 1.5vw;
+       font-size: 1.2vw;
        display: flex;
        flex-direction: column;
        justify-content: flex-end;
@@ -70,9 +80,12 @@
         flex-direction: column;
         justify-content: space-evenly;
         
-        img{
-            width: 4vw;
+        a{
             align-self: center;
+
+            img{
+                width: 4vw;
+            }
         }
       
 
@@ -94,26 +107,30 @@
   @media screen and(max-width:480px) {
 
     .footer_container {
+        padding-top: 5vw;
         
         .footer_menu{
             
-            p{
-                font-size: 3vw;
+            img{
+                width: 18vw;
             }
             ul{
-                font-size: 2.5vw; 
+                font-size: 2.2vw;
+                margin-top: 3vw;
             }
         }
     
         .footer_app_logo {
               
             img{
-                width: 15vw;
+                width: 20vw;
+                align-self: start;
                 
             }
     
         }
         .footer_rgpd {
+            margin-bottom: 2vw;
            
     
            p{
@@ -127,9 +144,10 @@
 
         }
         .footer_social_icon {
+            margin-bottom: 2vw;
             
             img{
-                width: 6vw;
+                width: 7vw;
             }
         }
     } 
