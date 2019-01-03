@@ -4,7 +4,7 @@ const Technology = models.Technology
 module.exports = {
 
     index: function(req, res, next) {
-        Technology.findAll()
+        Technology.findAll({include : ["picto"]})
         .then((technology) => {
           res.json({technology})
         })
