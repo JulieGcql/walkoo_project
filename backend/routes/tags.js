@@ -7,7 +7,10 @@ router.get('/', tagsController.index);
 
 /* GET tag by id. */
 router.get('/secteur', tagsController.getSecteurMedia);
+
 router.get('/technologie', tagsController.getTechnologyMedia);
+
+router.get('/logo', tagsController.getConfigurationMedia);
 
 router.get('/:id', tagsController.show);
 

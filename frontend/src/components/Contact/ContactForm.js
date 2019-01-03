@@ -1,37 +1,57 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {demoAction} from '../../store/actions/demo'
+import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
+import Checkbox from '@material-ui/core/Checkbox';
 import './ContactForm.scss'
 import Axios from 'axios';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    width: "100%",
+  },
+})
 
 class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    firstNameCompleted : 'input-text',
-    companyNameCompleted : 'input-text',
-    emailCompleted : 'input-text',
-    phoneCompleted : 'input-text',
-    messageCompleted : 'input-text',
-    firstName : '',
-    companyName : '',
-    email : '',
-    phone : '',
-    activitySector : '',
-    message : '',
+    firstName: '',
+    companyName: '',
+    email: '',
+    phone: '',
+    activitySector: 'Patrimoine',
+    message: '',
+    sectors: []
     }
+  }
+
+  componentDidMount() {
+    this.getSectors()
+  }
+
+  getSectors = () => {
+    Axios.get('/sectors')
+    .then((res) => this.setState({sectors : res.data.sectors}))
+    .catch((err) => console.log(err))
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
     Axios.post('/subscribers/create', {
-      firstName : this.state.firstName,
-      companyName : this.state.companyName,
-      email : this.state.email,
-      phone : this.state.phone,
-      activitySector : this.state.activitySector,
-      requestDemo : this.props.shared.requestDemo,
-      message : this.state.message
+      firstName: this.state.firstName,
+      companyName: this.state.companyName,
+      email: this.state.email,
+      phone: this.state.phone,
+      activitySector: this.state.activitySector,
+      requestDemo: this.props.shared.requestDemo,
+      message: this.state.message
     })
     .then((res) => {
       return this.props.click(e)
@@ -46,15 +66,10 @@ class Contact extends Component {
     if (e.target.name === 'requestDemo'){
       this.setState({requestDemo: !this.state.requestDemo})
     }
-
-    if(e.target.value !== ''){
-      this.setState({[`${currentFieldName}Completed`] : 'input-text not-empty'})
-    } else {
-      this.setState({[`${currentFieldName}Completed`] : 'input-text'})
-    }
   }    
   
   render() {
+    const { classes } = this.props;
     return (
       <div className="ContactContainer" id="contact">
 
@@ -64,140 +79,128 @@ class Contact extends Component {
 
             <h1>Contact</h1>
 
-          {/* NAME FIELD */}
+{/* NAME FIELD */}
 
             <div className="form-fields">
-              <input 
-                type="text" 
-                name="firstName" 
+              <TextField
+                required
                 id="firstName" 
+                name="firstName" 
+                label="Nom"
+                className={classes.textField}
                 value={this.state.firstName}
                 onChange={(e) => this.handleChange(e)} 
-                className={this.state.firstNameCompleted} 
-                required>
-              </input>
-
-              <label 
-                className="label" 
-                htmlFor="firstName">
-              Nom *
-              </label>
+                />
             </div>
             
-          {/* COMPANY FIELD */}
+{/* COMPANY FIELD */}
 
             <div className="form-fields">
-              <input 
-                type="text" 
+              <TextField
                 name="companyName"
                 id="companyName"
                 value={this.state.companyName}
                 onChange={(e) => this.handleChange(e)} 
-                className={this.state.companyNameCompleted} 
-              >
-              </input>
-              <label 
-                className="label" 
-                htmlFor="companyName">
-              Société
-              </label>
+                label="Société"
+                className={classes.textField}
+              />
             </div>
             
-          {/* EMAIL FIELD */}
+{/* EMAIL FIELD */}
 
             <div className="form-fields">
-              <input 
+              <TextField
+                required
                 type="email" 
                 name="email" 
                 id="email" 
                 value={this.state.email}
                 onChange={(e) => this.handleChange(e)} 
-                className={this.state.emailCompleted} 
-                required>
-              </input>
-              <label 
-              className="label" 
-              htmlFor="email">
-              Email *
-              </label>
+                label="Email"
+                className={classes.textField}
+              />
             </div>
 
-          {/* PHONE FIELD */}
+{/* PHONE FIELD */}
 
 
             <div className="form-fields">
-              <input 
+              <TextField
+                required
                 type="tel" 
                 name="phone" 
                 id="phone" 
                 value={this.state.phone}
                 onChange={(e) => this.handleChange(e)} 
-                className={this.state.phoneCompleted} 
-                required>
-              </input>
-              <label 
-                className="label" 
-                htmlFor="phone">
-              Téléphone *
-              </label>
+                label="Téléphone"
+                className={classes.textField}
+              />
             </div>
 
-          {/* SECTORS FIELD */}
+{/* SECTORS FIELD */}
 
 
             <div className="form-group form-fields">
-              <select 
-              className="custom-select" 
-              name="activitySector"
-              onChange={(e) => this.handleChange(e)}>
-                <option defaultValue="">Selectionner votre secteur</option>
-                <option value="Patrimoine">Patrimoine</option>
-                <option value="Evenements">Evenements</option>
-                <option value="Forme et Bien-être">Forme & Bien-être</option>
-                <option value="SmartCampus">SmartCampus</option>
-                <option value="Médias">Médias</option>
-                <option value="Autre">Autre</option>
-              </select>
+              <TextField
+                required
+                select
+                name="activitySector"
+                onChange={(e) => this.handleChange(e)}
+                label="Secteur d'activité"
+                className={classes.textField}
+                value={this.state.activitySector}
+                SelectProps={{
+                  native: true,
+                  MenuProps: {
+                    className: classes.menu,
+                  },
+                }}
+              >
+              {this.state.sectors.map(sector => (
+                <option key={sector.id} value={sector.title}>
+                  {sector.title}
+                </option>
+              ))}
+                <option value="Autre">
+                    Autre
+                </option>
+              </TextField>
             </div>
 
-          {/* DEMO FIELD */}
+{/* DEMO FIELD */}
 
 
             <div className="form-fields demo">
-              <input 
+              <Checkbox
                 type="checkbox"
                 name="requestDemo"
                 id="requestDemo" 
                 value={this.props.shared.requestDemo}
                 checked={this.props.shared.requestDemo}
-                className="checkbox"
+                color="default"
                 onClick={(e) => this.props.demoAction()}
-
-              ></input>
+              />
               <label 
                 htmlFor="requestDemo">
               Je souhaite une démo
               </label>
             </div>
 
-          {/* MESSAGE FIELD */}
+{/* MESSAGE FIELD */}
 
 
             <div className="form-fields message">
-              <input 
+              <TextField
+                label="Message"
+                multiline
+                rowsMax="5"
                 type="text" 
                 name="message" 
                 id="message" 
                 value={this.state.message}
                 onChange={(e) => this.handleChange(e)} 
-                className={this.state.messageCompleted} 
-              >
-              </input>
-              <label 
-                className="label" 
-                htmlFor="message">
-              Message
-              </label>
+                className={classes.textField}
+              />
             </div>
 
           {/* BUTTON */}
@@ -214,6 +217,7 @@ class Contact extends Component {
     )
   }
 }
+
 const mapStateToProps = (state) => ({
   ...state
 })
@@ -222,4 +226,8 @@ const mapDispatchToProps = {
   demoAction
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contact); 
+Contact.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Contact)); 

@@ -91,7 +91,7 @@ export default class Secteurs extends Component {
               return (
                 
                 <button 
-                onClick={() => this.getMediaId(media.id, media.name)}>
+                onClick={() => this.getMediaId(media.id)}>
 
                   <img 
                     src={`${media.url}`} 
