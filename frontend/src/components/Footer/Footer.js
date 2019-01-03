@@ -24,11 +24,15 @@ export default class Footer extends Component {
       <div>
         <div className="footer_container">
           <div className="footer_menu">
+<<<<<<< HEAD
           {this.state.configurations.logo &&
             <a href='/#home'>
               <img src={this.state.configurations.logo.url} alt="Logo Walkoo" className='LogoFooter'/>
             </a>
           }
+=======
+          <img src={require('./Pictures/LogoWalkoo.png')} alt="logo google play"/>
+>>>>>>> dev
             <ul>
               <li>Expertise</li>
               <li>Technologie</li>

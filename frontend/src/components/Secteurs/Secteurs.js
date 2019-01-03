@@ -17,6 +17,7 @@ class Secteurs extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <Media query="(max-width: 425px)">
           {matches =>
