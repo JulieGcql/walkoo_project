@@ -29,12 +29,12 @@ Realisation.bulkCreate([
     },
     {
         title: "Smart Campus",
-        url: "",
+        url: "http://www.etudiant.gouv.fr/pid33626-cid128863/c-est-quoi-un-smart-campus.html",
         description: "Suus satis. Quod etiam optime. Vos ite post eum, fistulae, nunquam vivum exire ab ea. Sed cum hoc ... excidit tibi in cibo aut in potu, aut: olefac Elegantioris non sit ... triginta sex horae post ... Poof. Vir aetatis operantes, dura sicut facit ...excidit tibi in cibo aut in potu, aut: olefac Elegantioris non sit ...",
     },
 
 ])
-    .then((technology) => {
-        console.log(technology)
+    .then((realisations) => {
+        console.log(realisations)
     })
-    .catch((err) => console.log("Error while create technology : ", err));
+    .catch((err) => console.log("Error while create realisation : ", err));

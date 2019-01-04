@@ -24,7 +24,7 @@ Technology.bulkCreate([
     },
 
 ])
-    .then((technology) => {
-        console.log(technology)
+    .then((technologies) => {
+        console.log(technologies)
     })
-    .catch((err) => console.log("Error while create technology : ", err))
+    .catch((err) => console.log("Error while create technology : ", err));
