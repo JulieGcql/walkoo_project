@@ -60,7 +60,7 @@ export default class Accueil extends Component {
           onSubmit={(e) => this.editHome(e)}
           className="SecteurForm">
 
-          <h3 className="hugoTitleAccueil">Création de l'accueil</h3>
+          <h3 className="hugoTitleAccueil">Modification de l'accueil</h3>
 
          
           <label
