@@ -35,7 +35,7 @@ componentDidMount = () => {
 
         <div className="secondContainer">
 
-          {/* <p className="Text2">{this.state.homes.subtitle } </p> */}
+          <p className="Text2">{this.state.homes.subtitle } </p>
 
           <button 
             className="btn btn-warning Bouton"
