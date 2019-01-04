@@ -84,9 +84,6 @@ export default class AdminMedias extends Component {
 
         <h1>Galerie</h1>
 
-        <AdminTags />
-
-
         {/* Création d'un média */}
 
         <div className="MediasContainer">
@@ -171,7 +168,7 @@ export default class AdminMedias extends Component {
               
               <div className="Media">
                 <img 
-                  src={`http://${media.url}`} 
+                  src={`${media.url}`} 
                   alt={media.name}/>
 
                 <p>{media.id}: {media.name}</p>

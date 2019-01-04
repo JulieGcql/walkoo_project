@@ -128,7 +128,7 @@ export default class Secteurs extends Component {
 
             <input 
               type="submit" 
-              value="Créer une rélisation" 
+              value="Créer une réalisation" 
               className="btn btn-outline-dark"
               ></input>
 
