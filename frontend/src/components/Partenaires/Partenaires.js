@@ -18,13 +18,14 @@ export default class Partenaires extends Component {
   componentDidMount = () => {
       axios.get('/tags/partenaire')
       .then((res) => {
-        console.log(res.data)
+        console.log('data', res.data)
         this.setState({partenaires: res.data.tag.medias})
       })
       .catch((err) => console.log("Erreur lors de l'obtention des partenaires"))
     };
 
   render() {
+    console.log('state', this.state.partenaires)
     const settings = {
       dots: false,
       infinite: true,
@@ -46,7 +47,7 @@ export default class Partenaires extends Component {
         <Slider {...settings}>
           {this.state.partenaires.map((partenaire, index) => {
             return(
-              <img className="LogosPartenaires" src ={`${partenaire.tag.medias.url}`} alt={`${partenaire.tag.medias.name}`}/>
+              <img className="LogosPartenaires" src ={`${partenaire.url}`} alt={`${partenaire.name}`} key={index}/>
             )
           })}
         </Slider>
