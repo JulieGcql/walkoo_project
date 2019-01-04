@@ -66,15 +66,6 @@ export default class SecteurModal extends Component {
                   >Nouvelle description :
                 </label>
 
-                {/* <textarea 
-                  type="text" 
-                  name="description" 
-                  value={this.state.description}
-                  onChange={(e) => this.handleChange(e)}
-                  className="form-control" 
-                  rows="5"
-                  required 
-                  ></textarea>  */}
                   <ReactQuill 
                 required
                 id="description"

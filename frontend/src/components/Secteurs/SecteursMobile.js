@@ -24,7 +24,6 @@ export default class SecteursMobile extends Component {
 
                 <img className="SecteurMobilePicto" src={`${secteur.picto.url}`} alt={`Logo ${secteur.picto.name}`}/>
                 <h3 className="SecteurMobileTitle">{secteur.title}</h3>
-                {/* <p className="SecteurMobileDescription">{secteur.description}</p> */}
                 <div className="SecteurMobileDescription" dangerouslySetInnerHTML={createMarkup (secteur.description)}></div>
                 
               </div>         
