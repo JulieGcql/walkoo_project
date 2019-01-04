@@ -8,7 +8,6 @@ export default class AdminMedias extends Component {
     tags: [],
     mediasList: [],
     tagIdSelected:[],
-    mediaName: ''
   }
 
   componentDidMount(){
@@ -19,8 +18,8 @@ export default class AdminMedias extends Component {
   uploadFile(e) {
     e.preventDefault();
     let data = new FormData()
-    data.append('name', this.state.mediaName)
-    data.append('file', this.state.file, this.state.mediaName + '.' +this.state.file.name.split('.').pop())
+    data.append('file', this.state.file)
+    console.log('file', this.state.file)
     data.append('tagIds', this.state.tagIdSelected.map(tag => tag.id))
     console.log(this.state.tagIdSelected);
     if (this.state.tagIdSelected.length == 0){
@@ -29,7 +28,6 @@ export default class AdminMedias extends Component {
     else {
     axios.post('/medias/create', data)
       .then((res) => {
-        this.setState({mediaName:""})
         console.log(res)
         this.getMedias()
       })
@@ -101,16 +99,6 @@ export default class AdminMedias extends Component {
                 <input 
                   type="file" 
                   onChange={(e) => this.setState({file: e.target.files[0]})}/>
-                
-                <label for="InputFile">Renommer l'image : </label>
-                
-                <input 
-                  required
-                  className="form-control"
-                  value={this.state.mediaName} 
-                  type="text" 
-                  name="mediaName" 
-                  onChange={(e) => this.setState({mediaName: e.target.value}) } />
 
               </div>
             </div>
