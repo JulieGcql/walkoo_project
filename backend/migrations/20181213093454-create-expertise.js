@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       paragraphOne: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       paragraphTwo: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       mediaId: {
         type: Sequelize.INTEGER,

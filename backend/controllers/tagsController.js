@@ -57,6 +57,18 @@ module.exports = {
     })
     .catch((error) => res.status(500).json({message: error}))
   },
+
+  getPartenairesMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "partenaire"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name logo`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
   
   create: function(req, res, next) {
     if(req.body.name){
