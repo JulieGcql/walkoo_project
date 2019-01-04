@@ -25,9 +25,9 @@ module.exports = {
   },
 
   create: function(req, res, next) {
-    if(req.body.name && req.file){
+    if(req.file){
       Media.create({
-        name: req.body.name,
+        name: req.file.originalname,
         type: 'file',
         url: `${req.protocol}://${req.get('Host')}/uploads/${req.file.originalname}`
       })
