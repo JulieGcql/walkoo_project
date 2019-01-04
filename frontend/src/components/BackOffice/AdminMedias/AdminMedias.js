@@ -19,9 +19,7 @@ export default class AdminMedias extends Component {
     e.preventDefault();
     let data = new FormData()
     data.append('file', this.state.file)
-    console.log('file', this.state.file)
     data.append('tagIds', this.state.tagIdSelected.map(tag => tag.id))
-    console.log(this.state.tagIdSelected);
     if (this.state.tagIdSelected.length == 0){
       alert("Selectionnez un tag")
     }
