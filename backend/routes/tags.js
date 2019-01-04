@@ -9,6 +9,8 @@ router.get('/', tagsController.index);
 router.get('/secteur', tagsController.getSecteurMedia);
 
 router.get('/technologie', tagsController.getTechnologyMedia);
+router.get('/expertise', tagsController.getExpertiseMedia);
+
 
 router.get('/logo', tagsController.getConfigurationMedia);
 

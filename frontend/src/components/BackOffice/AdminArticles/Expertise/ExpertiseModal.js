@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 
-export default class SecteurModal extends Component {
+export default class ExpertiseModal extends Component {
   state = {
-    title:"",
-    description:"",
+    paragraphOne:"",
+    paragraphTwo:"",
   }
 
   componentDidMount = () => {
-    this.setState({title: this.props.title, description: this.props.description})
+    this.setState({paragraphOne: this.props.paragraphOne, paragraphTwo: this.props.paragraphTwo})
   }
   
   handleChange = (e) => {
@@ -16,9 +16,9 @@ export default class SecteurModal extends Component {
   }
 
   handleModify = (id) => {
-    Axios.put(`/sectors/edit/${id}`, {
-      title: this.state.title,
-      description: this.state.description,
+    Axios.put(`/expertise/edit/${id}`, {
+      paragraphOne: this.state.paragraphOne,
+      paragraphTwo: this.state.paragraphTwo,
       mediaId: this.props.mediaId
     })
     .then((res) => {
@@ -34,40 +34,39 @@ export default class SecteurModal extends Component {
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Modification</h5>
+                <h5 class="modal-paragraphOne">Modification</h5>
               </div>
 
               <div class="modal-body">
               
-                <form className="SecteurForm">
+                <form className="ExpertiseForm">
 
                 <label 
                   className="col-form-label"
-                  >Nouveau titre :
+                  >Premier paragraphe :
                 </label>
 
-                <textarea 
+                <input 
                   type="text" 
-                  name="title" 
-                  value={this.state.title}
+                  name="paragraphOne" 
+                  value={this.state.paragraphOne}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="5"
                   required 
-                  ></textarea>
+                  ></input>
 
                 <label 
                   className="col-form-label"
-                  >Nouvelle description :
+                  >Second paragraphe :
                 </label>
 
                 <textarea 
                   type="text" 
-                  name="description" 
-                  value={this.state.description}
+                  name="paragraphTwo" 
+                  value={this.state.paragraphTwo}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="5"
+                  rows="8"
                   required 
                   ></textarea>    
                 </form>

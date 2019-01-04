@@ -14,6 +14,7 @@ var homesRouter = require('./routes/home');
 var subscriberRouter = require('./routes/subscriber')
 var sectorsRouter = require('./routes/sectors')
 var technologyRouter= require('./routes/technology')
+var expertiseRouter = require('./routes/expertise')
 var realisationRouter = require('./routes/realisation')
 var configurationRouter = require('./routes/configurations')
 
@@ -46,6 +47,7 @@ app.use('/sectors', sectorsRouter);
 app.use('/events', eventsRouter);
 app.use('/homes', homesRouter);
 app.use('/technology', technologyRouter);
+app.use('/expertise', expertiseRouter);
 app.use('/realisation', realisationRouter);
 app.use('/configurations', configurationRouter);
 

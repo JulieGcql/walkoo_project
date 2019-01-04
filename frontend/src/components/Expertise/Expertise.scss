@@ -12,10 +12,10 @@
   height:auto;
   width:auto;
 
-  p, h1, h3 {
-  margin-top:0;
-  margin-bottom:0;
-  }
+  // p, h1, h3 {
+  // margin-top:0;
+  // margin-bottom:0;
+  // }
 
     .expertTitle {
       grid-area: Title;
@@ -29,10 +29,9 @@
       text-align: justify;
       font-size:1.5vw;
       font-family: $condensed;
-
-      hr {
-        margin-top:5vh;
-        margin-bottom:5vh;
+      p {
+        border-bottom: 1px solid #343a403b;
+        padding-bottom: 4vw;
       }
 
       .expertParagraph {
@@ -61,6 +60,9 @@
       max-height:100%;
       justify-self:right;
       align-self: center;
+      img {
+        height:40vw;
+      }
     }
 }
 
@@ -92,9 +94,6 @@
       padding-bottom:2vh; 
       text-align: center;
       font-size:4vw;
-      hr {
-      display:none;
-      }
       .expertParagraph {
         margin-bottom: 1vw !important;
         font-size: 4vw;
