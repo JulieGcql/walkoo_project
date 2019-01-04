@@ -81,7 +81,7 @@ export default class MediasSalon extends Component {
             name="title"
             value={this.state.title}
             onChange={(e) => this.handleChange(e)}
-            className="form-control "
+            className="form-control zoneTexte "
             required
           ></input>
 
@@ -95,15 +95,15 @@ export default class MediasSalon extends Component {
             name="description"
             value={this.state.description}
             onChange={(e) => this.handleChange(e)}
-            className="form-control"
+            className="form-control zoneTexte"
             rows="5"
           ></textarea>
 
-          <div className="form-group">
+          <div className="form-group ">
             <label htmlFor="type"
             className="createEventMargin"
             >Type :</label>
-            <select className="form-control" onChange={(e) => this.handleChange(e)} name="type" id="type">
+            <select className="form-control zoneTexte" onChange={(e) => this.handleChange(e)} name="type" id="type">
               <option value="">Selectionnez le type</option>
               <option value="media">Media</option>
               <option value="salon">Salon</option>

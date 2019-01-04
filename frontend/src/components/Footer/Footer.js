@@ -10,7 +10,7 @@ export default class Footer extends Component {
   }
 
   componentDidMount() {
-    this.getConfiguration()
+    // this.getConfiguration()
   }
 
   getConfiguration = () => {
