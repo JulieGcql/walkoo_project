@@ -3,6 +3,7 @@ import axios from 'axios'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './AdminConfigurations.scss'
+import AdminConfigurationModal from './AdminConfigurationModal'
 
 export default class AdminConfigurations extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class AdminConfigurations extends Component {
       metaKeyword:"",
       metaImage:"",
       rgpd:"",
+      modal: false,
     }
   }
 
@@ -50,6 +52,10 @@ export default class AdminConfigurations extends Component {
       }
   }
 
+  handleClick = () => {
+    this.setState({modal: !this.state.modal})
+  }
+
   getMediaId = (id) => {
     this.setState({mediaId: id})
   }
@@ -77,9 +83,22 @@ export default class AdminConfigurations extends Component {
 
   render() {
     return (
+      
       <div className="AdminConfigurations">
-
+      {
+        this.state.modal &&
+        <AdminConfigurationModal close={this.handleClick}/>
+      }
         <h1>Configurations</h1>
+
+{/* PASSWORD */}
+
+        <button 
+          onClick={() => this.handleClick()}
+          className="btn btn-outline-dark password"
+        >
+          Modifier le mot de passe
+        </button>
 
 {/* MEDIAS */}
 
@@ -112,6 +131,7 @@ export default class AdminConfigurations extends Component {
         <label htmlFor="logo-select">Logo :</label>
         <select 
           id="logo-select"
+          class="form-control"
           onChange={(e) => this.setState({mediaId: e.target.value})}>
         {this.state.medias && 
             this.state.medias.map((media, index) => {
@@ -127,7 +147,8 @@ export default class AdminConfigurations extends Component {
 {/* TITLE */}
 
           <label htmlFor="title">Titre :</label>
-          <input 
+          <input
+            class="form-control" 
             type="text"
             value={this.state.title}
             onChange={(e) => this.handleChange(e)}
@@ -138,7 +159,8 @@ export default class AdminConfigurations extends Component {
 {/* PHONE */}
           
           <label htmlFor="phone">Téléphone :</label>
-          <input 
+          <input
+            class="form-control" 
             type="tel"
             value={this.state.phone}
             onChange={(e) => this.handleChange(e)} 
@@ -149,7 +171,8 @@ export default class AdminConfigurations extends Component {
 {/* TWITTER */}
 
           <label htmlFor="twitter">Lien Twitter :</label>
-          <input 
+          <input
+            class="form-control" 
             type="text"
             value={this.state.twitter}
             onChange={(e) => this.handleChange(e)} 
@@ -160,7 +183,8 @@ export default class AdminConfigurations extends Component {
 {/* LINKEDIN */}
 
           <label htmlFor="linkedin">Lien LinkedIn :</label>
-          <input 
+          <input
+            class="form-control" 
             type="text"
             value={this.state.linkedin}
             onChange={(e) => this.handleChange(e)} 
@@ -171,7 +195,8 @@ export default class AdminConfigurations extends Component {
 {/* METATITLE */}
 
           <label htmlFor="metaTitle">MetaTitre :</label>
-          <input 
+          <input
+            class="form-control" 
             type="text"
             value={this.state.metaTitle}
             onChange={(e) => this.handleChange(e)} 
@@ -181,8 +206,9 @@ export default class AdminConfigurations extends Component {
 
 {/* METADESCRIPTION */}
 
-          <label htmlFor="metaDescription">metaDescription :</label>
-          <input 
+          <label htmlFor="metaDescription">MetaDescription :</label>
+          <input
+            class="form-control" 
             type="text"
             value={this.state.metaDescription}
             onChange={(e) => this.handleChange(e)} 
@@ -193,7 +219,8 @@ export default class AdminConfigurations extends Component {
 {/* METAKEYWORD */}
 
           <label htmlFor="metaKeyword">MetaKeyword :</label>
-          <input 
+          <input
+            class="form-control" 
             type="text"
             value={this.state.metaKeyword}
             onChange={(e) => this.handleChange(e)} 
@@ -204,7 +231,8 @@ export default class AdminConfigurations extends Component {
 {/* METAIMAGE */}
 
           <label htmlFor="metaImage">MetaImage :</label>
-          <input 
+          <input
+            class="form-control" 
             type="text"
             value={this.state.metaImage}
             onChange={(e) => this.handleChange(e)} 
@@ -223,6 +251,7 @@ export default class AdminConfigurations extends Component {
             value={this.state.rgpd}
             onChange={(value) => this.handleChangeRGPD(value)}
           />
+
 
 {/* SUBMIT */}
 

@@ -47,7 +47,7 @@ module.exports = {
           .then((updatedSector) => {
             res.json({secteur: updatedSector})
           })
-          .catch((error) => res.status(500).json({message: "Erreur lors de la modifiction d'un secteur."}))
+          .catch((error) => res.status(500).json({message: "Erreur lors de la modification d'un secteur."}))
         } else {
           res.status(500).json({message: "name cannot be blank"})
         }
