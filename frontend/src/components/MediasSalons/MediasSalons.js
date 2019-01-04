@@ -30,7 +30,7 @@ componentDidMount = () => {
         <h1 className="msTitle">Salons</h1>
           {
             this.state.events.filter((event) => {
-              return event.type == 'salon'
+              return event.type === 'salon'
             }).map((event, index) => {
               return (<div key={index}>
                 <p >{event.title}</p>
@@ -48,7 +48,7 @@ componentDidMount = () => {
           <h1 className="msTitle" >Média</h1>
           {
             this.state.events.filter((event) => {
-              return event.type == 'media'
+              return event.type === 'media'
             }).map((event, index) => {
               return (<div key={index}>
                 <p >{event.title}</p>

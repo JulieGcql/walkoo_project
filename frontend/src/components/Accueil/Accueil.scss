@@ -1,6 +1,7 @@
 @import '../../Variables.scss'; 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+$animation-size: 7vw;
 
 body{
   overflow-x: hidden;
@@ -22,54 +23,148 @@ body{
     width: 100vw;
     position:absolute;
     top:0;
-    
-    .first{
-      
-      // visibility:hidden;
-      font-size:5vw;
-        width: auto;
-        height: auto;
-        color:white;
-        position: absolute;
-        -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
-        animation: mymove 20s infinite;
-        z-index:1;
-        left: 33vw;
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      padding: 2em 5em;
+      //font-size: 18px;
+      align-self: center;
+
+
     }
-    
-    .second{
-    
-      visibility:hidden;
-      font-size:5vw;
-        width: auto;
-        height: auto;
-        color:white;
-        left:0px;
-        position: absolute;
-        -webkit-animation: mymove2 20s infinite; /* Safari 4.0 - 8.0 */
-        animation: mymove2 20s infinite;
-        animation-delay: 5s;
-        z-index:2;
-        left: 33vw;
-    }   
-    
-    .third{
-    
-    visibility:hidden;
-      font-size:5vw;
-        width: auto;
-        height: auto;
-        color:white;
-        left:0px;
-        position: absolute;
-        -webkit-animation: mymove3 20s infinite; /* Safari 4.0 - 8.0 */
-        animation: mymove3 20s infinite;
-        animation-delay:10s;
-        z-index:3;
-        left: 33vw;
+
+    .logo h1 {
+      float: left;
+      overflow: hidden;
+      position: relative;
+      height: $animation-size;
+      font-size: 6vw;
+      top: 40px;
+    }
+
+    .logo b {
+      float: left;
+      overflow: hidden;
+      position: relative;
+      height: $animation-size;
+      font-size: 6vw;
+      top: 40px;
+    }
+
+    .logo .logo-secondpart {
+      display: inline-block;
+      color: white;
+      position: relative;
+      white-space: nowrap;
+      top: 0;
+      left: 0;
+
+
+      /*animation*/
+
+
+      -webkit-animation:move 3.5s;
+      -moz-animation:move 3.5s;
+      -ms-animation:move 3.5s;
+      -o-animation:move 3.5s;
+      animation:move 3.5s;
+      /*animation-iteration-count*/
+      -webkit-animation-iteration-count:infinite;
+      -moz-animation-iteration-count:infinite;
+      -ms-animation-iteration-count:infinite;
+      -o-animation-iteration-count:infinite;
+      animation-iteration-count:infinite;
+      /*animation-delay*/
+      -webkit-animation-delay:2s;
+      -ms-animation-delay:2s;
+      -o-animation-delay:2s;
+      animation-delay:2s;
+    }
+
+
+    @-webkit-keyframes move {
+      0%  { top: 0vw; }
+      40% { top: -$animation-size; }
+      80% { top: -$animation-size * 2; }
+    }
+    @-moz-keyframes move {
+      0%  { top: 0vw; }
+      40% { top: -$animation-size; }
+      80% { top: -$animation-size * 2; }
+    }
+    @-o-keyframes move {
+      0%  { top: 0vw; }
+      40% { top: -$animation-size; }
+      80% { top: -$animation-size * 2; }
+    }
+    @keyframes move {
+      0%  { top: 0vw; }
+      40% { top: -$animation-size; }
+      80% { top: -$animation-size * 2; }
+    }
+
+
+    .logo .logo-firstpart {
+      display: inline-block;
+      color: black;
+      position: relative;
+      white-space: nowrap;
+      top: 0;
+      left: 0;
+
+
+      /*animation*/
+      -webkit-animation:move2 3.5s;
+      -ms-animation:move2 3.5s;
+      -o-animation:move2 3.5s;
+      animation:move2 3.5s;
+      /*animation-iteration-count*/
+      -webkit-animation-iteration-count:infinite;
+      -moz-animation-iteration-count:infinite;
+      -ms-animation-iteration-count:infinite;
+      -o-animation-iteration-count:infinite;
+      animation-iteration-count:infinite;
+      /*animation-delay*/
+      -webkit-animation-delay:2s;
+      -ms-animation-delay:2s;
+      -o-animation-delay:2s;
+      animation-delay:2s;
+    }
+    @-webkit-keyframes move2 {
+      0%  { top: -$animation-size * 2; }
+      40% { top: -$animation-size; }
+      80% { top: -0vw; }
+      100% { top: -$animation-size * 2; }
+    }
+    @-moz-keyframes move2 {
+      0%  { top: -$animation-size * 2; }
+      40% { top: -$animation-size; }
+      80% { top: -0vw; }
+      100% { top: -$animation-size * 2; }
+    }
+    @-o-keyframes move2 {
+      0%  { top: -$animation-size * 2; }
+      40% { top: -$animation-size; }
+      80% { top: -0vw; }
+      100% { top: -$animation-size * 2; }
+    }
+    @keyframes move2 {
+      0%  { top: -$animation-size * 2; }
+      40% { top: -$animation-size; }
+      80% { top: -0vw; }
+      100% { top: -$animation-size * 2; }
     }
   }
 }
+
+
+
+
+
+
+
+
   .secondContainer{
     
     margin-top: 38vw;

@@ -1,30 +1,32 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 
-export default class SecteurModal extends Component {
+export default class AdminConfigurationModal extends Component {
   state = {
-    title:"",
-    description:"",
-  }
-
-  componentDidMount = () => {
-    this.setState({title: this.props.title, description: this.props.description})
+    password: "",
+    confirmPassword: "",
   }
   
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+    if(this.state.password === this.state.confirmPassword) {
+
+    }
   }
 
-  handleModify = (id) => {
-    Axios.put(`/sectors/edit/${id}`, {
-      title: this.state.title,
-      description: this.state.description,
-      mediaId: this.props.mediaId
-    })
-    .then((res) => {
-      this.props.close()
-    })
-    .catch((err) => alert("Erreur lors de la modification"))
+  handleModify = () => {
+    if(this.state.password === this.state.confirmPassword){
+      Axios.put(`/users/`, {
+        password: this.state.password
+      })
+      .then((res) => {
+        alert('Mot de passe changé avec succès')
+        this.props.close()
+      })
+      .catch((err) => alert("Erreur lors de la modification"))
+    } else {
+      alert('Les mots de passe ne correspondent pas.')
+    }
   }
 
   render() {
@@ -34,7 +36,7 @@ export default class SecteurModal extends Component {
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Modification</h5>
+                <h5 class="modal-title">Modifier le mot de passe</h5>
               </div>
 
               <div class="modal-body">
@@ -43,37 +45,36 @@ export default class SecteurModal extends Component {
 
                 <label 
                   className="col-form-label"
-                  >Nouveau titre :
+                  >Mot de passe :
                 </label>
 
-                <textarea 
-                  type="text" 
-                  name="title" 
-                  value={this.state.title}
+                <input 
+                  type="password" 
+                  name="password" 
+                  value={this.state.password}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="5"
                   required 
-                  ></textarea>
+                  ></input>
 
                 <label 
                   className="col-form-label"
-                  >Nouvelle description :
+                  >Confirmation :
                 </label>
-
-                <textarea 
-                  type="text" 
-                  name="description" 
-                  value={this.state.description}
+  
+                <input 
+                  type="password" 
+                  name="confirmPassword" 
+                  value={this.state.confirmPassword}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="5"
                   required 
-                  ></textarea>    
+                  ></input>
+
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary" onClick={() => this.handleModify(this.props.id)}>Modifier</button>
+                <button type="button" class="btn btn-outline-primary" onClick={() => this.handleModify()}>Modifier</button>
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onClick={this.props.close}>Quitter</button>
               </div>
             </div>

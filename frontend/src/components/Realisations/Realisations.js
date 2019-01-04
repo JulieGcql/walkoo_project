@@ -54,7 +54,6 @@ export default class Realisations extends Component {
       
     };
 
-
     return (
       <div className="realisations_container" id="realisations">
         <h1>Réalisations et Projet</h1>
@@ -69,9 +68,13 @@ export default class Realisations extends Component {
                   <div className="text">
                     <p>{realisation.description}</p> 
                   </div>
+                  {
+                    realisation.url &&
+                        <a href={realisation.url} target="_blank">
+                          <img src={require('./more.png')} alt={"Lien"}/>
+                        </a>
 
-                  <a href={realisation.url} target="_blank"><img src={require('./more.png')} alt="Lien"/></a>
-                  
+                  }
                 </div>
                 )
               }) 

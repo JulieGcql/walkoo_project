@@ -29,15 +29,18 @@ export default class Accueil extends Component {
   }
   editHome = (e) => {
     e.preventDefault()
-    if (this.state.catchPhrase !== '' && this.state.subtitle !== '') {
+    if (window.confirm("Voulez-vous changer le sous-titre ?") && this.state.subtitle !== '') {
       axios.put('/homes', this.state)
         .then((res) => {
-          alert("L'accueil a été créé.")
+          alert("Le sous-titre a été changé.")
           this.getHomes()
         })
         .catch((err) => console.log(err))
 
+    }else{
+      alert("Un sous-titre doit être ajouté !!!")
     }
+  
   }
 
   getHomes = () => {
@@ -70,13 +73,13 @@ export default class Accueil extends Component {
             name="subtitle"
             value={this.state.subtitle}
             onChange={(e) => this.handleChange(e)}
-            className="form-control form-controlAccueil"
+            className="form-control form-controlAccueil hugoTextareaAccueil"
             rows="5"
           ></textarea>
 
           <input
             type="submit"
-            value="Modifier l'accueil"
+            value="Modifier le sous-titre"
             className="btn btnAccueil btn-outline-dark"
           ></input>
 
