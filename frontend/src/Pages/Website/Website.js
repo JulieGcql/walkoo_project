@@ -14,7 +14,7 @@ const Website = () => (
   <div>
     <Navbar/>
     <Accueil/>
-    <Expertise/>
+    {/* <Expertise/> */}
     <Technologie/>
     <Secteurs/>
     <Realisations/>

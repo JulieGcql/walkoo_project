@@ -26,7 +26,8 @@ export default class Secteurs extends Component {
                 {currentSelected === secteur.title ? 
                       
                   <div>
-                    <p className="SecteurDescription">{secteur.description}</p>
+                    {/* <p className="SecteurDescription">{secteur.description}</p> */}
+                    <div className="SecteurDescription" dangerouslySetInnerHTML={createMarkup (secteur.description)}></div>
                     <img className="SecteurPictoLess" src={Less} alt="Button Less" onClick={() => this.setState({currentSelected : null})
                   }/>
                   </div>
@@ -40,4 +41,8 @@ export default class Secteurs extends Component {
       </div>
     )
   }
+}
+
+function  createMarkup ( stringyfiedHtml ) {
+  return { __html :  stringyfiedHtml };
 }
