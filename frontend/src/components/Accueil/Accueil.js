@@ -25,12 +25,22 @@ componentDidMount = () => {
       <div className="containerAnim">
 
         <div className="Text1 ">
-
-
-
-              <div className="first">Le bon contenu</div>
-              <div className="second">Au bon endroit</div>
-              <div className="third">Au bon moment</div>
+              <div className="logo">
+                  <h1>
+                      <div className="logo-firstpart">
+                          au bon <br/>
+                          au bon <br/>
+                          Le bon <br/>
+                      </div>
+                  </h1>
+                  <h1>
+                      <div className="logo-secondpart">
+                          contenu<br/>
+                          endroit<br/>
+                          moment<br/>
+                      </div>
+                  </h1>
+              </div>
         </div>
 
         <div className="secondContainer">
