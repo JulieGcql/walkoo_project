@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './Secteurs.scss'
 import axios from 'axios'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import SecteurModal from './SecteurModal';
 
 export default class Secteurs extends Component {
@@ -24,6 +26,10 @@ export default class Secteurs extends Component {
   
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleChangeDescription = (value) => {
+    this.setState({description: value})
   }
 
   getMediaId = (id) => {
@@ -130,15 +136,13 @@ export default class Secteurs extends Component {
               >Description :
             </label>
 
-            <textarea 
-              type="text" 
-              name="description" 
-              value={this.state.description}
-              onChange={(e) => this.handleChange(e)}
-              className="form-control" 
-              rows="5"
-              required 
-              ></textarea>
+              <ReactQuill 
+                required
+                id="description"
+                className="description"
+                value={this.state.description}
+                onChange={(value) => this.handleChangeDescription(value)}
+              /> 
 
               <p className="IconeSelected">Icône selectionnée : {this.state.mediaId} </p>
               

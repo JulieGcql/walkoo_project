@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
+import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
 
 export default class SecteurModal extends Component {
   state = {
@@ -13,6 +15,10 @@ export default class SecteurModal extends Component {
   
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleChangeDescription = (value) => {
+    this.setState({description: value})
   }
 
   handleModify = (id) => {
@@ -46,30 +52,27 @@ export default class SecteurModal extends Component {
                   >Nouveau titre :
                 </label>
 
-                <textarea 
+                <input 
                   type="text" 
                   name="title" 
                   value={this.state.title}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="5"
-                  required 
-                  ></textarea>
+                    required 
+                  ></input>
 
                 <label 
                   className="col-form-label"
                   >Nouvelle description :
                 </label>
 
-                <textarea 
-                  type="text" 
-                  name="description" 
-                  value={this.state.description}
-                  onChange={(e) => this.handleChange(e)}
-                  className="form-control" 
-                  rows="5"
-                  required 
-                  ></textarea>    
+                  <ReactQuill 
+                required
+                id="description"
+                className="description"
+                value={this.state.description}
+                onChange={(value) => this.handleChangeDescription(value)}
+              />    
                 </form>
               </div>
               <div class="modal-footer">
