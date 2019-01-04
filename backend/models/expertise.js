@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Expertise = sequelize.define('Expertise', {
-    paragraphOne: DataTypes.STRING,
-    paragraphTwo: DataTypes.STRING,
+    paragraphOne: DataTypes.TEXT,
+    paragraphTwo: DataTypes.TEXT,
     mediaId: DataTypes.INTEGER
   }, {});
   Expertise.associate = function(models) {

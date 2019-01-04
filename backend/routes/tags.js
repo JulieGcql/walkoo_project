@@ -12,6 +12,8 @@ router.get('/technologie', tagsController.getTechnologyMedia);
 
 router.get('/logo', tagsController.getConfigurationMedia);
 
+router.get('/partenaire', tagsController.getPartenairesMedia);
+
 router.get('/:id', tagsController.show);
 
 /* POST new tag. */
