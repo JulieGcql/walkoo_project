@@ -26,6 +26,7 @@ export default class AdminMedias extends Component {
     else {
     axios.post('/medias/create', data)
       .then((res) => {
+        alert("Votre image a bien été créée")
         console.log(res)
         this.getMedias()
       })
