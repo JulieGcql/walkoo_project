@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './Expertise.scss'
-import axios from 'axios'
-import ExpertiseModal from './ExpertiseModal';
+import axios from 'axios';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 

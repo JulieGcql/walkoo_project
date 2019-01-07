@@ -22,7 +22,7 @@ componentDidMount = () => {
   render() {
     console.log(this.state);
     return (
-      <div className="containerAnim">
+      <div className="containerAnim" id="home">
 
         <div className="Text1 ">
               <div className="logo">
@@ -30,7 +30,7 @@ componentDidMount = () => {
                       <div className="logo-firstpart">
                           au bon <br/>
                           au bon <br/>
-                          Le bon <br/>
+                          le bon <br/>
                       </div>
                   </h1>
                   <h1>
@@ -45,8 +45,8 @@ componentDidMount = () => {
 
         <div className="secondContainer">
 
-          <p className="Text2">{this.state.homes.subtitle } </p>
-
+          {/* <p className="Text2">{this.state.homes.subtitle } </p> */}
+          <div dangerouslySetInnerHTML={createMarkup(this.state.homes.subtitle)} className="Text2"></div>
           <button 
             className="btn btn-warning Bouton"
             onClick={() => this.props.demoAction()}
@@ -59,6 +59,11 @@ componentDidMount = () => {
     )
   }
 }
+
+function createMarkup(stringyfiedHtml) {
+  return { __html: stringyfiedHtml };
+}
+
 
 const mapStateToProps = (state) => ({
   ...state

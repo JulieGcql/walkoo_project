@@ -45,7 +45,7 @@ export default class Footer extends Component {
             <p className="walkoo_c"> © WALKOO 2018 </p>
           </div>
           <div className="footer_social_icon">
-            <a href={this.state.configurations.twitter} rel="noopener noreferrer" target="_blank">
+           <a href={this.state.configurations.twitter} rel="noopener noreferrer" target="_blank">
               <img src={require('./Pictures/twitter.png')} alt="logo twitter"/>
             </a>
             <a href={this.state.configurations.linkedin} rel="noopener noreferrer" target="_blank">
