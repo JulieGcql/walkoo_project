@@ -12,11 +12,6 @@
   height:auto;
   width:auto;
 
-  // p, h1, h3 {
-  // margin-top:0;
-  // margin-bottom:0;
-  // }
-
     .expertTitle {
       grid-area: Title;
       font-size: 3vw;
@@ -87,36 +82,23 @@
       text-align: center;
     }
 
-    .expertDescription, .expertSubtitle{
+    .expertDescription{
       margin-left:6vw;
       margin-right:6vw;
-      padding-top:2vh;
-      padding-bottom:2vh; 
       text-align: center;
       font-size:4vw;
-      .expertParagraph {
-        margin-bottom: 1vw !important;
-        font-size: 4vw;
-        font-family: $condensed;
+      p {
+        border-bottom:none;
+        padding-bottom:0;
+        margin-bottom:0;
       }
+    }
+    .expertSubtitle {
+      margin-left:6vw;
+      margin-right:6vw;
+      text-align: center;
+      font-size:4vw;
+      padding-bottom:2vh;
     }
   }
 }
-
-// @media screen and(max-width:425px){
-//   .expertContainer {
-
-    
-//     .expertTitle {
-//       font-size:3vw;
-//     }
-
-//     .expertDescription {
-//       font-size:4vw;
-//     }
-
-//     .expertSubtitle {
-//       font-size:3vw;
-//     }
-//   }
-// }
