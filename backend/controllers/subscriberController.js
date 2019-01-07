@@ -1,5 +1,17 @@
 const models = require("../models");
 const Subscriber = models.Subscriber;
+const nodemailer = require('nodemailer');
+
+
+const smtpTransport = nodemailer.createTransport({
+  host: "smtp.live.com",
+  port: 25,
+  secure: false,
+  auth: {
+      user: process.env.DB_MAIL,
+      pass: process.env.DB_PASSWORD,
+  }
+});
 
 module.exports = {
 
@@ -22,7 +34,19 @@ module.exports = {
       message : req.body.message
     })
     .then((newSubscriber) => {
-      res.json({newSubscriber})
+      smtpTransport.sendMail({
+        from: process.env.DB_MAIL, // Expediteur
+        to: process.env.DB_MAIL, // Destinataire
+        subject: "Nouveau Contact", // Sujet
+        text: `Vous avez une nouvelle demande de contact de la part de ${req.body.firstName}, son mail est : ${req.body.email} et son numéro de téléphone est : ${req.body.phone}`, // plaintext body
+        html: `<p>Vous avez une nouvelle demande de contact de la part de <b>${req.body.firstName}</b>, son mail est : <b>${req.body.email}</b> et son numéro de téléphone est : <b>${req.body.phone}</b></p>` // html body
+      }, (error, response) => {
+        if(error){
+          console.log(error);
+        }else{
+          res.send("message sent")
+        }
+      })
     })
     .catch((err) => res.json("Erreur lors de la création d'un contact.", err))
   },
