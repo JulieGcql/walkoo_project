@@ -117,7 +117,7 @@ export default class Expertise extends Component {
               onChange={(value) => this.handleChangeParagraphTwo(value)}
             />
 
-            <p className="ImageSelected">Icône selectionnée : {this.state.mediaId} </p>
+            <p className="ImageSelected">Média selectionné : {this.state.mediaId} </p>
 
             {/* SUBMIT */}
 
