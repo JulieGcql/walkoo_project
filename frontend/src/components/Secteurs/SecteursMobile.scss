@@ -44,7 +44,9 @@
         text-align: justify;
         font-size: 4vw;
         margin: 0 -17vw;
-        font-family: $condensed;
+        p{
+          font-family: $condensed;
+        }
       }
     }
   }
