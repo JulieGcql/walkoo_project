@@ -10,19 +10,34 @@ import Partenaires from '../../components/Partenaires/Partenaires';
 import Contact from '../../components/Contact/Contact';
 import Footer from '../../components/Footer/Footer';
 
-import MetaTags from 'react-meta-tags'
+import MetaTags from 'react-meta-tags';
+import axios from "axios";
 
 export default class Website extends Component {
 
+    state= {
+        configurations: []
+    };
+
+    componentDidMount = () => {
+        axios.get('/configurations')
+            .then((res) => {
+                console.log("Website component",res.data);
+                this.setState({configurations: res.data.configurations})
+            })
+            .catch((err) => console.log("Erreur lors de l'obtention des configurations"))
+    };
+
 render() {
+
     return(
         <div>
-            {/*<MetaTags>
-                  <title>Page 1</title>
-                  <meta name="description" content="Some description." />
-                  <meta property="og:title" content="MyApp" />
-                  <meta property="og:image" content="path/to/image.jpg" />
-              </MetaTags>*/}
+            <MetaTags>
+                  <title>Walkoo</title>
+                  <meta name="description" content= {this.state.configurations.metaDescription} />
+                  <meta property="og:title" content= {this.state.configurations.metaTitle} />
+                  <meta property="og:image" content={this.state.configurations.metaImage} />
+              </MetaTags>
 
             <Navbar/>
             <Accueil/>
