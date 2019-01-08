@@ -57,6 +57,11 @@ export default class Secteurs extends Component {
       axios.post('/sectors/create', this.state)
       .then((res) => {
         alert(res.data.message)
+        this.setState({
+          mediaId:"",
+          title:"",
+          description:"",
+        })
         this.getSectors()
       })
       .catch((err) => console.log(err))

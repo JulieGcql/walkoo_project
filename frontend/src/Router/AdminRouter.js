@@ -15,7 +15,7 @@ export class AdminRouter extends Component {
     return (
       <div>
 
-        {/* {this.props.authentification.user.userData.user.isAdmin &&  */}
+        {this.props.authentification.user.userData.user.isAdmin && 
 
           <Switch>
             <Route exact path="/admin/home" component={PageHome}/>
@@ -26,7 +26,7 @@ export class AdminRouter extends Component {
             <Route exact path="/admin/configuration" component={PageConfigurations} />
 
           </Switch>
-        {/* } */}
+        }
 
       </div>
     )

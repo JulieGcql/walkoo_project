@@ -22,6 +22,10 @@ class LoginAdmin extends Component {
     .then((res) => {
       if(res.data.user.isAdmin){
         this.props.authAction(res.data)
+        const token = res.data.token
+          if (token) {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+          }
       } else {
         alert("Vous n'avez pas les droits d'administrateur")
       }

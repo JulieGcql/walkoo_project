@@ -21,6 +21,7 @@ export class AdminNav extends Component {
   }
   
   logOut = () => {
+    delete Axios.default.headers.common['Authorization']
     this.props.logOutAction()
   }
 
