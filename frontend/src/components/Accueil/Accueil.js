@@ -28,9 +28,9 @@ componentDidMount = () => {
               <div className="logo">
                   <h1>
                       <div className="logo-firstpart">
-                          au bon <br/>
-                          au bon <br/>
-                          le bon <br/>
+                          au bon<br/>
+                          au bon<br/>
+                          le bon<br/>
                       </div>
                   </h1>
                   <h1>

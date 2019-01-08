@@ -5,7 +5,7 @@ const rgpd = "<p><strong>Politique de Confidentialité et Conditions Générales
 
 Configuration.create({
   title: "Walkoo",
-  mediaId: 20,
+  mediaId: 6,
   phone: faker.phone.phoneNumber(),
   twitter: "https://twitter.com/WALKOO1",
   linkedin: "https://www.linkedin.com/company/walkoostudio",
