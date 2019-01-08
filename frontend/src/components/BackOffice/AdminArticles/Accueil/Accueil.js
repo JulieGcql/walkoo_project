@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './Accueil.scss'
 import axios from 'axios'
+import ReactQuill from 'react-quill';
+
 
 export default class Accueil extends Component {
 
@@ -37,20 +39,24 @@ export default class Accueil extends Component {
         })
         .catch((err) => console.log(err))
 
-    }else{
+    } else {
       alert("Un sous-titre doit être ajouté !!!")
     }
-  
+
   }
 
   getHomes = () => {
     axios.get('/homes')
       .then((res) => {
-        this.setState({ ...res.data.homeData})
+        this.setState({ ...res.data.homeData })
         console.log('data from home', res.data)
       })
       .catch((err) => console.log('error from home', err))
 
+  }
+
+  handleChangeSubtitle = (value) => {
+    this.setState({ subtitle: value })
   }
 
   render() {
@@ -62,20 +68,28 @@ export default class Accueil extends Component {
 
           <h3 className="hugoTitleAccueil">Modification de l'accueil</h3>
 
-         
-          <label
-            className="col-form-label hugoSubtitleAccueil"
-          >Sous-titre :
-          </label>
 
-          <textarea
+          
+<form className="SubtitleForm">
+            <label
+              className="labelSubtitle"
+              htmlFor="accueilSubtitle">Sous-titre :</label>
+            <ReactQuill
+              id="accueilSubtitle"
+              className="accueilSubtitle"
+              value={this.state.subtitle}
+              onChange={(value) => this.handleChangeSubtitle(value)}
+            />
+
+          </form>
+          {/* <textarea
             type="text"
             name="subtitle"
             value={this.state.subtitle}
             onChange={(e) => this.handleChange(e)}
             className="form-control form-controlAccueil hugoTextareaAccueil"
             rows="5"
-          ></textarea>
+          ></textarea> */}
 
           <input
             type="submit"
@@ -83,11 +97,11 @@ export default class Accueil extends Component {
             className="btn btnAccueil btn-outline-dark"
           ></input>
 
-
+          
         </form>
 
 
-        
+
       </div>
 
     )

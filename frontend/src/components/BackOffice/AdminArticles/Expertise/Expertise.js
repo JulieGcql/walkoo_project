@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './Expertise.scss'
-import axios from 'axios'
-import ExpertiseModal from './ExpertiseModal';
+import axios from 'axios';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -118,7 +117,7 @@ export default class Expertise extends Component {
               onChange={(value) => this.handleChangeParagraphTwo(value)}
             />
 
-            <p className="ImageSelected">Icône selectionnée : {this.state.mediaId} </p>
+            <p className="ImageSelected">Média selectionné : {this.state.mediaId} </p>
 
             {/* SUBMIT */}
 

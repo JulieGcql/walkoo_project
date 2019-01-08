@@ -17,8 +17,7 @@ module.exports = {
     Home.findAll()
     .then((home) => {
       if(home[0]){
-        if(req.body.catchPhrase && req.body.subtitle ){
-          home[0].catchPhrase = req.body.catchPhrase;
+        if( req.body.subtitle ){
           home[0].subtitle = req.body.subtitle;
           
           home[0].save()
