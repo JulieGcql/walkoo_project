@@ -30,10 +30,10 @@ export default class Footer extends Component {
             </a>
           }
             <ul>
-              <li>Expertise</li>
-              <li>Technologie</li>
-              <li>Secteurs</li>
-              <li>Réalisations</li>
+              <li><a href="/#expertise">Expertise</a></li>
+              <li><a href="/#technologie">Technologie</a></li>
+              <li><a href="/#secteurs">Secteurs</a></li>
+              <li><a href="/#realisations">Réalisations</a></li>
             </ul>
           </div>
           <div className="footer_app_logo">
