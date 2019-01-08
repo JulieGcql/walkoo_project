@@ -48,7 +48,8 @@ export default class Technologie extends Component {
               <img src={`${technologie.picto.url}`} alt="logo Link"/>
               <h6>{technologie.title}</h6>
             </div>
-            <p className='text1'>{technologie.description}</p>
+            {/*<p className='text1'>{technologie.description}</p>*/}
+            <div dangerouslySetInnerHTML={createMarkup(technologie.description)} className='text1 text'></div>
            </div>
             )
             }
@@ -61,7 +62,8 @@ export default class Technologie extends Component {
               <img src={`${technologie.picto.url}`} alt="logo notification"/>
               <h6>{technologie.title}</h6>
             </div>            
-            <p className='text2'>{technologie.description}</p>
+            {/*<p className='text2'>{technologie.description}</p>*/}
+            <div dangerouslySetInnerHTML={createMarkup(technologie.description)} className='text2 text'></div>
           </div>     
               )
             }
@@ -75,3 +77,7 @@ export default class Technologie extends Component {
     )
   }
 }
+function createMarkup(stringyfiedHtml) {
+  return {__html: stringyfiedHtml};
+}
+

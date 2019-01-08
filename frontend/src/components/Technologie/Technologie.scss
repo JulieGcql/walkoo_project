@@ -60,7 +60,7 @@
                 
             }
             
-            p{
+            .text{
             margin: 0vw 3vw;
             font-size: 1.15vw;
             text-align: justify;
@@ -141,8 +141,8 @@
                         }
     
                         .text2{
-                        grid-column: 1;
-                        grid-row: 1;
+                            grid-column: 1;
+                            grid-row: 1;
                             }
     
 
@@ -165,7 +165,7 @@
                     
                 }
                 
-                p{
+                .text{
                 margin: 0 2vw;
                 font-size: 3.6vw;
                 align-self: center;

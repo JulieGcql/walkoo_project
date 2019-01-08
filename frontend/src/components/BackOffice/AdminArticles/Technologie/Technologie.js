@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './Technologie.scss'
 import axios from 'axios'
 import TechnologieModal from './TechnologieModal';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default class Secteurs extends Component {
   state = {
@@ -78,6 +80,7 @@ export default class Secteurs extends Component {
   }
 
   render() {
+
     return (
       <div className="technologieContainer">
 
@@ -133,15 +136,14 @@ export default class Secteurs extends Component {
               >Description :
             </label>
 
-            <textarea 
-              type="text" 
-              name="description" 
+              <ReactQuill
+              required
+              id="description"
+              className="description"
               value={this.state.description}
+              onKeyDown={this.checkCharacterCount}
               onChange={(e) => this.handleChange(e)}
-              className="form-control" 
-              rows="5"
-              required 
-              ></textarea>
+              />
 
               <p className="IconeSelected">Icône selectionnée : {this.state.mediaId} </p>
               
@@ -222,4 +224,5 @@ export default class Secteurs extends Component {
       </div>
     )
   }
+
 }

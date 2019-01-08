@@ -56,6 +56,9 @@
         text-align: justify;
         font-size: 1.15vw;
         font-family: $condensed;
+        p{
+          font-family: $condensed;
+        }
       }
       
     }

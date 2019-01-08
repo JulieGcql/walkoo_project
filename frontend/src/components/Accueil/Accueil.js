@@ -22,7 +22,7 @@ componentDidMount = () => {
   render() {
     console.log(this.state);
     return (
-      <div className="containerAnim">
+      <div className="containerAnim" id={"home"}>
 
         <div className="Text1 ">
               <div className="logo">

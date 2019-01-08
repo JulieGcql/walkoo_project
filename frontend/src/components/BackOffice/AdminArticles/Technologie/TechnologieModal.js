@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
+import ReactQuill from "./Technologie";
 
 export default class TechnologieModal extends Component {
   state = {
@@ -61,15 +62,13 @@ export default class TechnologieModal extends Component {
                   >Nouvelle description :
                 </label>
 
-                <textarea 
-                  type="text" 
-                  name="description" 
-                  value={this.state.description}
-                  onChange={(e) => this.handleChange(e)}
-                  className="form-control" 
-                  rows="8"
-                  required 
-                  ></textarea>    
+
+                <ReactQuill
+                    id="description"
+                    className="description"
+                    value={this.state.description}
+                    onChange={(e) => this.handleChange(e)}
+                />
 
                 </form>
 

@@ -100,7 +100,8 @@ export default class Realisations extends Component {
 
             <textarea 
               type="text" 
-              name="description" 
+              name="description"
+              maxLength={"10"}
               value={this.state.description}
               onChange={(e) => this.handleChange(e)}
               className="form-control" 
@@ -118,7 +119,7 @@ export default class Realisations extends Component {
 
             <input 
               type="text" 
-              name="url" 
+              name="url"
               value={this.state.url}
               onChange={(e) => this.handleChange(e)}
               className="form-control" 

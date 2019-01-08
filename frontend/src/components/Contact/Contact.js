@@ -3,6 +3,7 @@ import ContactForm from './ContactForm'
 import Backdrop from './Backdrop/Backdrop'
 import PopUp from './PopUp/PopUp'
 
+
 export default class Contact extends Component {
   constructor(props){
     super(props);
@@ -10,6 +11,7 @@ export default class Contact extends Component {
       popUpOpen : false
     }
   }
+
 
   drawerToggleClickHandler = (e) => {
     this.setState((prevState) => {
