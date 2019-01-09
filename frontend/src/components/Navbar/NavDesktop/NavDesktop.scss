@@ -10,8 +10,8 @@ html {
 
 .Navbar {
   display: grid;
-  grid-template-columns: 40% 60%;
-  padding: 0.5vw 2vw;
+  grid-template-columns: 50% 50%;
+  padding: 0 2vw;
   width: 100vw;
   position: fixed;
   background-color: $white;
@@ -20,7 +20,7 @@ html {
 
 
   .Logo {
-    margin: 0 2vw;
+    margin: 0.5vw 2vw;
     grid-column: 1;
     a{
       color: $black;
@@ -28,13 +28,13 @@ html {
     }
     
     .Logo_Walkoo{
-      width: 13vw;
-      margin: 0 3vw;
+      height: 2.5vw;
+      margin: auto 3vw;
     }
   }
 
   .NavLinks{
-    margin: 0 2vw;
+    margin: auto 2vw;
     padding-top: inherit;
 
     ul{
@@ -44,8 +44,8 @@ html {
     }
     
     li{
+      display: flex;
       list-style: none;
-      float: left;
     }
 
     a{
@@ -73,6 +73,7 @@ html {
 @media screen and(max-width:425px){
   .Navbar {
     position: initial;
+    height: auto;
     padding: 0vw 0 1vw 0;
     grid-template-columns: 80% 20%;
 
@@ -83,6 +84,7 @@ html {
       
       .Logo_Walkoo{
         width: 55vw;
+        height: auto;
         margin: 0 5vw;
       }
     }
