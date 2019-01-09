@@ -26,10 +26,9 @@ export default class Expertise extends Component {
     this.setState({mediaId: id})
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
+  handleSubmit = (id) => {
     if(window.confirm("Voulez-vous valider les modifications ?")){
-      axios.put(`/expertise/edit/5`, this.state)
+      axios.put(`/expertise/edit/${id}`, this.state)
       .then((res) => alert("Modifications effectuées"))
       .catch((err) => alert("Erreur lors de la sauvegarde des modifications"))
       }
