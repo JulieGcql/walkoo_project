@@ -6,7 +6,7 @@ const User = models.User;
 
 var opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = '6A576E5A7234753778214125442A472D4B614E645267556B58703273357638792F423F4528482B4D6251655368566D597133743677397A24432646294A404E63';
+opts.secretOrKey = process.env.MY_SECRET_KEY;
 
 const jwtAuthStrategy = passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
     User.findAll({where: {id: jwt_payload.id}})

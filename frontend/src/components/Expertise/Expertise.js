@@ -19,7 +19,7 @@ export default class Expertise extends Component {
     const imgUrl = this.state.expertise.image ? this.state.expertise.image.url : null
     return (
       <div className="expertContainer" id="expertise">
-        <h1 className="expertTitle">Expertise</h1>
+        <h1 className="expertTitle">L'expertise de Walkoo : l'approche contextuelle</h1>
         <div dangerouslySetInnerHTML={createMarkup(this.state.expertise.paragraphOne)} className="expertDescription"></div>
         <div dangerouslySetInnerHTML={createMarkup(this.state.expertise.paragraphTwo)} className="expertSubtitle"></div>
         <div className="expertImage">
