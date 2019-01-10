@@ -67,14 +67,12 @@ export default class Expertise extends Component {
     return (
       <div className="expertiseContainer">
 
-        <h3>Modification de l'expertise :</h3>
-
         {/* CREATION EXPERTISE */}
         <div className="CreateExpertise">
 
           <div className="MediaList">
 
-          <p>Selectionnez un média :</p>
+          <h3>Selectionnez un média :</h3>
 
             {this.state.medias && 
             this.state.medias.map((media) => {
@@ -96,6 +94,9 @@ export default class Expertise extends Component {
           </div>
 
           <form className="ExpertiseForm">
+
+            <h3>Modification de l'expertise :</h3>
+
             <label 
               className="labelExpertise"
               htmlFor="paragraphOne">Premier paragraphe :</label>
