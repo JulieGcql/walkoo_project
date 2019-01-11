@@ -1,10 +1,8 @@
 // Taille des logos : 567px x 200px
 
-///// IMPORT VARIABLES SCSS /////
-@import '../../Variables.scss'; 
+@import '../../Variables.scss';
 
 .Partenaires {
-    
     .titrePartenaires {
         margin-bottom:3vw;
         font-size:3vw;
@@ -12,11 +10,9 @@
         font-family:$open;  
         text-align: center;    
     }
-
     button {
         display:none;
     }
-    
     .slick-initialized {
         width:100%;
     }
@@ -25,11 +21,9 @@
 @media screen and(max-width:900px){
     .Partenaires {
         margin-bottom: 2vw;
-  
       .titrePartenaires {
         font-size:3vw;
       }
-
       img {
           width:30vw!important;
       }
@@ -38,11 +32,9 @@
 
 @media screen and(max-width:425px){
     .Partenaires {
-  
       .titrePartenaires {
         font-size:8vw;
       }
-
       img {
           width:30vw!important;
       }

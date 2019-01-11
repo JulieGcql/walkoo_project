@@ -1,8 +1,4 @@
-///// IMPORT VARIABLES SCSS /////
-
 @import '../../../Variables.scss';
-
-///// SCSS /////
 
 .MediasTagContainer{
   width:90%;
@@ -15,18 +11,14 @@
   }
   .MediasContainer{
     margin: 0 5vw;
-    margin-bottom:5vw;
     .addMedias {
       display:grid;
-      grid-template-columns: 2;
-      grid-template-areas: 2;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 1fr auto;
       .mediaCreate {
         grid-column: 1;
         grid-row: 1;
         .uploadImage {
-          display:grid;
-          grid-template-rows: 1fr 1fr;
-          grid-gap:0.5vw;
           padding-left: 1vw;
           padding-bottom:2vw;
           .form-control {
