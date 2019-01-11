@@ -18,8 +18,8 @@
     margin-bottom:5vw;
     .addMedias {
       display:grid;
-      grid-template-columns: 2;
-      grid-template-areas: 2;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 1fr auto;
       .mediaCreate {
         grid-column: 1;
         grid-row: 1;
