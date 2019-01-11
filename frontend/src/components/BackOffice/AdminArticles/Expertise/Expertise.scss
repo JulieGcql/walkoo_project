@@ -1,9 +1,4 @@
-
-///// IMPORT VARIABLES SCSS /////
-
 @import '../../../../Variables.scss';
-
-///// SCSS /////
 
 .expertiseContainer{
   margin: 2vw 0;
@@ -28,7 +23,6 @@
       button{
         background-color: white;
         border: none;
-        
         img{
           cursor: pointer;
           background-color: #ddd;
@@ -40,7 +34,6 @@
         }
       }
       button:focus{
-        
         img{
           border: 5px solid orange;
           + p{

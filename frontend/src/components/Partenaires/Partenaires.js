@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import './Logos/commerce.png';
-import './Logos/frenchtech.png';
-import './Logos/impulse.png';
-import './Logos/stationf.png';
-import './Logos/sud.png';
 import './Partenaires.scss'
 import axios from 'axios';
 
@@ -25,7 +20,6 @@ export default class Partenaires extends Component {
     };
 
   render() {
-    console.log('state', this.state.partenaires)
     const settings = {
       dots: false,
       infinite: true,

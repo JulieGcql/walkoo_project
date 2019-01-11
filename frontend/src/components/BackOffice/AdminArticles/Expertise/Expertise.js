@@ -63,11 +63,9 @@ export default class Expertise extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="expertiseContainer">
 
-        {/* CREATION EXPERTISE */}
         <div className="CreateExpertise">
 
           <div className="MediaList">
@@ -75,10 +73,10 @@ export default class Expertise extends Component {
           <h3>Selectionnez un média :</h3>
 
             {this.state.medias && 
-            this.state.medias.map((media) => {
+            this.state.medias.map((media, index) => {
               return (
                 
-                <button 
+                <button key={index}
                 onClick={() => this.getMediaId(media.id, media.name)}>
 
                   <img 
@@ -118,8 +116,6 @@ export default class Expertise extends Component {
             />
 
             <p className="ImageSelected">Média selectionné : {this.state.mediaId} </p>
-
-            {/* SUBMIT */}
 
             <button
               onClick={(e) => this.handleSubmit()}
