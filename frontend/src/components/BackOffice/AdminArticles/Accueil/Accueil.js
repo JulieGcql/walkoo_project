@@ -16,7 +16,7 @@ export default class Accueil extends Component {
     this.getHomes()
   }
   handleChange = (e) => {
-    console.log(e.target.value)
+   
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -49,7 +49,7 @@ export default class Accueil extends Component {
     axios.get('/homes')
       .then((res) => {
         this.setState({ ...res.data.homeData })
-        console.log('data from home', res.data)
+        
       })
       .catch((err) => console.log('error from home', err))
 
@@ -61,16 +61,17 @@ export default class Accueil extends Component {
 
   render() {
     return (
-      <div>
-        <form
-          onSubmit={(e) => this.editHome(e)}
-          className="SecteurForm">
+      <div className="SecteurForm">
+        
+          
 
           <h3 className="hugoTitleAccueil">Modification de l'accueil</h3>
 
 
           
-<form className="SubtitleForm">
+<form className="SubtitleForm"
+onSubmit={(e) => this.editHome(e)}>
+
             <label
               className="labelSubtitle"
               htmlFor="accueilSubtitle">Sous-titre :</label>
@@ -79,17 +80,12 @@ export default class Accueil extends Component {
               className="accueilSubtitle"
               value={this.state.subtitle}
               onChange={(value) => this.handleChangeSubtitle(value)}
+              
+              
             />
 
-          </form>
-          {/* <textarea
-            type="text"
-            name="subtitle"
-            value={this.state.subtitle}
-            onChange={(e) => this.handleChange(e)}
-            className="form-control form-controlAccueil hugoTextareaAccueil"
-            rows="5"
-          ></textarea> */}
+         
+          
 
           <input
             type="submit"

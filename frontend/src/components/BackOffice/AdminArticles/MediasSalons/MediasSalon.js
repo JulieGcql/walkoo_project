@@ -16,7 +16,7 @@ export default class MediasSalon extends Component {
     this.getEvents()
   }
   handleChange = (e) => {
-    console.log(e.target.value)
+   
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -56,7 +56,7 @@ export default class MediasSalon extends Component {
     axios.get('/events')
       .then((res) => {
         this.setState({ events: res.data.events })
-        console.log(res.data)
+        
       })
       .catch((err) => console.log(err))
   }
