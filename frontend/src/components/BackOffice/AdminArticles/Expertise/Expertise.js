@@ -14,7 +14,7 @@ export default class Expertise extends Component {
   }
 
   componentDidMount() {
-    this.getExpertise()
+    this.getExpertise();
     this.getMedias()
   }
   

@@ -9,7 +9,7 @@
 
 .realisations_container{
     scroll-margin-top: 65px;
-    background-image: url('./walking.png');
+    /*background-image: url('./walking.png');*/
     background-size: cover;
     text-align: center;
     max-height: 100%;
@@ -21,6 +21,15 @@
     font-size: 3vw;
     color: white;
     font-family: $open;
+
+    }
+
+    p{
+        color: #cccccc;
+        font-family: $condensed;
+        margin: 2vw 10vw;
+        font-size: 1.8vw;
+        font-weight: 900;
 
     }
    
