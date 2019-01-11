@@ -70,6 +70,18 @@ module.exports = {
     .catch((error) => res.status(500).json({message: error}))
   },
 
+  getRealisationMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "realisation"}, include: ["medias"]})
+        .then((tag) => {
+          if(tag){
+            res.json({tag})
+          } else {
+            res.status(404).json({message: `Tag does not exist with name backgroundImage`})
+          }
+        })
+        .catch((error) => res.status(500).json({message: error}))
+  },
+
   getPartenairesMedia: function(req, res, next) {
     Tag.findOne({where :{name: "partenaire"}, include: ["medias"]})
     .then((tag) => {

@@ -12,12 +12,14 @@ var mediasRouter = require('./routes/medias');
 var subscriberRouter = require('./routes/subscriber');
 var eventsRouter = require('./routes/events');
 var homesRouter = require('./routes/home');
-var subscriberRouter = require('./routes/subscriber')
-var sectorsRouter = require('./routes/sectors')
-var technologyRouter= require('./routes/technology')
-var expertiseRouter = require('./routes/expertise')
-var realisationRouter = require('./routes/realisation')
-var configurationRouter = require('./routes/configurations')
+var subscriberRouter = require('./routes/subscriber');
+var sectorsRouter = require('./routes/sectors');
+var technologyRouter= require('./routes/technology');
+var expertiseRouter = require('./routes/expertise');
+var realisationRouter = require('./routes/realisation');
+var sectionRealisationRouter = require('./routes/sectionRealisation');
+var sectionTechnologyRouter = require('./routes/sectionTechnology');
+var configurationRouter = require('./routes/configurations');
 
 const passport = require('passport');
 const {localAuthStrategy} = require("./routes/strategies/local");
@@ -51,6 +53,8 @@ app.use('/technology', technologyRouter);
 app.use('/expertise', expertiseRouter);
 app.use('/realisation', realisationRouter);
 app.use('/configurations', configurationRouter);
+app.use('/section-realisation', sectionRealisationRouter);
+app.use('/section-technology', sectionTechnologyRouter);
 
 module.exports = app;
 
