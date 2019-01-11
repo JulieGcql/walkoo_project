@@ -73,6 +73,7 @@ export default class Realisations extends Component {
 
       <div className="realisations_container" id="realisations" style={{backgroundImage:`url(${this.state.sectionRealisation.backgroundImage.url})`}}>
         <h1>Réalisations et Projet</h1>
+        <p> Walkoo partage ici quelques cas d’usage de l'approche contextuelle et ses projets en cours.</p>
         <div className="case_container">
           <Slider {...settings} >
             

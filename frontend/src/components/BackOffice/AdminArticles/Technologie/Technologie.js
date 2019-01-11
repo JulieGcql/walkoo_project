@@ -77,7 +77,7 @@ export default class Secteurs extends Component {
 
   handleSubmitSectionTechnology = () => {
       if(window.confirm("Voulez-vous valider les modifications ?")){
-        axios.put(`/section-technology/edit/3`,{
+        axios.put(`/section-technology/edit/1`,{
           description: this.state.sectionTechnologyDescription,
           subtitle: this.state.sectionTechnologySubtitle,
 

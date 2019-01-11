@@ -26,7 +26,7 @@ export default class Technologie extends Component {
       axios.get('/section-technology')
       .then((res) => {
         console.log("technologiefront",res.data)
-        this.setState({sectionTechnology: res.data.sectionTechnology[1]})
+        this.setState({sectionTechnology: res.data.sectionTechnology[0]})
       })
       .catch((err) => console.log("Erreur lors de l'obtention de section technology"))
 
