@@ -72,7 +72,8 @@ export default class SecteurModal extends Component {
                 className="description"
                 value={this.state.description}
                 onChange={(value) => this.handleChangeDescription(value)}
-              />    
+              />
+
                 </form>
               </div>
               <div class="modal-footer">

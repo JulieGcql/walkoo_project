@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
-import ReactQuill from "./Technologie";
+import ReactQuill from "react-quill";
 
 export default class TechnologieModal extends Component {
   state = {
@@ -15,6 +15,10 @@ export default class TechnologieModal extends Component {
   
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleChangeDescription = (value) => {
+    this.setState({description: value})
   }
 
   handleModify = (id) => {
@@ -62,12 +66,21 @@ export default class TechnologieModal extends Component {
                   >Nouvelle description :
                 </label>
 
+                {/*  <input
+                      type="text"
+                      name="description"
+                      value={this.state.description}
+                      onChange={(e) => this.handleChange(e)}
+                      className="form-control"
+                      required
+                  ></input>*/}
+
 
                 <ReactQuill
                     id="description"
                     className="description"
                     value={this.state.description}
-                    onChange={(e) => this.handleChange(e)}
+                    onChange={(value) => this.handleChangeDescription(value)}
                 />
 
                 </form>

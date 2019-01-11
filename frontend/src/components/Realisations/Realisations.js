@@ -11,29 +11,43 @@ export default class Realisations extends Component {
  
 
     state={
-      realisations: []
-    
-   
-  }
+      realisations: [],
+      sectionRealisation:[],
+  };
 
 
-    
   componentDidMount = () => {
+    this.getSectionRealisation();
+    this.getRealisation()
+  };
+
+  getRealisation = () => {
     axios.get('/realisation')
-    .then((res) => {
-      console.log(res.data)
-      this.setState({realisations: res.data.realisations})
-    })
-    .catch((err) => console.log("Erreur lors de l'obtention des realisations"))
-  }
-  
+        .then((res) => {
+          this.setState({realisations: res.data.realisations})
+        })
+        .catch((err) => console.log("Erreur lors de l'obtention des realisations"));
+  };
+
+  getSectionRealisation = () => {
+    axios.get('/section-realisation')
+        .then((res) => {
+          console.log("section-realisation",res)
+          this.setState({sectionRealisation : res.data.realisations[0]})
+        })
+        .catch((err) => console.log(err))
+  };
+
+
 
   render() {
+     /* console.log("state-section-realisation",this.state.sectionRealisation.backgroundImage.url);*/
+
 
     const settings = {
       dots: true,
       arrows: false,
-      useCSS: true, 
+      useCSS: true,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
@@ -47,15 +61,17 @@ export default class Realisations extends Component {
           breakpoint: 480,
           settings: {
             slidesToShow: 2,
-            
+
           }
         }
-      ]   
-      
+      ]
+
     };
+  if(this.state.sectionRealisation.backgroundImage){
 
     return (
-      <div className="realisations_container" id="realisations">
+
+      <div className="realisations_container" id="realisations" style={{backgroundImage:`url(${this.state.sectionRealisation.backgroundImage.url})`}}>
         <h1>Réalisations et Projet</h1>
         <div className="case_container">
           <Slider {...settings} >
@@ -73,7 +89,6 @@ export default class Realisations extends Component {
                         <a href={realisation.url} target="_blank">
                           <img src={require('./more.png')} alt={"Lien"}/>
                         </a>
-
                   }
                 </div>
                 )
@@ -84,6 +99,10 @@ export default class Realisations extends Component {
         </div>
       </div>
     );
+  } else {
+        return null
+  }
+
   }
 }
 

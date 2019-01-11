@@ -9,7 +9,8 @@ const text = "The entire starfleet couldn't destroy the whole planet. It'd take 
 export default class Technologie extends Component {
 
   state = {
-    technologies:[]
+    technologies:[],
+      sectionTechnology:[],
 
   };
 
@@ -19,20 +20,32 @@ export default class Technologie extends Component {
         console.log(res.data)
         this.setState({technologies: res.data.technology})
       })
-      .catch((err) => console.log("Erreur lors de l'obtention des realisations"))
+      .catch((err) => console.log("Erreur lors de l'obtention des technologies"))
+
+
+      axios.get('/section-technology')
+      .then((res) => {
+        console.log("technologiefront",res.data)
+        this.setState({sectionTechnology: res.data.sectionTechnology[1]})
+      })
+      .catch((err) => console.log("Erreur lors de l'obtention de section technology"))
+
+
+
     };
 
 
   render() {
+      console.log('technologie', this.state.technologies)
     
     return (
 
       <div className="technologie_container" id="technologie">
        <div className="technologie-firstpart">
          <h1>Technologie</h1>
-         <p>La solution numérique développée par Walkoo se compose d’une plateforme personnalisée que vous administrez à partir de comptes dédiés et d’une application mobile spécialement désignée, téléchargeable sur smartphone.</p>
+         <p>{this.state.sectionTechnology.description}</p>
         </div>
-        <h3>Les avantages de la solution Walkoo</h3>
+        <h3>{this.state.sectionTechnology.subtitle}</h3>
         <div className="technologie-secondpart">
         <div className="grid_container_avantage">
 

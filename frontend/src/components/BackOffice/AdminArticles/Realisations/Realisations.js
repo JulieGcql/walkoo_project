@@ -8,6 +8,9 @@ export default class Realisations extends Component {
     realisations: [],
     title:"",
     description:"",
+    sectionRealisation:[],
+    medias: [],
+    mediaId: "",
     url:"",
     selected: "",
     modal: false,
@@ -18,7 +21,9 @@ export default class Realisations extends Component {
   };
 
   componentDidMount() {
-    this.getRealisations()
+    this.getRealisations();
+    /*this.getSectionRealisation();*/
+    this.getMedias()
   }
   
   handleChange = (e) => {
@@ -48,9 +53,38 @@ export default class Realisations extends Component {
         this.getRealisations()
       })
       .catch((err) => console.log(err))
-    } 
-    
-  
+    };
+
+  getMedias = () => {
+    axios.get('/tags/realisation')
+        .then((res) => {
+          this.setState({medias : res.data.tag.medias})
+        })
+        .catch((err) => console.log(err))
+  }
+
+/*  getSectionRealisation = () => {
+    axios.get('/section-realisation')
+        .then((res) => {
+          console.log("section - realisation",res)
+          /!*this.setState({sectionRealisation : res.data.sectionRealisaton})*!/
+        })ç
+        .catch((err) => console.log(err))
+  }*/
+
+ getMediaId = (id) => {
+   this.setState({mediaId: id})
+ };
+
+  handleModify = () => {
+    axios.put(`/section-realisation/edit/1`, {
+      mediaId: this.state.mediaId,
+    })
+        .then((res) => {
+          alert("Fond-ecran modifié")
+        })
+        .catch((err) => alert("Erreur lors de la modification"))
+  }
 
   getRealisations = () => {
     axios.get('/realisation')
@@ -61,6 +95,7 @@ export default class Realisations extends Component {
   }
 
   render() {
+
 
     return (
       <div className="realisationContainer">
@@ -132,8 +167,35 @@ export default class Realisations extends Component {
               value="Créer une réalisation" 
               className="btn btn-outline-dark"
               ></input>
-
           </form>
+            <div className="MediaList">
+
+              <h3>Selectionnez un fond-écran :</h3>
+
+              {this.state.medias &&
+              this.state.medias.map((media) => {
+                console.log("map-media", media)
+                return (
+                    <button
+                        onClick={() => this.getMediaId(media.id)}>
+
+                      <img
+                          src={`${media.url}`}
+                          alt={media.name}/>
+                      <p>{media.id}</p>
+
+                    </button>
+
+                )
+              })}
+              <button className="btn btn-outline-dark modifbtn"
+                  onClick={() => this.handleModify()}>
+                Modifier
+              </button>
+
+            </div>
+
+
         </div>
 
         <hr/>

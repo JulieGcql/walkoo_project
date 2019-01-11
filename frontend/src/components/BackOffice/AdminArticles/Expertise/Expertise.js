@@ -14,7 +14,7 @@ export default class Expertise extends Component {
   }
 
   componentDidMount() {
-    this.getExpertise()
+    this.getExpertise();
     this.getMedias()
   }
   
@@ -29,7 +29,7 @@ export default class Expertise extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     if(window.confirm("Voulez-vous valider les modifications ?")){
-      axios.put(`/expertise/edit/5`, this.state)
+      axios.put(`/expertise/edit/5`, )
       .then((res) => alert("Modifications effectuées"))
       .catch((err) => alert("Erreur lors de la sauvegarde des modifications"))
       }

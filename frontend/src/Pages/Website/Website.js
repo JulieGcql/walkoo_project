@@ -22,8 +22,7 @@ export default class Website extends Component {
     componentDidMount = () => {
         axios.get('/configurations')
             .then((res) => {
-                console.log("Website component",res.data);
-                this.setState({configurations: res.data.configurations})
+                this.setState({configurations: res.data.configurations[0]})
             })
             .catch((err) => console.log("Erreur lors de l'obtention des configurations"))
     };

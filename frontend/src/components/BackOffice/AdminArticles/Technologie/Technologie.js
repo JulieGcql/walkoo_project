@@ -17,16 +17,28 @@ export default class Secteurs extends Component {
     mediaIdSelected:"",
     titleSelected:"",
     descriptionSelected:"",
-    urlSelected:""
+    urlSelected:"",
+    sectionTechnology:[],
+    sectionTechnologyDescription:"",
+    sectionTechnologySubtitle:"",
   }
 
   componentDidMount() {
     this.getTechnology()
     this.getMedias()
+    this.getSectionTechnology()
   }
   
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleChangeDescription = (value) => {
+    this.setState({description: value})
+  }
+
+  handleChangeSectionTechnologyDescription = (value) => {
+    this.setState({sectionTechnologyDescription: value})
   }
 
   getMediaId = (id) => {
@@ -53,14 +65,27 @@ export default class Secteurs extends Component {
     if (this.state.mediaId){
       axios.post('/technology/create', this.state)
       .then((res) => {
-        alert(res.data.message)
+        alert("Création efffectuées")
         this.getTechnology()
       })
       .catch((err) => console.log(err))
     } else {
       alert("Selectionnez un icône.")
     }
+
   }
+
+  handleSubmitSectionTechnology = () => {
+      if(window.confirm("Voulez-vous valider les modifications ?")){
+        axios.put(`/section-technology/edit/3`,{
+          description: this.state.sectionTechnologyDescription,
+          subtitle: this.state.sectionTechnologySubtitle,
+
+        })
+            .then((res) => alert("Modifications effectuées"))
+            .catch((err) => alert("Erreur lors de la sauvegarde des modifications"))
+      }
+    }
 
   getMedias = () => {
     axios.get('/tags/technologie')
@@ -79,10 +104,73 @@ export default class Secteurs extends Component {
     .catch((err) => console.log("Erreur lors de l'obtention de l'avantage"))
   }
 
+  getSectionTechnology = () => {
+    axios.get('/section-technology')
+    .then((res) => {
+      console.log("technologieSection", res.data)
+      this.setState({
+        sectionTechnologyDescription: res.data.sectionTechnology[1].description,
+        sectionTechnologySubtitle: res.data.sectionTechnology[1].subtitle,
+      })
+    })
+    .catch((err) => console.log("Erreur lors de l'obtention de section technologie"))
+  }
+
+
   render() {
 
     return (
       <div className="technologieContainer">
+
+        {/* CREATION PRESENTATION */}
+        <div className="CreateTechnologiePresentation">
+
+          <form className="PresentationForm" >
+
+
+          <label
+              className="col-form-label"
+          >Presentation :
+          </label>
+
+          <ReactQuill
+              required
+              id="sectionTechnologyDescription"
+              className="sectionTechnologyDescription"
+              value={this.state.sectionTechnologyDescription}
+              onChange={(value) => this.handleChangeSectionTechnologyDescription(value)}
+
+          />
+
+
+        {/* CREATION SOUS-TITRE */}
+
+
+          <label
+              className="col-form-label"
+          >Sous-titre :
+          </label>
+
+          <input
+              type="text"
+              name="sectionTechnologySubtitle"
+              value={this.state.sectionTechnologySubtitle}
+              onChange={(e) => this.handleChange(e)}
+              className="form-control"
+              required
+          ></input>
+
+
+            <button
+                onClick={() => this.handleSubmitSectionTechnology()}
+                className="btn btn-outline-dark modifbtn"
+            >Modifier</button>
+
+      </form>
+
+
+
+      </div>
 
         {/* CREATION TECHNOLOGIE  */}
 
@@ -141,8 +229,7 @@ export default class Secteurs extends Component {
               id="description"
               className="description"
               value={this.state.description}
-              onKeyDown={this.checkCharacterCount}
-              onChange={(e) => this.handleChange(e)}
+              onChange={(value) => this.handleChangeDescription(value)}
               />
 
               <p className="IconeSelected">Icône selectionnée : {this.state.mediaId} </p>
