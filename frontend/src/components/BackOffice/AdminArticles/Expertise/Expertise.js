@@ -26,9 +26,9 @@ export default class Expertise extends Component {
     this.setState({mediaId: id})
   }
 
-  handleSubmit = (id) => {
+  handleSubmit = () => {
     if(window.confirm("Voulez-vous valider les modifications ?")){
-      axios.put(`/expertise/edit/${id}`, this.state)
+      axios.put(`/expertise/edit/1`, this.state)
       .then((res) => alert("Modifications effectuées"))
       .catch((err) => alert("Erreur lors de la sauvegarde des modifications"))
       }
@@ -63,24 +63,20 @@ export default class Expertise extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="expertiseContainer">
 
-        <h3>Modification de l'expertise :</h3>
-
-        {/* CREATION EXPERTISE */}
         <div className="CreateExpertise">
 
           <div className="MediaList">
 
-          <p>Selectionnez un média :</p>
+          <h3>Selectionnez un média :</h3>
 
             {this.state.medias && 
-            this.state.medias.map((media) => {
+            this.state.medias.map((media, index) => {
               return (
                 
-                <button 
+                <button key={index}
                 onClick={() => this.getMediaId(media.id, media.name)}>
 
                   <img 
@@ -96,6 +92,9 @@ export default class Expertise extends Component {
           </div>
 
           <form className="ExpertiseForm">
+
+            <h3>Modification de l'expertise :</h3>
+
             <label 
               className="labelExpertise"
               htmlFor="paragraphOne">Premier paragraphe :</label>
@@ -118,10 +117,8 @@ export default class Expertise extends Component {
 
             <p className="ImageSelected">Média selectionné : {this.state.mediaId} </p>
 
-            {/* SUBMIT */}
-
             <button
-              onClick={(e) => this.handleSubmit(e)}          
+              onClick={(e) => this.handleSubmit()}
               className="btn btn-outline-dark"
             >Modifier</button>
           

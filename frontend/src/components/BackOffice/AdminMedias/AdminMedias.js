@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AdminTags from './AdminTags'
 import './AdminMedias.scss'
 import axios from 'axios'
 
@@ -20,7 +19,7 @@ export default class AdminMedias extends Component {
     let data = new FormData()
     data.append('file', this.state.file)
     data.append('tagIds', this.state.tagIdSelected.map(tag => tag.id))
-    if (this.state.tagIdSelected.length == 0){
+    if (this.state.tagIdSelected.length === 0){
       alert("Selectionnez un tag")
     }
     else {
@@ -75,13 +74,10 @@ export default class AdminMedias extends Component {
   }
 
   render() {
-    console.log('FROM ADMIN MEDIA', this.state);
     return (
       <div className="MediasTagContainer">
 
         <h1>Galerie</h1>
-
-        {/* Création d'un média */}
 
         <div className="MediasContainer">
 
@@ -89,11 +85,10 @@ export default class AdminMedias extends Component {
             onSubmit={(e) => this.uploadFile(e)}
             className="addMedias">
 
-            {/* Uploader un média */}
             <div className="mediaCreate">
               <h3> Création d'un média :</h3>
 
-              <div class="uploadImage">
+              <div className="uploadImage">
               
                 <input 
                   type="file" 
@@ -101,9 +96,6 @@ export default class AdminMedias extends Component {
 
               </div>
             </div>
-            
-
-            {/* Checkbox des tags */}
 
             <div className="tagCreate">
               <h3>Sélectionner un tag :</h3>
@@ -114,9 +106,9 @@ export default class AdminMedias extends Component {
               this.state.tags && 
               this.state.tags.map((tag, index) => {
                 return(               
-                  <div class="custom-control custom-checkbox" key={index}>
-                    <input  onClick={() => this.getTagsSelected(tag)} type="checkbox" class="custom-control-input" id={index}></input>
-                    <label class="custom-control-label" for={index}>{tag.name}</label>
+                  <div className="custom-control custom-checkbox" key={index}>
+                    <input  onClick={() => this.getTagsSelected(tag)} type="checkbox" className="custom-control-input" id={index}></input>
+                    <label className="custom-control-label" htmlFor={index}>{tag.name}</label>
                   </div>
                 
                 )
@@ -140,9 +132,6 @@ export default class AdminMedias extends Component {
 
         <hr/>
 
-
-        {/* Liste des médias */}
-
         <div className="mediasListContainer">
 
           <h3>Liste des médias :</h3>
@@ -150,10 +139,10 @@ export default class AdminMedias extends Component {
           <div className="mediasList">
 
           {this.state.mediasList && 
-          this.state. mediasList.map((media) => {
+          this.state.mediasList.map((media, index) => {
             return (
               
-              <div className="Media">
+              <div className="Media" key={index}>
                 <img 
                   src={`${media.url}`} 
                   alt={media.name}/>

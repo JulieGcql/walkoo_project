@@ -45,8 +45,6 @@ componentDidMount = () => {
     return (
       <div className="tagsContainer">
 
-        {/* Création d'un tag  */}
-
         <div className="createTags">
 
           <div className="addTags">
@@ -75,8 +73,6 @@ componentDidMount = () => {
             </form>
 
           </div>
-
-          {/* Liste des tags */}
 
           <div className="listTags">
 

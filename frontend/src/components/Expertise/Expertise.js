@@ -12,10 +12,8 @@ export default class Expertise extends Component {
     .then((res) => this.setState({expertise: res.data.expertise[0]}))
     .catch((err) => {console.log(err)});
   }
-  
 
   render() {
-    console.log(this.state.expertise)
     const imgUrl = this.state.expertise.image ? this.state.expertise.image.url : null
     return (
       <div className="expertContainer" id="expertise">
