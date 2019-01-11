@@ -93,10 +93,10 @@ export default class Secteurs extends Component {
           <h3>Selectionnez une icône :</h3>
 
             {this.state.medias && 
-            this.state.medias.map((media) => {
+            this.state.medias.map((media, index) => {
               return (
                 
-                <button 
+                <button key={index}
                 onClick={() => this.getMediaId(media.id)}>
 
                   <img 

@@ -26,7 +26,7 @@ class Secteurs extends Component {
                 <SecteursMobile sectors={this.state.sectors}/>
               </div>
             ) : (
-              <div id="secteurs" style={{scrollMarginTop: '85px'}}>            
+              <div id="secteurs" style={{scrollMarginTop: '65px'}}>            
                 <SecteursPc sectors={this.state.sectors}/>
               </div>
             )
