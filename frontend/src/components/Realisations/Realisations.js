@@ -32,7 +32,6 @@ export default class Realisations extends Component {
   getSectionRealisation = () => {
     axios.get('/section-realisation')
         .then((res) => {
-          console.log("section-realisation",res)
           this.setState({sectionRealisation : res.data.realisations[0]})
         })
         .catch((err) => console.log(err))
@@ -41,8 +40,6 @@ export default class Realisations extends Component {
 
 
   render() {
-     /* console.log("state-section-realisation",this.state.sectionRealisation.backgroundImage.url);*/
-
 
     const settings = {
       dots: true,
@@ -87,7 +84,7 @@ export default class Realisations extends Component {
                   </div>
                   {
                     realisation.url &&
-                        <a href={realisation.url} target="_blank">
+                        <a href={realisation.url} target="_blank" rel="noopener noreferrer" >
                           <img src={require('./more.png')} alt={"Lien"}/>
                         </a>
                   }

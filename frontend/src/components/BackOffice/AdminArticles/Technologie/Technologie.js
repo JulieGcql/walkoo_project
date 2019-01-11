@@ -90,7 +90,6 @@ export default class Secteurs extends Component {
   getMedias = () => {
     axios.get('/tags/technologie')
     .then((res) => {
-      console.log(res)
       this.setState({medias : res.data.tag.medias})
     })
     .catch((err) => console.log(err))
@@ -107,10 +106,9 @@ export default class Secteurs extends Component {
   getSectionTechnology = () => {
     axios.get('/section-technology')
     .then((res) => {
-      console.log("technologieSection", res.data)
       this.setState({
-        sectionTechnologyDescription: res.data.sectionTechnology[1].description,
-        sectionTechnologySubtitle: res.data.sectionTechnology[1].subtitle,
+        sectionTechnologyDescription: res.data.sectionTechnology[0].description,
+        sectionTechnologySubtitle: res.data.sectionTechnology[0].subtitle,
       })
     })
     .catch((err) => console.log("Erreur lors de l'obtention de section technologie"))
@@ -181,11 +179,11 @@ export default class Secteurs extends Component {
           <h3>Selectionnez une icône :</h3>
 
             {this.state.medias && 
-            this.state.medias.map((media) => {
+            this.state.medias.map((media, index) => {
               return (
                 
                 <button 
-                onClick={() => this.getMediaId(media.id, media.name)}>
+                onClick={() => this.getMediaId(media.id, media.name)} key={`rel2 ${index}`}>
 
                   <img 
                     src={`${media.url}`} 
@@ -289,7 +287,7 @@ export default class Secteurs extends Component {
                     <td><button 
                       className="btn btn-outline-primary"
                       onClick={() => this.handleClick(technology.id,technology.mediaId,technology.title, technology.description,)}>
-                        <i class="fas fa-pen"></i>
+                        <i className="fas fa-pen"></i>
                     </button></td>
                     <td><button 
                       className="btn btn-outline-danger"

@@ -63,14 +63,6 @@ export default class Realisations extends Component {
         .catch((err) => console.log(err))
   }
 
-/*  getSectionRealisation = () => {
-    axios.get('/section-realisation')
-        .then((res) => {
-          console.log("section - realisation",res)
-          /!*this.setState({sectionRealisation : res.data.sectionRealisaton})*!/
-        })ç
-        .catch((err) => console.log(err))
-  }*/
 
  getMediaId = (id) => {
    this.setState({mediaId: id})
@@ -173,11 +165,10 @@ export default class Realisations extends Component {
               <h3>Selectionnez un fond-écran :</h3>
 
               {this.state.medias &&
-              this.state.medias.map((media) => {
-                console.log("map-media", media)
+              this.state.medias.map((media, index) => {
                 return (
                     <button
-                        onClick={() => this.getMediaId(media.id)}>
+                        onClick={() => this.getMediaId(media.id)} key={`rel ${index}`}>
 
                       <img
                           src={`${media.url}`}
