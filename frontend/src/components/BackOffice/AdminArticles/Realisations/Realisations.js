@@ -179,10 +179,12 @@ export default class Realisations extends Component {
 
                 )
               })}
-              <button className="btn btn-outline-dark modifbtn"
-                  onClick={() => this.handleModify()}>
-                Modifier
-              </button>
+              <input className="btn btn-outline-dark"
+                     type="submit"
+                     onClick={() => this.handleModify()}
+              value="Modifier">
+
+              </input>
 
             </div>
 
