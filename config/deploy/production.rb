@@ -8,7 +8,7 @@ server "51.75.252.171", user: "deploy", roles: %w{app db web}, my_property: :my_
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 desc "ENV config"
-  task :setup_config, roles: [:app] do
+  task :setup_config do
   put File.read(".env"), "#{shared_path}/config/.env"
   # make symlink
   run "ln -nfs #{shared_path}/config/.env #{current_path}/.env"
