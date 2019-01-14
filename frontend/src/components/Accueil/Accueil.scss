@@ -271,36 +271,10 @@ body{
   
 /*telport*/
 @media screen and (max-width: 425px) {
-  .secondContainer{
-    
-    margin-top: 38vw;
-    height:auto;
-  }
-    .Text2 { 
-      text-align: center;
-      height: 6vw;
-      bottom: 1vw;
-      margin-left: 15vw;
-      margin-right: 15vw;
-      font-size: 4vw;
-      position: absolute;
-      top: 39vw;
-      p{
-        font-family: $condensed;      
-      }
-    }
-    
+
   body{
     overflow-x: hidden;
   }
-
-
-
-
-
-
-
-  
 
   .containerAnim{
     justify-items: center;
@@ -465,7 +439,7 @@ body{
     line-height: 6vw;
     margin-left: 25vw;
     position: absolute;
-    margin-top: 0vw;
+    margin-top: 30vw;
 
     a{
       color: white;

@@ -68,7 +68,6 @@
     grid-template-rows: auto auto 25vh auto;
     grid-template-areas: "Title" "Description" "Image" "Subtitle";
     height:auto;
-    
   
 .expertImage {
       grid-area: Image;
@@ -80,7 +79,6 @@
     .expertTitle {
       font-size: 8vw;
       text-align: center;
-      margin-top: 13vw;
     }
 
     .expertDescription{
