@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "walkoo"
-set :repo_url, "git@github.com:Eth3rnit3/walkoo-back.git"
+set :repo_url, "git@github.com:WildCodeSchool/marseille_project3_walkoo.git"
 set :repo_tree, 'backend'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
