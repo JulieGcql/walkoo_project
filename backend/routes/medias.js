@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mediasController = require('../controllers/mediasController');
+const passport = require('passport');
 
 // Require and setup uploader to keep files in uploads folder
 const multer  = require('multer');
@@ -21,12 +22,12 @@ router.get('/', mediasController.index);
 router.get('/:id', mediasController.show);
 
 /* POST new media. multer create an object, we can access it with req.file */
-router.post('/create', upload.single('file'), mediasController.create);
+router.post('/create', passport.authenticate('jwt', { session: false }),upload.single('file'), mediasController.create);
 
 /* PUT edit media. */
-router.put('/edit/:id', mediasController.edit);
+router.put('/edit/:id', passport.authenticate('jwt', { session: false }),mediasController.edit);
 
 /* DELETE existing media. */
-router.delete('/:id', mediasController.delete);
+router.delete('/:id', passport.authenticate('jwt', { session: false }),mediasController.delete);
 
 module.exports = router;

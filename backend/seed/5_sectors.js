@@ -18,12 +18,12 @@ Sector.bulkCreate([
     description: "La personnalisation des conseils et des informations est une des clés de l’efficacité des messages de prévention santé. Grâce à l’approche contextuelle, Walkoo est en mesure de - créer un flux de conseils localisés et actualisés et même des démonstrations d’exercices - personnaliser la forme des conseils pour différents publics (audio, vidéo…)  - imaginer de nouvelles formes de diffusion inspirées des nouveaux usages et créer des chatbots. WALKOO permet de diffuser des informations et des conseils tout en tenant compte des besoins de chaque utilisateur, identifiés à partir de ses bilans d’activité. Grâce aux notifications ludiques et informées par les connaissances scientifiques les plus récentes, délivrées au bon endroit et au bon moment, les applications conçues par WALKOO stimulent la motivation des utilisateurs pour les guider vers l’adoption d’habitudes de vie actives, favorables à la forme et au bien-être."
   },
   {
-    mediaId: 11,
+    mediaId: 10,
     title: "Université",
     description: "La personnalisation de l’info est la première demande des usagers de votre campus. Grâce à l’approche contextuelle, Walkoo est en mesure de - créer un flux de contenus localisés et actualisés, de l’information pratique nécessaire au quotidien à la communication des activités associatives, culturelles ou sportives de la vie du campus - personnaliser la forme des articles pour différents lectorats (étudiants ou personnel) - imaginer de nouvelles formes de diffusion inspirées des nouveaux usages et créer des chatbots. Délivrées au bon endroit et au bon moment, l’information s'adapte aux besoins de chaque usager. "
   },
   {
-    mediaId: 10,
+    mediaId: 11,
     title: "Media",
     description: "La personnalisation de l’info est la première demande de vos lecteurs. Grâce à l’approche contextuelle, Walkoo est en mesure de - créer un flux de contenus localisés et actualisés - personnaliser la forme des articles pour différents lectorats (audio, vidéo…) - imaginer de nouvelles formes de diffusion inspirées des nouveaux usages et créer des chatbots.   Le module PRESSMAP peut facilement être intégré à une application existante. Délivrées au bon endroit et au bon moment, information et publicité s'adaptent aux attentes de chaque lecteur. "
   },

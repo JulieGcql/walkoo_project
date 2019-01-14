@@ -6,6 +6,6 @@ const userController = require("../controllers/usersController");
 /* GET users listing. */
 router.get('/', passport.authenticate('jwt', { session: false }), userController.index);
 
-router.put('/', userController.edit)
+router.put('/', passport.authenticate('jwt', { session: false }),userController.edit)
 
 module.exports = router;

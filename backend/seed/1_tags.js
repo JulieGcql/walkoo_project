@@ -1,7 +1,7 @@
 const models = require('../models');
 const Tag = models.Tag;
 
-Tag.create(
+Tag.bulkCreate([
     {
   name: "logo"
 },
@@ -20,6 +20,6 @@ Tag.create(
 {
   name: "partenaire"
 },
-)
+])
     .then((createdHome) => console.log(createdHome))
     .catch((err) => console.log(err))

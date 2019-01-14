@@ -21,7 +21,6 @@ var sectionRealisationRouter = require('./routes/sectionRealisation');
 var sectionTechnologyRouter = require('./routes/sectionTechnology');
 var configurationRouter = require('./routes/configurations');
 
-const passport = require('passport');
 const {localAuthStrategy} = require("./routes/strategies/local");
 const {jwtAuthStrategy} = require("./routes/strategies/jwt");
 
@@ -41,22 +40,33 @@ localAuthStrategy;
 jwtAuthStrategy
 
 app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
+
 app.use('/auth', authRouter);
+
 app.use('/tags', tagsRouter);
+
 app.use('/medias', mediasRouter);
+
 app.use('/subscribers', subscriberRouter);
+
 app.use('/sectors', sectorsRouter);
+
 app.use('/events', eventsRouter);
+
 app.use('/homes', homesRouter);
+
 app.use('/technology', technologyRouter);
+
 app.use('/expertise', expertiseRouter);
-app.use('/realisation', realisationRouter);
-app.use('/configurations', configurationRouter);
+
 app.use('/section-realisation', sectionRealisationRouter);
+
 app.use('/section-technology', sectionTechnologyRouter);
 
+app.use('/realisation', realisationRouter);
+
+app.use('/configurations', configurationRouter);
+
 module.exports = app;
-
-
-// passport.authenticate('jwt', { session: false }),
