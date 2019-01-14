@@ -71,7 +71,7 @@ module.exports = {
   },
 
   getRealisationMedia: function(req, res, next) {
-    Tag.findOne({where :{name: "realisation"}, include: ["medias"]})
+    Tag.findOne({where :{name: "ressource"}, include: ["medias"]})
         .then((tag) => {
           if(tag){
             res.json({tag})

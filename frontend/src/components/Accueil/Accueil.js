@@ -14,8 +14,7 @@ export class Accueil extends Component {
 
 componentDidMount = () => {
   Axios.get ('/homes')
-  .then ((res)=> {console.log (res.data.homeData);
-    this.setState({homes:res.data.homeData})})
+  .then ((res)=> {this.setState({homes:res.data.homeData})})
 .catch((err)=> {console.log(err)});
 }
 

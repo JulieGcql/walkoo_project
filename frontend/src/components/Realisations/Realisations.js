@@ -52,7 +52,6 @@ export default class Realisations extends Component {
       initialSlide: 0,
       rows: 2,
       adaptiveHeight: true,
-      // slidesPerRow: 2
       responsive: [
         {
           breakpoint: 480,
@@ -69,7 +68,7 @@ export default class Realisations extends Component {
     return (
 
       <div className="realisations_container" id="realisations" style={{backgroundImage:`url(${this.state.sectionRealisation.backgroundImage.url})`}}>
-        <h1>Réalisations et Projet</h1>
+        <h1>Ressources</h1>
         <p> Walkoo partage ici quelques cas d’usage de l'approche contextuelle et ses projets en cours.</p>
         <div className="case_container">
           <Slider {...settings} >

@@ -99,7 +99,7 @@ export default class Realisations extends Component {
             onSubmit={(e) => this.handleSubmit(e)} 
             className="RealisationForm">
 
-            <h3>Création d'une réalisation :</h3>
+            <h3>Création d'une ressource :</h3>
 
               {/* *******Title******* */}
 
@@ -209,7 +209,7 @@ export default class Realisations extends Component {
 
         <div className="RealisationList">
           
-          <h3>Liste des réalisations :</h3>
+          <h3>Liste des ressources :</h3>
 
           <table className="table table-hover">
             <thead>
@@ -237,7 +237,7 @@ export default class Realisations extends Component {
                     <td><button 
                       className="btn btn-outline-primary"
                       onClick={() => this.handleClick(realisation.id,realisation.title, realisation.description, realisation.url)}>
-                        <i class="fas fa-pen"></i>
+                        <i className="fas fa-pen"></i>
                     </button></td>
 
                     <td><button 
