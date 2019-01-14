@@ -36,14 +36,14 @@ export default class SecteurModal extends Component {
   render() {
     return (
       <div>
-        <div class="modal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Modification</h5>
+        <div className="modal">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Modification</h5>
               </div>
 
-              <div class="modal-body">
+              <div className="modal-body">
               
                 <form className="SecteurForm">
 
@@ -58,8 +58,8 @@ export default class SecteurModal extends Component {
                   value={this.state.title}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                    required 
-                  ></input>
+                  required 
+                ></input>
 
                 <label 
                   className="col-form-label"
@@ -72,12 +72,13 @@ export default class SecteurModal extends Component {
                 className="description"
                 value={this.state.description}
                 onChange={(value) => this.handleChangeDescription(value)}
-              />    
+              />
+
                 </form>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary" onClick={() => this.handleModify(this.props.id)}>Modifier</button>
-                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onClick={this.props.close}>Quitter</button>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-outline-primary" onClick={() => this.handleModify(this.props.id)}>Modifier</button>
+                <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" onClick={this.props.close}>Quitter</button>
               </div>
             </div>
           </div>

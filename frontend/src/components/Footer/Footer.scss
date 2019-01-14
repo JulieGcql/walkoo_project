@@ -115,22 +115,29 @@
 
 
 
-  @media screen and(max-width:480px) {
+  @media screen and(max-width:425px) {
 
     .footer_container {
         padding-top: 5vw;
         
         .footer_menu{
-            
-            img{
-                width: 18vw;
-            }
+
+          .LogoFooter{
+            width: 18vw;
+            margin-bottom: 1vw;
+          }
+
+
+
             ul{
-                font-size: 2.2vw;
+                font-size: 3vw;
                 margin-top: 3vw;
+              li{
+                margin-bottom: 1vw;
+              }
             }
         }
-    
+
         .footer_app_logo {
               
             img{
@@ -141,7 +148,9 @@
     
         }
         .footer_rgpd {
-            margin-bottom: 2vw;
+          margin: 0px 12vw;
+          margin-bottom: 3vw;
+          font-size: 2.5vw;
            
     
            p{
@@ -156,10 +165,11 @@
         }
         .footer_social_icon {
             margin-bottom: 2vw;
-            
-            img{
-                width: 7vw;
+          a {
+            img {
+              width: 7vw;
             }
+          }
         }
     } 
   }

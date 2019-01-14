@@ -11,7 +11,7 @@ module.exports = {
         .catch((err) => res.json("Erreur lors de l'index de technologie", err))
       },
 
-      create: function(req, res, next) {
+      create: function(req, res,) {
         Technology.create({
           title : req.body.title,
           description: req.body.description,

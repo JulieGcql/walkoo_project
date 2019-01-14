@@ -10,12 +10,11 @@ export default class Medias extends Component {
   
 componentDidMount = () => {
   Axios.get ('/events/')
-  .then ((res)=> {console.log (res.data.events);this.setState({events:res.data.events})})
+  .then ((res)=> {this.setState({events:res.data.events})})
 .catch((err)=> {console.log(err)});
 }
     
   render() {
-    console.log(this.state);
     return (
 
 

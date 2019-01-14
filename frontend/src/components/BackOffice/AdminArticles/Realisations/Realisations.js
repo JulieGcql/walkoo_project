@@ -8,6 +8,9 @@ export default class Realisations extends Component {
     realisations: [],
     title:"",
     description:"",
+    sectionRealisation:[],
+    medias: [],
+    mediaId: "",
     url:"",
     selected: "",
     modal: false,
@@ -18,7 +21,9 @@ export default class Realisations extends Component {
   };
 
   componentDidMount() {
-    this.getRealisations()
+    this.getRealisations();
+    /*this.getSectionRealisation();*/
+    this.getMedias()
   }
   
   handleChange = (e) => {
@@ -48,9 +53,30 @@ export default class Realisations extends Component {
         this.getRealisations()
       })
       .catch((err) => console.log(err))
-    } 
-    
-  
+    };
+
+  getMedias = () => {
+    axios.get('/tags/realisation')
+        .then((res) => {
+          this.setState({medias : res.data.tag.medias})
+        })
+        .catch((err) => console.log(err))
+  }
+
+
+ getMediaId = (id) => {
+   this.setState({mediaId: id})
+ };
+
+  handleModify = () => {
+    axios.put(`/section-realisation/edit/1`, {
+      mediaId: this.state.mediaId,
+    })
+        .then((res) => {
+          alert("Fond-ecran modifié")
+        })
+        .catch((err) => alert("Erreur lors de la modification"))
+  }
 
   getRealisations = () => {
     axios.get('/realisation')
@@ -62,6 +88,7 @@ export default class Realisations extends Component {
 
   render() {
 
+
     return (
       <div className="realisationContainer">
 
@@ -72,7 +99,7 @@ export default class Realisations extends Component {
             onSubmit={(e) => this.handleSubmit(e)} 
             className="RealisationForm">
 
-            <h3>Création d'une réalisation :</h3>
+            <h3>Création d'une ressource :</h3>
 
               {/* *******Title******* */}
 
@@ -100,7 +127,8 @@ export default class Realisations extends Component {
 
             <textarea 
               type="text" 
-              name="description" 
+              name="description"
+              maxLength={"10"}
               value={this.state.description}
               onChange={(e) => this.handleChange(e)}
               className="form-control" 
@@ -118,7 +146,7 @@ export default class Realisations extends Component {
 
             <input 
               type="text" 
-              name="url" 
+              name="url"
               value={this.state.url}
               onChange={(e) => this.handleChange(e)}
               className="form-control" 
@@ -131,8 +159,36 @@ export default class Realisations extends Component {
               value="Créer une réalisation" 
               className="btn btn-outline-dark"
               ></input>
-
           </form>
+            <div className="MediaList">
+
+              <h3>Selectionnez un fond-écran :</h3>
+
+              {this.state.medias &&
+              this.state.medias.map((media, index) => {
+                return (
+                    <button
+                        onClick={() => this.getMediaId(media.id)} key={`rel ${index}`}>
+
+                      <img
+                          src={`${media.url}`}
+                          alt={media.name}/>
+                      <p>{media.id}</p>
+
+                    </button>
+
+                )
+              })}
+              <input className="btn btn-outline-dark"
+                     type="submit"
+                     onClick={() => this.handleModify()}
+              value="Modifier">
+
+              </input>
+
+            </div>
+
+
         </div>
 
         <hr/>
@@ -153,7 +209,7 @@ export default class Realisations extends Component {
 
         <div className="RealisationList">
           
-          <h3>Liste des réalisations :</h3>
+          <h3>Liste des ressources :</h3>
 
           <table className="table table-hover">
             <thead>
@@ -181,7 +237,7 @@ export default class Realisations extends Component {
                     <td><button 
                       className="btn btn-outline-primary"
                       onClick={() => this.handleClick(realisation.id,realisation.title, realisation.description, realisation.url)}>
-                        <i class="fas fa-pen"></i>
+                        <i className="fas fa-pen"></i>
                     </button></td>
 
                     <td><button 

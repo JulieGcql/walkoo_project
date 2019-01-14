@@ -101,7 +101,7 @@ export default class Secteurs extends Component {
             this.state.medias.map((media) => {
               return (
                 
-                <button 
+                <button key={media.id}
                 onClick={() => this.getMediaId(media.id)}>
 
                   <img 
@@ -206,7 +206,7 @@ export default class Secteurs extends Component {
                     <td><button 
                       className="btn btn-outline-primary"
                       onClick={() => this.handleClick(sector.id,sector.mediaId,sector.title, sector.description)}>
-                        <i class="fas fa-pen"></i>
+                        <i className="fas fa-pen"></i>
                     </button></td>
                     <td><button 
                       className="btn btn-outline-danger"

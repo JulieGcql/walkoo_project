@@ -7,7 +7,7 @@ import Axios from 'axios';
 export default class Footer extends Component {
   state = {
     configurations : []
-  }
+  };
 
   componentDidMount() {
     this.getConfiguration()
@@ -17,7 +17,7 @@ export default class Footer extends Component {
     Axios.get('/configurations')
     .then((res) => this.setState({configurations : res.data.configurations[0]}))
     .catch((err) => console.log(err))
-  }
+  };
 
   render() {
     return (

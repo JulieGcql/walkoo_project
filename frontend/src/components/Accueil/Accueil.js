@@ -14,13 +14,12 @@ export class Accueil extends Component {
 
 componentDidMount = () => {
   Axios.get ('/homes')
-  .then ((res)=> {console.log (res.data.homeData);
-    this.setState({homes:res.data.homeData})})
+  .then ((res)=> {this.setState({homes:res.data.homeData})})
 .catch((err)=> {console.log(err)});
 }
 
   render() {
-    console.log(this.state);
+   
     return (
       <div className="containerAnim" id="home">
 
@@ -28,9 +27,9 @@ componentDidMount = () => {
               <div className="logo">
                   <h1>
                       <div className="logo-firstpart">
-                          au bon <br/>
-                          au bon <br/>
-                          le bon <br/>
+                          au bon<br/>
+                          au bon<br/>
+                          le bon<br/>
                       </div>
                   </h1>
                   <h1>
@@ -45,8 +44,9 @@ componentDidMount = () => {
 
         <div className="secondContainer">
 
-          {/* <p className="Text2">{this.state.homes.subtitle } </p> */}
-          <div dangerouslySetInnerHTML={createMarkup(this.state.homes.subtitle)} className="Text2"></div>
+         
+          <div dangerouslySetInnerHTML={createMarkup(this.state.homes.subtitle)} 
+          className="Text2"></div>
           <button 
             className="btn btn-warning Bouton"
             onClick={() => this.props.demoAction()}

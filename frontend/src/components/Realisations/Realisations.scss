@@ -8,8 +8,7 @@
 
 
 .realisations_container{
-    scroll-margin-top: 65px;
-    background-image: url('./walking.png');
+    scroll-margin-top: 3vw;
     background-size: cover;
     text-align: center;
     max-height: 100%;
@@ -21,6 +20,15 @@
     font-size: 3vw;
     color: white;
     font-family: $open;
+
+    }
+
+    p{
+        color: black;
+        font-family: $condensed;
+        margin: 2vw 10vw;
+        font-size: 1.8vw;
+        font-weight: 900;
 
     }
    
@@ -35,15 +43,12 @@
             list-style-type: none;
             z-index: 15;
             position: relative;
-            // margin: 10vh;
             width: 20vw !important;
             height: 20vw;
             align-self: center;
             display: flex !important;
             justify-content: center;
             opacity: 0.95;
-            // margin-left: auto;
-            // margin-right: auto;
             margin: 2vw auto;
             padding-bottom: 0.5vw;
 
@@ -135,7 +140,6 @@
     }
 
     .slick-dots li button:before {
-        // transform: scale(2);
         color: white !important;
         background-color: transparent;
         opacity: .80;
@@ -146,9 +150,6 @@
         color: orange !important;
     }
 
-    // .slick-list{
-    //     overflow: initial;
-    // } 
 
     }
 
@@ -208,6 +209,9 @@
             font-family: "Open Sans", sans-serif;
         
             }
+        p{
+            font-size: 4vw;
+        }
 
         .case_container{
 
@@ -238,7 +242,6 @@
                     
                 }
                 .text{
-                    // height: 40vw;
                     padding: 2vw 2.5vw;
                 
                     p{

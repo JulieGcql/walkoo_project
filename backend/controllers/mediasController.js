@@ -1,5 +1,5 @@
 const models = require("../models");
-const fs = require('fs')
+const fs = require('fs');
 const Media = models.Media;
 const Tag = models.Tag;
 

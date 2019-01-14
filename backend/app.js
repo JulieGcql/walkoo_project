@@ -12,12 +12,14 @@ var mediasRouter = require('./routes/medias');
 var subscriberRouter = require('./routes/subscriber');
 var eventsRouter = require('./routes/events');
 var homesRouter = require('./routes/home');
-var subscriberRouter = require('./routes/subscriber')
-var sectorsRouter = require('./routes/sectors')
-var technologyRouter= require('./routes/technology')
-var expertiseRouter = require('./routes/expertise')
-var realisationRouter = require('./routes/realisation')
-var configurationRouter = require('./routes/configurations')
+var subscriberRouter = require('./routes/subscriber');
+var sectorsRouter = require('./routes/sectors');
+var technologyRouter= require('./routes/technology');
+var expertiseRouter = require('./routes/expertise');
+var realisationRouter = require('./routes/realisation');
+var sectionRealisationRouter = require('./routes/sectionRealisation');
+var sectionTechnologyRouter = require('./routes/sectionTechnology');
+var configurationRouter = require('./routes/configurations');
 
 const {localAuthStrategy} = require("./routes/strategies/local");
 const {jwtAuthStrategy} = require("./routes/strategies/jwt");
@@ -58,6 +60,10 @@ app.use('/homes', homesRouter);
 app.use('/technology', technologyRouter);
 
 app.use('/expertise', expertiseRouter);
+
+app.use('/section-realisation', sectionRealisationRouter);
+
+app.use('/section-technology', sectionTechnologyRouter);
 
 app.use('/realisation', realisationRouter);
 

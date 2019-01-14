@@ -131,7 +131,7 @@ export default class AdminConfigurations extends Component {
         <label htmlFor="logo-select">Logo :</label>
         <select 
           id="logo-select"
-          class="form-control"
+          className="form-control"
           onChange={(e) => this.setState({mediaId: e.target.value})}>
         {this.state.medias && 
             this.state.medias.map((media, index) => {
@@ -148,7 +148,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="title">Titre :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.title}
             onChange={(e) => this.handleChange(e)}
@@ -160,7 +160,7 @@ export default class AdminConfigurations extends Component {
           
           <label htmlFor="phone">Téléphone :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="tel"
             value={this.state.phone}
             onChange={(e) => this.handleChange(e)} 
@@ -172,7 +172,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="twitter">Lien Twitter :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.twitter}
             onChange={(e) => this.handleChange(e)} 
@@ -184,7 +184,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="linkedin">Lien LinkedIn :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.linkedin}
             onChange={(e) => this.handleChange(e)} 
@@ -196,7 +196,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="metaTitle">MetaTitre :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.metaTitle}
             onChange={(e) => this.handleChange(e)} 
@@ -208,7 +208,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="metaDescription">MetaDescription :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.metaDescription}
             onChange={(e) => this.handleChange(e)} 
@@ -220,7 +220,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="metaKeyword">MetaKeyword :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.metaKeyword}
             onChange={(e) => this.handleChange(e)} 
@@ -232,7 +232,7 @@ export default class AdminConfigurations extends Component {
 
           <label htmlFor="metaImage">MetaImage :</label>
           <input
-            class="form-control" 
+            className="form-control" 
             type="text"
             value={this.state.metaImage}
             onChange={(e) => this.handleChange(e)} 
