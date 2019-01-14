@@ -75,15 +75,16 @@ export default class Secteurs extends Component {
 
   }
 
-  handleSubmitSectionTechnology = () => {
+  handleSubmitSectionTechnology = (e) => {
       if(window.confirm("Voulez-vous valider les modifications ?")){
+        e.preventDefault()
         axios.put(`/section-technology/edit/1`,{
           description: this.state.sectionTechnologyDescription,
           subtitle: this.state.sectionTechnologySubtitle,
 
         })
-            .then((res) => alert("Modifications effectuées"))
-            .catch((err) => alert("Erreur lors de la sauvegarde des modifications"))
+            .then((res) => alert("Modifications effectuées."))
+            .catch((err) => alert("Erreur lors de la sauvegarde des modifications."))
       }
     }
 
@@ -100,7 +101,7 @@ export default class Secteurs extends Component {
     .then((res) => {
       this.setState({technologies: res.data.technology})
     })
-    .catch((err) => console.log("Erreur lors de l'obtention de l'avantage"))
+    .catch((err) => console.log("Erreur lors de l'obtention de l'avantage."))
   }
 
   getSectionTechnology = () => {
@@ -111,7 +112,7 @@ export default class Secteurs extends Component {
         sectionTechnologySubtitle: res.data.sectionTechnology[0].subtitle,
       })
     })
-    .catch((err) => console.log("Erreur lors de l'obtention de section technologie"))
+    .catch((err) => console.log("Erreur lors de l'obtention de section technologie."))
   }
 
 
@@ -128,7 +129,7 @@ export default class Secteurs extends Component {
 
           <label
               className="col-form-label"
-          >Presentation :
+          >Présentation :
           </label>
 
           <ReactQuill
@@ -160,7 +161,7 @@ export default class Secteurs extends Component {
 
 
             <button
-                onClick={() => this.handleSubmitSectionTechnology()}
+                onClick={(e) => this.handleSubmitSectionTechnology(e)}
                 className="btn btn-outline-dark modifbtn"
             >Modifier</button>
 
@@ -201,7 +202,7 @@ export default class Secteurs extends Component {
             onSubmit={(e) => this.handleSubmit(e)} 
             className="TechnologieForm">
 
-            <h3>Création des avantages :</h3>
+            <h3>Création d'un avantage :</h3>
 
             <label 
               className="col-form-label"

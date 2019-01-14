@@ -175,7 +175,6 @@ class Contact extends Component {
                 type="checkbox"
                 name="requestDemo"
                 id="requestDemo" 
-                value={this.props.shared.requestDemo}
                 checked={this.props.shared.requestDemo}
                 color="default"
                 onClick={(e) => this.props.demoAction()}

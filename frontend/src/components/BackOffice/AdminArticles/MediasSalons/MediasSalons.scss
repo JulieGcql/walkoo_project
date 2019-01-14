@@ -1,17 +1,18 @@
-.hugoTitleMS {
-    text-align: center;
-    margin-top: 25px;
-    text-align: center;
-}
-
-.zoneTexte {
-    display: flex;
-    margin: auto;
+.EventForm{
     width: 50vw;
-}
-
-.createEventMargin {
-    margin-left: 95px;
+    margin: auto;
+    
+    .hugoTitleMS {
+        text-align: center;
+        margin-top: 25px;
+        text-align: center;
+    }
+    
+    .zoneTexte {
+        display: flex;
+        margin: auto;
+        width: 50vw;
+    }
 }
 
 

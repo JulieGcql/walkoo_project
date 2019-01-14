@@ -77,7 +77,7 @@ class LoginAdmin extends Component {
               </input>
               <label 
               className="label" 
-              htmlForv ="password">Mot de passe</label>
+              htmlFor="password">Mot de passe</label>
             </div>
 
             <div className="form-fields">

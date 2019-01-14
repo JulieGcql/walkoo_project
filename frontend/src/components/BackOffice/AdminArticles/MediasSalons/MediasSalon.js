@@ -67,7 +67,7 @@ export default class MediasSalon extends Component {
       <div>
         <form
           onSubmit={(e) => this.createEvent(e)}
-          className="SecteurForm">
+          className="EventForm">
 
           <h3 className="hugoTitleMS">Création d'un évènement :</h3>
 
@@ -124,7 +124,7 @@ export default class MediasSalon extends Component {
 
           <div className="listeS">
 
-            <h3 >Liste des salons</h3>
+            <h3 >Liste des salons :</h3>
 
             <table className="table table-hover">
               <thead>
@@ -152,54 +152,48 @@ export default class MediasSalon extends Component {
                     </button></td>
                   </tr>
                 </tbody>
-
               )})}
             </table>
           </div>
-        
 
+          <div className="listeM">
+            <h3 >Liste des media :</h3>
 
-        <div className="listeM">
-          <h3 >Liste des media</h3>
-
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Titre</th>
-                <th scope="col">Description</th>
-                <th scope="col">Supprimer</th>
-              </tr>
-            </thead>
-          
-
-
-          {this.state.events && this.state.events.map((event, index) => {
-            return (
-
-              event.type === "media" &&
-              <tbody key={index}>
+            <table className="table table-hover">
+              <thead>
                 <tr>
-                  <th scope="row">{event.title}</th>
-                  <td>{event.description} </td>
-                  <td><button 
-                      className="btn btn-outline-danger"
-                      onClick={() => this.handleDelete(event.id)}>
-                        <i className="fas fa-trash-alt"></i>
-                    </button></td>
+                  <th scope="col">Titre</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Supprimer</th>
                 </tr>
-              </tbody>
+              </thead>
+            
 
-            )
-          })}
-          </table>
+
+              {this.state.events && this.state.events.map((event, index) => {
+                return (
+
+                  event.type === "media" &&
+                  <tbody key={index}>
+                    <tr>
+                      <th scope="row">{event.title}</th>
+                      <td>{event.description} </td>
+                      <td>
+                        <button 
+                          className="btn btn-outline-danger"
+                          onClick={() => this.handleDelete(event.id)}>
+                            <i className="fas fa-trash-alt"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                )
+              })}
+            </table>
           </div>
         </div>
       </div>
-
-
-
-
-
     )
   }
 }

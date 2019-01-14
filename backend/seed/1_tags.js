@@ -15,7 +15,7 @@ Tag.create(
   name: "secteur"
 },
 {
-  name: "realisation"
+  name: "ressource"
 },
 {
   name: "partenaire"

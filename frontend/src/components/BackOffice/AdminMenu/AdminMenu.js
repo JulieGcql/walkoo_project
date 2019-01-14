@@ -28,13 +28,6 @@ const AdminMenu = () => {
         </button>
       </NavLink>
 
-      {/* <NavLink to="/admin/statistiques">
-        <button className="ButtonMenuAdmin">
-          <i className="far fa-chart-bar"></i>
-          <h5>Statistiques</h5>
-        </button>
-      </NavLink> */}
-
       <NavLink to="/admin/contacts">
         <button className="ButtonMenuAdmin">
           <i className="fas fa-users"></i>
