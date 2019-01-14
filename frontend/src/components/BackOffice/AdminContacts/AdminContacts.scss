@@ -1,0 +1,15 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS /////
+
+.ContactAdmin {
+  margin-left: 10%;
+  height: 100vh;
+  padding-top:  5vw;
+  h1{
+    padding-bottom: 2vw;
+    padding-left: 1vw;
+  }
+}

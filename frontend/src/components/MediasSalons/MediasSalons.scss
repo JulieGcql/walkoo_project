@@ -1,0 +1,75 @@
+///// IMPORT VARIABLES SCSS /////
+@import '../../Variables.scss'; 
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; 
+    margin: 5vw 0;
+}
+.msTitle{
+    color:#f79646;
+    text-align: center;
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    font-family: $open;
+}
+
+.ListeSalons{
+    text-align: center;
+    max-height:fit-content;
+    border-right: 1px solid black; 
+    width:50vw;
+    font-size: 1.8vw;
+    line-height: 2.5;
+    p{
+        font-family: $condensed
+    }
+}
+.ListeMedia{
+    text-align: center;
+    list-style-type: none;
+    width:50vw;
+    font-size: 1.8vw;
+    line-height: 2.5;
+    p{
+        font-family: $condensed;
+        margin:0;
+    }
+}
+.Descrip{
+    line-height: 1.5;
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 425px) {
+
+    .grid-container {
+        max-height:fit-content;
+        margin-top: 5vw;
+        margin-bottom: 10vw;
+    }
+    .msTitle{
+        font-size: 8vw;
+        font-family: $open;
+    }
+    .ListeSalons{
+        p{
+            font-size: 5vw;
+        }
+    }
+    .ListeMedia{
+        p{
+            font-size: 5vw;
+        }
+    }
+}
+
+// @media screen and (max-width: 768px) {
+//     .grid-container {
+        
+//         margin-top: 10vw;
+//         height: 45vw;
+//         margin-bottom: 10vw;
+//     }
+// }

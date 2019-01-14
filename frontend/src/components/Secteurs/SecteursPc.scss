@@ -1,0 +1,68 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../Variables.scss';
+
+///// SCSS /////
+
+.SecteursContainer{
+  background-color: $orange;
+  padding: 2vw 0;
+
+  .SecteursTitle{
+    color: $white;
+    text-align: center;
+    font-size: 3vw;
+    margin: 0 auto 2vw;
+    font-family: $open;
+  }
+
+  .SecteursCards {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 6vw;  
+    
+    .SecteurCard{
+      display: flex;
+      flex-direction: column;
+      width: 18vw;
+
+      .SecteurPicto{
+        width: 12vw;
+        margin: 0 auto;
+      }
+
+      .SecteurTitle{
+        color: $white;
+        text-align: center;
+        font-size: 1.5vw;
+        font-family: $open;
+      }
+
+      .SecteurPictoMore{
+        width: 3vw;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .SecteurPictoLess{
+        display: flex;
+        margin: 0 auto;
+        width: 2.5vw;
+        cursor: pointer;
+      }
+      
+      .SecteurDescription{
+        color:$white;
+        text-align: justify;
+        font-size: 1.15vw;
+        font-family: $condensed;
+        p{
+          font-family: $condensed;
+        }
+      }
+      
+    }
+  }
+
+  
+}

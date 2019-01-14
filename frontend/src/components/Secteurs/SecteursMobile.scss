@@ -1,0 +1,62 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../Variables.scss';
+
+///// SCSS /////
+
+.SecteursMobileContainer{
+  scroll-margin-top: 0px;
+  background-color: $orange;
+  padding: 7vw 0;
+  .SecteursMobileTitle{
+    color: $white;
+    text-align: center;
+    font-size: 6vw;
+    margin: 0 auto 2vw;
+    font-family: $open;
+  }
+  .SecteursMobileCards{
+
+    .SecteursMobileRows {
+      cursor: pointer;
+      margin: 12vw 6vw;
+      width: 10vw;
+      height: 10vw;
+    }    
+    .SecteurMobileCard{
+      position: relative;
+      margin: 0 20vw;
+      width: 60vw !important;
+      height: 15vw;
+      .SecteurMobilePicto{
+        width: 30vw;
+        display: flex;
+        margin: auto;
+      }
+      .SecteurMobileTitle{
+        color: $white;
+        text-align: center;
+        font-size: 4.5vw;
+        font-family: $open;
+      }
+      .SecteurMobileDescription{
+        color: $white;
+        text-align: justify;
+        font-size: 4vw;
+        margin: 0 -17vw;
+        p{
+          font-family: $condensed;
+        }
+      }
+    }
+  }
+}
+
+.slick-dots li button:before {
+  color: $white;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  color: $black;
+}

@@ -12,7 +12,7 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Tag.findByPk(req.params.id, {include: [Media]})
+    Tag.findByPk(req.params.id, {include: ["medias"]})
     .then((tag) => {
       if(tag){
         res.json({tag})
@@ -22,7 +22,78 @@ module.exports = {
     })
     .catch((error) => res.status(500).json({message: error}))
   },
+  getSecteurMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "secteur"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name secteur`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
 
+  getTechnologyMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "technologie"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name technologie`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
+
+  getExpertiseMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "expertise"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name expertise`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
+  
+  getConfigurationMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "logo"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name logo`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
+
+  getRealisationMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "ressource"}, include: ["medias"]})
+        .then((tag) => {
+          if(tag){
+            res.json({tag})
+          } else {
+            res.status(404).json({message: `Tag does not exist with name backgroundImage`})
+          }
+        })
+        .catch((error) => res.status(500).json({message: error}))
+  },
+
+  getPartenairesMedia: function(req, res, next) {
+    Tag.findOne({where :{name: "partenaire"}, include: ["medias"]})
+    .then((tag) => {
+      if(tag){
+        res.json({tag})
+      } else {
+        res.status(404).json({message: `Tag does not exist with name logo`})
+      }
+    })
+    .catch((error) => res.status(500).json({message: error}))
+  },
+  
   create: function(req, res, next) {
     if(req.body.name){
       Tag.create({
@@ -62,8 +133,12 @@ module.exports = {
     Tag.findByPk(req.params.id)
     .then((tag) => {
       if(tag){
-        tag.destroy()
-        .then((tag) => res.json({message: 'Tag has been deleted'}))
+        tag.setMedias([])
+        .then((result) => {
+          tag.destroy()
+          .then((result) => res.json({message: 'Tag has been deleted'}))
+          .catch((error) => res.status(500).json({message: error}))
+        })
         .catch((error) => res.status(500).json({message: error}))
       } else {
         res.status(404).json({message: `Tag does not exist with id: ${req.params.id}`})

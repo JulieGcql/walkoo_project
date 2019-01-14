@@ -1,0 +1,43 @@
+.EventForm{
+    width: 50vw;
+    margin: auto;
+    
+    .hugoTitleMS {
+        text-align: center;
+        margin-top: 25px;
+        text-align: center;
+    }
+    
+    .zoneTexte {
+        display: flex;
+        margin: auto;
+        width: 50vw;
+    }
+}
+
+
+.Listes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5vw;
+    margin-bottom: 5vw;
+    margin: 0 3vw;
+
+
+    h3 {
+        text-align: center;
+        margin-top: 2vw;
+    }
+
+
+    .ListeS {
+        border-right: 1px solid black;
+        grid-column: 1;
+        
+}
+
+    .ListeM {
+        grid-column: 2;
+       
+    }
+}

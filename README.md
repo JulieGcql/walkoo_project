@@ -1,8 +1,10 @@
+# marseille_project3_walkoo
+
 {
   "development": {
     "username": "root",
-    "password": "Nidaigle031088",
-    "database": "my_db_name",
+    "password": "ADD YOUR PASSWORD",
+    "database": "walkoo_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -1,0 +1,269 @@
+///// IMPORT VARIABLES SCSS /////
+@import '../../Variables.scss'; 
+
+
+* {
+    outline: none !important;  
+}
+
+
+.realisations_container{
+    scroll-margin-top: 3vw;
+    background-size: cover;
+    text-align: center;
+    max-height: 100%;
+    
+    
+
+    h1{
+    padding-top: 2vw;
+    font-size: 3vw;
+    color: white;
+    font-family: $open;
+
+    }
+
+    p{
+        color: black;
+        font-family: $condensed;
+        margin: 2vw 10vw;
+        font-size: 1.8vw;
+        font-weight: 900;
+
+    }
+   
+
+    .case_container{
+
+        .case{
+          
+            background-color: grey;
+            border-radius: .3em;
+            list-style-image: none;
+            list-style-type: none;
+            z-index: 15;
+            position: relative;
+            width: 20vw !important;
+            height: 20vw;
+            align-self: center;
+            display: flex !important;
+            justify-content: center;
+            opacity: 0.95;
+            margin: 2vw auto;
+            padding-bottom: 0.5vw;
+
+            
+        
+
+            h6{
+                align-self: center;
+                font-size: 1.5vw;
+                margin: 0 1.5vw;
+                font-family: $open;
+            }
+            .text {
+              
+                width: 15vw;
+                align-self: center;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 1.5vw 2.5vw;
+                
+
+                p{  
+                    font-size: 1.15vw;
+                    color: white;
+                    text-align: justify;
+                    margin: 0 2px;
+                    opacity: 0;
+                    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                    transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
+                    font-weight: 200;
+                    -webkit-transform: translate3d(0%, 30%, 0);
+                    transform: translate3d(0%, 30%, 0);
+                    -webkit-transition-delay: 0s;
+                    transition-delay: 0s;
+                    font-family: $condensed;
+                }
+
+               
+        }
+        a{
+            display: flex;
+            position: absolute;
+            align-self: flex-end;
+
+            img{
+                width: 3vw;
+                height: 3vw;
+                align-self: flex-end;
+                opacity: 0;
+                -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
+                -webkit-transform: translate3d(0%, 30%, 0);
+                    transform: translate3d(0%, 30%, 0);
+                    -webkit-transition-delay: 0s;
+                    transition-delay: 0s;
+                    
+            }
+
+        }
+      
+
+        .text::before {
+            position: absolute;
+            top: 2vw;
+            right: 30px;
+            bottom: 2vw;
+            left: 100%;
+            border-left: 4px solid rgba(255, 255, 255, 0.8);
+            content: '';
+            opacity: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-transition-delay: 0.6s;
+            transition-delay: 0.6s;
+        }
+
+        
+        }
+
+
+    .slick-dots {
+        position: static;
+        margin-bottom: 2vw;  
+
+    }
+
+    .slick-dots li button:before {
+        color: white !important;
+        background-color: transparent;
+        opacity: .80;
+
+    }
+
+    .slick-dots li.slick-active button:before {
+        color: orange !important;
+    }
+
+
+    }
+
+    .case * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+   
+      .case:hover {
+        opacity: 1;
+    
+      }
+      .case:hover h6 {
+        color: transparent; 
+    
+      }
+      
+      .case:hover .text p  {
+        opacity: 0.9;
+        -webkit-transform: translate3d(0%, 0%, 0);
+        transform: translate3d(0%, 0%, 0);
+        -webkit-transition-delay: 0.6s ;
+        transition-delay: 0.6s;
+      }
+      .case:hover a img  {
+        opacity: 0.4;
+        -webkit-transform: translate3d(0%, 0%, 0);
+        transform: translate3d(0%, 0%, 0);
+        -webkit-transition-delay: 0.6s;
+        transition-delay: 0.6s;
+      }
+
+
+      .case:hover .text::before {
+        background: rgba(255, 255, 255, 0);
+        left: 1vw;
+        opacity: 1;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      }
+     
+     
+      
+      
+
+}
+
+
+@media screen and(max-width:480px) {
+    .realisations_container{
+    scroll-margin-top: 0px;
+
+
+        h1{
+    
+            font-size: 6vw;
+            font-family: "Open Sans", sans-serif;
+        
+            }
+        p{
+            font-size: 4vw;
+        }
+
+        .case_container{
+
+            slick-list {
+                height: auto !important;
+            }
+
+
+
+            .case{
+            
+                width: 45vw !important;
+                height: 45vw;
+                padding-bottom: 1vw;
+
+                h6{
+                    font-size: 3.5vw;
+                }
+
+            
+
+                .text::before {
+                    
+                    border-left: 1px solid rgba(255, 255, 255, 0.8);
+                    top: 3vw;
+                    
+                    bottom: 3vw;
+                    
+                }
+                .text{
+                    padding: 2vw 2.5vw;
+                
+                    p{
+                        font-size: 2.9vw;
+                    }
+                }
+        
+                a{
+                    img{
+                        width: 6vw;
+                        height: 6vw;
+                        
+                    }
+                    
+                }    
+                
+                
+                
+            }
+
+        }
+
+
+    }
+}

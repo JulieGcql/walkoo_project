@@ -1,0 +1,22 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS /////
+
+.AccueilAdmin {
+  // margin-top: 4.5vw;
+  margin-left: 10%;
+  height: 100vh;
+  padding-top:  5vw;
+  h1{
+    // text-align: center;
+    padding-bottom: 2vw;
+    padding-left: 1vw;
+  }
+  .hello{
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+  }
+}

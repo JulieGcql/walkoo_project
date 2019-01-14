@@ -1,0 +1,175 @@
+.footer_container {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-areas: "footer_menu footer_app_logo footer_social_icon" "footer_menu footer_rgpd footer_social_icon" ". . .";
+
+    max-height: 100%;
+    background-color: #707070;
+    margin-top: 5vw;
+    padding:1vw 2vw;
+    font-family: "Open Sans", sans-serif;
+
+
+    .footer_menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        .LogoFooter{
+            width: 12vw;
+            margin-bottom: 1vw;
+        }
+
+        img{
+          width: 10vw;
+          margin: auto;
+          margin-bottom: 1vw;
+        }
+
+        p{
+            font-size: 2vw;
+            font-family: "Open Sans", sans-serif;
+        
+        }
+
+        ul{
+            list-style-type: none;
+            align-self: center;
+            font-size: 1.2vw;
+            padding: 0;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            &:hover{
+                color: #F79646;
+            }
+        }
+    }
+
+    .footer_app_logo {
+        display: flex;
+        justify-content: space-evenly;
+        
+        
+        img{
+            width: 12vw;
+            align-self: center;
+        }
+
+    }
+    .footer_rgpd {
+       text-align: center;      
+       color: white;
+       font-size: 1.2vw;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       p{
+           font-family: "Open Sans", sans-serif;
+               &:hover{
+                   color:#F79646;
+               }
+    }
+    
+    .walkoo_c{
+        font-size: 1vw;
+        font-family: "Open Sans", sans-serif;
+        &:hover{
+            color:white;
+        }
+       }
+
+        
+
+    }
+    .footer_social_icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        a{
+            align-self: center;
+
+            img{
+                width: 4vw;
+            }
+        }
+      
+
+    }
+    
+    
+  }
+  
+  .footer_menu { grid-area: footer_menu; }
+  
+  .footer_app_logo { grid-area: footer_app_logo; }
+  
+  .footer_rgpd { grid-area: footer_rgpd; }
+  
+  .footer_social_icon { grid-area: footer_social_icon; }
+
+
+
+  @media screen and(max-width:425px) {
+
+    .footer_container {
+        padding-top: 5vw;
+        
+        .footer_menu{
+
+          .LogoFooter{
+            width: 18vw;
+            margin-bottom: 1vw;
+          }
+
+
+
+            ul{
+                font-size: 3vw;
+                margin-top: 3vw;
+              li{
+                margin-bottom: 1vw;
+              }
+            }
+        }
+
+        .footer_app_logo {
+              
+            img{
+                width: 20vw;
+                align-self: start;
+                
+            }
+    
+        }
+        .footer_rgpd {
+          margin: 0px 12vw;
+          margin-bottom: 3vw;
+          font-size: 2.5vw;
+           
+    
+           p{
+            font-size: 1.8vw;
+            margin-bottom: 2.5vw;
+           }
+    
+           .walkoo_c{
+            font-size: 2vw;
+           }
+
+        }
+        .footer_social_icon {
+            margin-bottom: 2vw;
+          a {
+            img {
+              width: 7vw;
+            }
+          }
+        }
+    } 
+  }

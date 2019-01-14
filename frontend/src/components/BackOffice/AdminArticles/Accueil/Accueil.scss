@@ -1,0 +1,35 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../../Variables.scss';
+
+///// SCSS /////
+
+.hugoTitleAccueil{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.hugoSubtitleAccueil{
+    padding-left: 90px;
+}
+
+.hugoTextareaAccueil{
+    width:50vw;
+    display: flex;
+    margin: auto;
+}           
+.form-controlAccueil {
+   
+    margin-top: 4vw !important;
+}
+ 
+.SubtitleForm{
+    width:50vw;
+    margin: auto;  
+    margin-top: 3vw;
+}
+
+.btnAccueil {
+    margin-top: 3vw !important;
+    
+}

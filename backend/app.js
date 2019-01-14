@@ -2,14 +2,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var tagsRouter = require('./routes/tags');
 var mediasRouter = require('./routes/medias');
+var subscriberRouter = require('./routes/subscriber');
+var eventsRouter = require('./routes/events');
+var homesRouter = require('./routes/home');
+var subscriberRouter = require('./routes/subscriber');
+var sectorsRouter = require('./routes/sectors');
+var technologyRouter= require('./routes/technology');
+var expertiseRouter = require('./routes/expertise');
+var realisationRouter = require('./routes/realisation');
+var sectionRealisationRouter = require('./routes/sectionRealisation');
+var sectionTechnologyRouter = require('./routes/sectionTechnology');
+var configurationRouter = require('./routes/configurations');
 
-const passport = require('passport');
 const {localAuthStrategy} = require("./routes/strategies/local");
 const {jwtAuthStrategy} = require("./routes/strategies/jwt");
 
@@ -25,13 +36,37 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static('uploads'));
 
 // Initialize auth strategies config
-localAuthStrategy;
+localAuthStrategy;  
 jwtAuthStrategy
 
 app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
+
 app.use('/auth', authRouter);
-app.use('/tags', passport.authenticate('jwt', { session: false }), tagsRouter);
-app.use('/medias', passport.authenticate('jwt', { session: false }), mediasRouter);
+
+app.use('/tags', tagsRouter);
+
+app.use('/medias', mediasRouter);
+
+app.use('/subscribers', subscriberRouter);
+
+app.use('/sectors', sectorsRouter);
+
+app.use('/events', eventsRouter);
+
+app.use('/homes', homesRouter);
+
+app.use('/technology', technologyRouter);
+
+app.use('/expertise', expertiseRouter);
+
+app.use('/section-realisation', sectionRealisationRouter);
+
+app.use('/section-technology', sectionTechnologyRouter);
+
+app.use('/realisation', realisationRouter);
+
+app.use('/configurations', configurationRouter);
 
 module.exports = app;

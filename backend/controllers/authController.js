@@ -6,11 +6,10 @@ module.exports = {
     /* By default passport save authenticated user in req.user object */
     const user = {
       id: req.user.id,
-      email: req.user.email,
       isAdmin: req.user.isAdmin
     }
     /* Signin jwt with your SECRET key */
-    const token = jwt.sign(user, 'your_jwt_secret');
+    const token = jwt.sign(user, process.env.MY_SECRET_KEY);
     /* Return user and token in json response */
     res.json({user, token});
   },
@@ -23,7 +22,11 @@ module.exports = {
       isAdmin: req.body.isAdmin || false
     })
     .then((newUser) => {
-      res.json({user: newUser})
+      res.json({user: {
+        id: newUser.id,
+        email: newUser.email,
+        isAdmin: newUser.isAdmin
+      }})
     })
     .catch((err) => res.send(err))
   }

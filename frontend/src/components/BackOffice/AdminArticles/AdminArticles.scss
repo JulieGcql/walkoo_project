@@ -1,0 +1,18 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS /////
+
+.ArticlesAdmin {
+  margin-left: 10%;
+  height: 100vh;
+  padding-top:  5vw;
+  h1{
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+  }
+  a{
+    color: $orange
+  }
+}

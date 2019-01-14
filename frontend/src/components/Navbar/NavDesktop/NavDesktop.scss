@@ -1,0 +1,107 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS /////
+
+html {
+  scroll-behavior: smooth;
+}
+
+.Navbar {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 0 2vw;
+  width: 100vw;
+  position: fixed;
+  background-color: $white;
+  z-index: 100;
+  top: 0;
+
+
+  .Logo {
+    margin: 0.5vw 2vw;
+    grid-column: 1;
+    a{
+      color: $black;
+      text-decoration: none;
+    }
+    
+    .Logo_Walkoo{
+      height: 2.5vw;
+      margin: auto 3vw;
+    }
+  }
+
+  .NavLinks{
+    margin: auto 2vw;
+    padding-top: inherit;
+
+    ul{
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+    }
+    
+    li{
+      display: flex;
+      list-style: none;
+    }
+
+    a{
+      font-family: $open;
+      color: $black;
+      text-decoration: none;
+      border-radius: 5px;
+      align-self: center;
+      padding: 0.7vw 2vw;
+      font-size: 1vw;
+    }
+    
+    a:hover{
+      background-color: $orange;
+      color: $white;
+      border-radius: 90px;
+    }
+
+    .ContactLink{
+      color: $orange;
+    }
+  }
+}
+
+@media screen and(max-width:425px){
+  .Navbar {
+    position: initial;
+    height: auto;
+    padding: 0vw 0 1vw 0;
+    grid-template-columns: 80% 20%;
+
+    .Logo {
+      font-size: 15vw;
+      margin: auto 0 auto 17vw;
+      grid-column: 1;
+      
+      .Logo_Walkoo{
+        width: 55vw;
+        height: auto;
+        margin: 0 5vw;
+      }
+    }
+    .Navbar-toggle-button{
+      margin: auto;
+      padding-top: 4vw;
+    }
+    
+    .NavLinks {
+      display: none;
+      
+    }
+  }
+}
+
+@media screen and(min-width: 426px) {
+  .Navbar-toggle-button {
+    display: none;
+  }
+}

@@ -1,0 +1,90 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../Variables.scss';
+
+///// SCSS /////
+
+// Mobile device
+
+@media screen and(max-width:425px) {
+  .ContactContainer {
+    scroll-margin-top: 0px;
+    h1{
+      font-family: $open;
+      color: $orange;
+      margin-top: 5vw;
+      font-size: 8vw;
+    }
+    .contact-form {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 5vw;
+      .button {
+        justify-self: center;
+      }
+      .btn{
+        padding: 2vw 20vw;
+        background-color: $orange;
+        border-radius: 90px;
+        font-family: $open;
+      }
+      .button, h1 {
+        justify-self: center;
+      }
+      .form-fields {
+        position: relative;
+        font-size: 5vw;
+        font-family: $open;
+      }
+    } 
+  }
+}
+
+// Other device
+
+@media screen and(min-width:426px) {
+  .ContactContainer {
+    scroll-margin-top: 3vw;
+    margin-top: 3vw;
+    h1{
+      color: $orange;
+      margin-top: 1vw;
+      font-size: 3vw;
+      justify-self: center;
+      font-family: $open;
+    }
+    .contact-form {
+      width: 60vw;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3vw;
+      .demo{
+        margin: auto 0;
+      }
+      .button {
+        justify-self: center;
+      }
+      .message, .button, h1{
+        grid-column: 1 / 3;
+      }
+      .message{
+        margin-top: -1vw;
+      }
+      .btn{
+        padding: 1vw 5vw;
+        font-size: 1.15vw;
+        background-color: $orange;
+        border-radius: 90px;
+        font-family: $open;
+      }
+      .form-fields {
+        position: relative;
+        font-size: 1.15vw;
+        font-family: $open;
+      }
+    } 
+  }
+}

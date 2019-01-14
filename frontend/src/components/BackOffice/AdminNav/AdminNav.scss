@@ -1,0 +1,79 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../../../Variables.scss';
+
+///// SCSS /////
+
+.NavbarAdmin{
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  width: 100vw;
+  height: 4.5vw;
+  position: fixed;
+  background-color: $white;
+  z-index: 100;
+  border: $black solid 1px;
+
+  .toggle-button-admin{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto 2vw;
+    height: 2vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .toggle-button:focus {
+    outline: none;
+  }
+  
+  .toggle-button_line{
+    width: 2vw;
+    height: 0.2vw;
+    background: $black;
+    border-radius: 5px;
+  }
+  
+  .LogoAdmin {
+    margin: auto;
+    font-size: 2vw;
+    grid-column: 2 / 3;
+    .Logo_WalkooAdmin{
+      width: 14vw;
+      margin: 0 0.5vw;
+    }
+    h1{
+      float: right;
+      font-size: 3.2vw;
+      margin: 0;
+      color: black;
+    }
+  }
+  .LogOutAdmin{
+    display: flex;
+    margin: auto 2vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5vw 0;
+    box-sizing: border-box;
+    color: $black;
+    text-decoration: none;
+    p{
+      margin: 0 1vw;
+      font-size: 1.2vw;
+    }
+    i{
+      font-size: 2vw;
+    }
+  }
+  .LogOutAdmin:hover {
+    background-color: $orange;
+    color:$white;
+    border-radius: 5px;
+  }
+}

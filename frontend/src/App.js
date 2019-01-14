@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 import store from './store';
-
-import './App.css';
-import LoginForm from './components/LoginForm';
-import Profile from './components/Profile';
+import Router from './Router/Router';
+import AdminRouter from './Router/AdminRouter';
 
 class App extends Component {
   render() {
-    console.log("default state :", store.getState())
     return (
       <Provider store={store}>
-          <div>
-            <LoginForm/>
-            <Profile />
-          </div>
+          <BrowserRouter>
+            <div>
+              <Router/>
+              <AdminRouter/>
+            </div>
+          </BrowserRouter>
       </Provider>
     );
   }

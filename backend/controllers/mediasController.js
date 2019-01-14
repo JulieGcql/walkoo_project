@@ -1,4 +1,5 @@
 const models = require("../models");
+const fs = require('fs');
 const Media = models.Media;
 const Tag = models.Tag;
 
@@ -12,7 +13,7 @@ module.exports = {
   },
 
   show: function(req, res, next) {
-    Media.findByPk(req.params.id, {include: [ Tag ]})
+    Media.findByPk(req.params.id, {include: [ "tag" ]})
     .then((media) => {
       if(media){
         res.json({media})
@@ -24,11 +25,11 @@ module.exports = {
   },
 
   create: function(req, res, next) {
-    if(req.body.name && req.file){
+    if(req.file){
       Media.create({
-        name: req.body.name,
+        name: req.file.originalname,
         type: 'file',
-        url: `${req.get('Host')}/uploads/${req.file.originalname}`
+        url: `${req.protocol}://${req.get('Host')}/uploads/${req.file.originalname}`
       })
       .then((newMedia) => {
         // si une liste d'id à été fourni alors on lie les tags correspondants au média
@@ -80,19 +81,27 @@ module.exports = {
     Media.findByPk(req.params.id)
     .then((media) => {
       if(media){
+        let name = media.name;
         media.setTags([])
         .then((result) => {
           media.save()
           .then((result) => {
-            media.destroy()
-            .then((media) => res.json({message: 'Media has been deleted'}))
-            .catch((error) => res.status(500).json({message: error}))
+            fs.unlink(`uploads/${name}`, (err) => {
+              if (err) console.log("le media n'a pas été supprimé");
+              media.destroy()
+              .then((result) => res.json({message: 'Media has been deleted'})
+              )
+              .catch((error) => res.status(500).json({message: "Erreur lors de la suppression"})
+              )
+            })
           })
+          .catch((err) => console.log("No results in the save"))
         })
+        .catch((err) => console.log("Not result in the setTags"))
       } else {
         res.status(404).json({message: `Media does not exist with id: ${req.params.id}`})
       }
     })
-    .catch((error) => res.status(500).json({message: error}))
+    .catch((error) => res.status(500).json({message: "Erreur de connexion avec le serveur"}))
   }
 }

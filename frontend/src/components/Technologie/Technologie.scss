@@ -1,0 +1,179 @@
+///// IMPORT VARIABLES SCSS /////
+@import '../../Variables.scss'; 
+
+.technologie_container{
+    scroll-margin-top: 3vw;
+    height: auto;
+    margin: 0 3vw;
+
+    .technologie-firstpart{
+        text-align: center;
+        background-color: #F8F8F8;
+        padding: 2vw;
+        margin: 0 -3vw;
+
+        h1{
+        margin-top: 0px;
+        font-size: 3vw;
+        color: $orange;
+        font-family: $open;
+        }
+        p{
+
+        font-family: $condensed;
+        margin: 2vw 10vw;
+        font-size: 1.5vw;
+
+       
+        
+        }
+
+    }
+
+    h3{
+        font-size: 2vw;
+        color: #605A5A;
+        margin: 3vh 0;
+        text-align: center;
+        font-family: $open;
+        
+        }
+    .technologie-secondpart{
+     text-align: center;
+     margin: 3vw 0vw;
+        
+        
+        .grid_container_avantage{
+        display: grid;
+        grid-template-columns: repeat(4, 25%); 
+
+
+            img{
+            width: 12vw;
+
+            }
+
+            h6{
+            margin: 3vh 5.7vw;
+            font-size: 1.5vw;
+            margin-top: 0vw;
+            font-family: $open;
+
+                
+            }
+            
+            .text{
+            margin: 0vw 3vw;
+            font-size: 1.15vw;
+            text-align: justify;
+            font-family: $condensed;
+
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+
+    
+
+    .technologie_container{
+        scroll-margin-top: 0px;
+
+        margin: 0 2vw;
+    
+        .technologie-firstpart{
+            text-align: center;
+            padding-top: 2vw;
+            
+    
+            h1{
+            margin-top: 2vw;
+            font-size: 8vw;
+            font-family: $open;
+            }
+            p{
+            margin: 5vw 5vw;
+            font-size: 4vw;
+            font-family: $condensed;
+            }
+    
+        }
+        h3{
+        font-size: 5vw ;
+        color: black;
+        margin: 10vw 0;
+        font-family: $open;
+        }
+        
+        .technologie-secondpart{
+         margin: 3vw 0vw;
+    
+
+            .grid_container_avantage{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 5vw;
+            
+            
+            
+    
+                .avantage1{
+                    display: grid;
+                    grid-template-columns: 35% 60%; 
+                    width: 100vw;
+                    .title1{
+                        margin: 0 auto;
+                    }
+                }
+                .avantage2{
+                    display: grid;
+                    grid-template-columns: 60% 35%;
+                    width: 100vw; 
+                    
+
+                        
+                        .title2{
+                        grid-column: 2;
+                        margin: 0 auto;
+                        }
+    
+                        .text2{
+                            grid-column: 1;
+                            grid-row: 1;
+                            }
+    
+
+                        }
+                        
+                    
+    
+                img{
+                transform: scale(0.5);
+                margin: auto;
+                width: 35vw;
+    
+                }
+    
+                h6{
+                margin: 0;
+                font-size: 3.5vw;
+                margin-top: -2vh;
+                font-family: $open;
+                    
+                }
+                
+                .text{
+                margin: 0 2vw;
+                font-size: 3.6vw;
+                align-self: center;
+    
+                }
+            }
+        }
+    
+    }
+      
+}
+
