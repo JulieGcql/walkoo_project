@@ -45,7 +45,8 @@ componentDidMount = () => {
         <div className="secondContainer">
 
          
-          <div dangerouslySetInnerHTML={createMarkup(this.state.homes.subtitle)} className="Text2"></div>
+          <div dangerouslySetInnerHTML={createMarkup(this.state.homes.subtitle)} 
+          className="Text2"></div>
           <button 
             className="btn btn-warning Bouton"
             onClick={() => this.props.demoAction()}
