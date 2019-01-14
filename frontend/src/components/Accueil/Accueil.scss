@@ -164,11 +164,6 @@ body{
 
 
 
-
-
-
-
-
   .secondContainer{
     
     margin-top: 38vw;
@@ -270,15 +265,17 @@ body{
 
   
 /*telport*/
+
 @media screen and (max-width: 425px) {
+
+  $animation-size: 12vw;
 
   body{
     overflow-x: hidden;
   }
 
-  .containerAnim{
+  .containerAnim {
     justify-items: center;
-
 
 
     .Text1 {
@@ -288,10 +285,10 @@ body{
       display: inline-flex;
       font-size: 2vw;
       font-family: $open;
-      color:white;
+      position: relative;
+      color: white;
       width: 100vw;
-      position:absolute;
-      top:0;
+      top: 0;
       display: flex;
       justify-content: center;
 
@@ -307,7 +304,7 @@ body{
         overflow: hidden;
         position: relative;
         height: $animation-size;
-        font-size: 9vw;
+        font-size: 10vw;
 
       }
 
@@ -316,7 +313,7 @@ body{
         overflow: hidden;
         position: relative;
         height: $animation-size;
-        font-size: 9vw;
+        font-size: 10vw;
         top: 40px;
       }
 
@@ -328,48 +325,72 @@ body{
         top: 0;
         left: 0;
 
+     /*   !******************animation************!*/
 
-        /*animation*/
 
+        -webkit-animation: move 3.5s;
+        -moz-animation: move 3.5s;
+        -ms-animation: move 3.5s;
+        -o-animation: move 3.5s;
+        animation: move 3.5s;
 
-        -webkit-animation:move 3.5s;
-        -moz-animation:move 3.5s;
-        -ms-animation:move 3.5s;
-        -o-animation:move 3.5s;
-        animation:move 3.5s;
-        /*animation-iteration-count*/
-        -webkit-animation-iteration-count:infinite;
-        -moz-animation-iteration-count:infinite;
-        -ms-animation-iteration-count:infinite;
-        -o-animation-iteration-count:infinite;
-        animation-iteration-count:infinite;
-        /*animation-delay*/
-        -webkit-animation-delay:2s;
-        -ms-animation-delay:2s;
-        -o-animation-delay:2s;
-        animation-delay:2s;
+      /*  animation-iteration-count*/
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        /* animation-delay */
+        -webkit-animation-delay: 2s;
+        -ms-animation-delay: 2s;
+        -o-animation-delay: 2s;
+        animation-delay: 2s;
       }
 
 
       @-webkit-keyframes move {
-        0%  { top: 0vw; }
-        40% { top: -$animation-size; }
-        80% { top: -$animation-size * 2; }
+        0% {
+          top: 0vw;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -$animation-size * 2;
+        }
       }
       @-moz-keyframes move {
-        0%  { top: 0vw; }
-        40% { top: -$animation-size; }
-        80% { top: -$animation-size * 2; }
+        0% {
+          top: 0vw;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -$animation-size * 2;
+        }
       }
       @-o-keyframes move {
-        0%  { top: 0vw; }
-        40% { top: -$animation-size; }
-        80% { top: -$animation-size * 2; }
+        0% {
+          top: 0vw;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -$animation-size * 2;
+        }
       }
       @keyframes move {
-        0%  { top: 0vw; }
-        40% { top: -$animation-size; }
-        80% { top: -$animation-size * 2; }
+        0% {
+          top: 0vw;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -$animation-size * 2;
+        }
       }
 
 
@@ -381,71 +402,108 @@ body{
         top: 0;
         left: 0;
 
+      /*  animation*/
+        -webkit-animation: move2 3.5s;
+        -ms-animation: move2 3.5s;
+        -o-animation: move2 3.5s;
+        animation: move2 3.5s;
 
-        /*animation*/
-        -webkit-animation:move2 3.5s;
-        -ms-animation:move2 3.5s;
-        -o-animation:move2 3.5s;
-        animation:move2 3.5s;
-        /*animation-iteration-count*/
-        -webkit-animation-iteration-count:infinite;
-        -moz-animation-iteration-count:infinite;
-        -ms-animation-iteration-count:infinite;
-        -o-animation-iteration-count:infinite;
-        animation-iteration-count:infinite;
-        /*animation-delay*/
-        -webkit-animation-delay:2s;
-        -ms-animation-delay:2s;
-        -o-animation-delay:2s;
-        animation-delay:2s;
+       /* animation-iteration-count*/
+
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+       /* animation-delay*/
+
+        -webkit-animation-delay: 2s;
+        -ms-animation-delay: 2s;
+        -o-animation-delay: 2s;
+        animation-delay: 2s;
       }
+
       @-webkit-keyframes move2 {
-        0%  { top: -$animation-size * 2; }
-        40% { top: -$animation-size; }
-        80% { top: -0vw; }
-        100% { top: -$animation-size * 2; }
+        0% {
+          top: -$animation-size * 2;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -0vw;
+        }
+        100% {
+          top: -$animation-size * 2;
+        }
       }
       @-moz-keyframes move2 {
-        0%  { top: -$animation-size * 2; }
-        40% { top: -$animation-size; }
-        80% { top: -0vw; }
-        100% { top: -$animation-size * 2; }
+        0% {
+          top: -$animation-size * 2;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -0vw;
+        }
+        100% {
+          top: -$animation-size * 2;
+        }
       }
       @-o-keyframes move2 {
-        0%  { top: -$animation-size * 2; }
-        40% { top: -$animation-size; }
-        80% { top: -0vw; }
-        100% { top: -$animation-size * 2; }
+        0% {
+          top: -$animation-size * 2;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -0vw;
+        }
+        100% {
+          top: -$animation-size * 2;
+        }
       }
       @keyframes move2 {
-        0%  { top: -$animation-size * 2; }
-        40% { top: -$animation-size; }
-        80% { top: -0vw; }
-        100% { top: -$animation-size * 2; }
+        0% {
+          top: -$animation-size * 2;
+        }
+        40% {
+          top: -$animation-size;
+        }
+        80% {
+          top: -0vw;
+        }
+        100% {
+          top: -$animation-size * 2;
+        }
       }
     }
-  }
 
-  .Bouton {
-    text-align: center;
-    background-color: #f79646;
-    padding: 2vw 5vw;
-    border-radius: 90px;
-    font-size: 4vw;
-    font-family: $open;
-    color: white;
-    width: 50%;
-    bottom: inherit;
-    line-height: 6vw;
-    margin-left: 25vw;
-    position: absolute;
-    margin-top: 30vw;
 
-    a{
+
+    .Bouton {
+      text-align: center;
+      background-color: #f79646;
+      padding: 2vw 5vw;
+      border-radius: 90px;
+      font-size: 4vw;
+      font-family: $open;
       color: white;
-      text-decoration: none;
-    }
-}
+      width: 50%;
+      bottom: inherit;
+      line-height: 6vw;
+      margin-left: 25vw;
 
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+  }
 
 }
