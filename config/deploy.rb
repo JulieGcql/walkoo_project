@@ -21,7 +21,7 @@ set :deploy_to, "/home/deploy/www/walkooagency.com/production"
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, ".env"
+append :linked_files, ".env"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "uploads"
