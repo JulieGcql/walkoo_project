@@ -23,7 +23,6 @@ body{
     font-family: $open;
     color:white;
     width: 100vw;
-    position:absolute;
     top:0;
     display: flex;
     justify-content: center;
@@ -167,7 +166,7 @@ body{
 
   .secondContainer{
     
-    margin-top: 38vw;
+    margin-top: 7vw;
     height:auto;
   }
     .Text2 { 
@@ -176,7 +175,8 @@ body{
       bottom: 1vw;
       margin-left: 15vw;
       margin-right: 15vw;
-      font-size: 1.5vw;
+      font-size: 2vw;
+      margin-top: -5vw;
       p{
         font-family: $condensed;      
       }
@@ -186,6 +186,7 @@ body{
       display: flex;
     }
     .Bouton { 
+      margin-top: 3vw;
       text-align: center;
       background-color: rgb(247, 150, 70);
       border-radius: 90px;
@@ -483,7 +484,21 @@ body{
       }
     }
 
-
+    .Text2 { 
+      text-align: center;
+      height: 6vw;
+      bottom: 1vw;
+      margin-left: 15vw;
+      margin-right: 15vw;
+      font-size: 4.5vw;
+      margin-top: 5vw;
+      p{
+        margin-bottom: 1vw;
+        font-family: $condensed;      
+      }
+    }
+.secondContainer{
+  margin:auto;
 
     .Bouton {
       text-align: center;
@@ -497,14 +512,14 @@ body{
       bottom: inherit;
       line-height: 6vw;
       margin-left: 25vw;
-
+      margin-top: 25vw;
 
       a {
         color: white;
         text-decoration: none;
       }
     }
-
   }
+}
 
 }
