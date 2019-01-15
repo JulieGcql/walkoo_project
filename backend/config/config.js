@@ -19,7 +19,7 @@ module.exports = {
   production: {
     username: process.env.MY_DB_USERNAME,
     password: process.env.MY_DB_PASSWORD,
-    database: process.env.MY_DB_NAME,
+    database: 'walkoo_production',
     host: process.env.MY_DB_HOSTNAME,
     dialect: 'mysql'
   }
