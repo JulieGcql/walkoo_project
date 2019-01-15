@@ -57,6 +57,8 @@ export default class Realisations extends Component {
           breakpoint: 480,
           settings: {
             slidesToShow: 2,
+            slidesToScroll: 2,
+            adaptiveHeight: false,
 
           }
         }

@@ -67,7 +67,7 @@ export default class RealisationModal extends Component {
                   value={this.state.description}
                   onChange={(e) => this.handleChange(e)}
                   className="form-control" 
-                  rows="8"
+                  rows="5"
                   required 
                   ></textarea>
 
