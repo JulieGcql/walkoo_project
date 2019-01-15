@@ -40,8 +40,8 @@ export default class Realisations extends Component {
     }
   }
 
-  handleClick = (id, title, description) => {
-    this.setState({modal: !this.state.modal, idSelected: id,  titleSelected: title, descriptionSelected: description})
+  handleClick = (id, title, description, url) => {
+    this.setState({modal: !this.state.modal, idSelected: id,  titleSelected: title, descriptionSelected: description, urlSelected: url})
     this.getRealisations()
   }
 
