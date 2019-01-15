@@ -67,6 +67,9 @@
             font-size: 1.15vw;
             text-align: justify;
             font-family: $condensed;
+                p{
+                    font-family: $condensed;
+                }
 
             }
         }
@@ -161,6 +164,7 @@
                 font-size: 3.5vw;
                 margin-top: -2vh;
                 font-family: $open;
+                padding: 0px 3vw;
                     
                 }
                 
