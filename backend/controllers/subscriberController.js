@@ -4,12 +4,12 @@ const nodemailer = require('nodemailer');
 
 
 const smtpTransport = nodemailer.createTransport({
-  host: "smtp.live.com",
-  port: 25,
-  secure: false,
+  host: "ssl0.ovh.net",
+  port: 465,
+  secure: true,
   auth: {
-      user: process.env.DB_MAIL,
-      pass: process.env.DB_PASSWORD,
+      user: process.env.ADRESSE_MAIL,
+      pass: process.env.ADRESSE_MDP,
   }
 });
 
@@ -35,8 +35,8 @@ module.exports = {
     })
     .then((newSubscriber) => {
       smtpTransport.sendMail({
-        from: process.env.DB_MAIL, // Expediteur
-        to: process.env.DB_MAIL, // Destinataire
+        from: process.env.ADRESSE_MAIL, // Expediteur
+        to: "contact.walkoo@gmail.com", // Destinataire
         subject: "Nouveau Contact", // Sujet
         text: `Vous avez une nouvelle demande de contact de la part de ${req.body.firstName}, son mail est : ${req.body.email} et son numéro de téléphone est : ${req.body.phone}`, // plaintext body
         html: `<p>Vous avez une nouvelle demande de contact de la part de <b>${req.body.firstName}</b>, son mail est : <b>${req.body.email}</b> et son numéro de téléphone est : <b>${req.body.phone}</b></p>` // html body
