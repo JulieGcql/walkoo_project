@@ -43,7 +43,7 @@ class NavDesktop extends Component {
             <li><a href="/#expertise">Expertise</a></li>
             <li><a href="/#technologie">Technologie</a></li>
             <li><a href="/#secteurs">Secteurs</a></li>
-            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/#realisations">Ressources</a></li>
             <li><a href="/#contact" className="ContactLink">Contact</a></li>
           </ul>
         </div>

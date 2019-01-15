@@ -26,7 +26,6 @@ export default class AdminMedias extends Component {
     axios.post('/medias/create', data)
       .then((res) => {
         alert("Votre image a bien été créée")
-        console.log(res)
         this.getMedias()
       })
       .catch((err) => console.log(err))
@@ -59,7 +58,6 @@ export default class AdminMedias extends Component {
   getTags = () => {
     axios.get('/tags')
     .then((res) => {
-      console.log(res);
       this.setState({tags : res.data.tags})
     })
     .catch((err) => console.log(err))
@@ -98,7 +96,7 @@ export default class AdminMedias extends Component {
             </div>
 
             <div className="tagCreate">
-              <h3>Sélectionner un tag :</h3>
+              <h3>Sélectionnez un tag :</h3>
 
               <div className="check-tag">
                 

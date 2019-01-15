@@ -13,7 +13,6 @@ export default class Partenaires extends Component {
   componentDidMount = () => {
       axios.get('/tags/partenaire')
       .then((res) => {
-        console.log('data', res.data)
         this.setState({partenaires: res.data.tag.medias})
       })
       .catch((err) => console.log("Erreur lors de l'obtention des partenaires"))

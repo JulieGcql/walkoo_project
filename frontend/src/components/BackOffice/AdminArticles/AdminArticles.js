@@ -82,12 +82,12 @@ export default class AdminArticles extends Component {
             data-toggle="tab" 
             name="realisations"
             href="#5"
-            >Réalisations
+            >Ressources
             </a>
           </li>
 
           <li className="nav-item">
-            <a accueil
+            <a
             className={`nav-link ${medias_salons}`}
             onClick={(e) => handleSubmit(e)}  
             data-toggle="tab" 

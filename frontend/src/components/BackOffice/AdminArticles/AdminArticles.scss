@@ -5,13 +5,14 @@
 ///// SCSS /////
 
 .ArticlesAdmin {
-  // margin-top: 4.5vw;
   margin-left: 10%;
   height: 100vh;
   padding-top:  5vw;
   h1{
-    // text-align: center;
     padding-bottom: 1vw;
     padding-left: 1vw;
+  }
+  a{
+    color: $orange
   }
 }

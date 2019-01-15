@@ -15,7 +15,7 @@ Tag.bulkCreate([
   name: "secteur"
 },
 {
-  name: "realisation"
+  name: "ressource"
 },
 {
   name: "partenaire"

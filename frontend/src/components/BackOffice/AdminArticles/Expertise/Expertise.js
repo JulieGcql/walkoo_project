@@ -26,8 +26,9 @@ export default class Expertise extends Component {
     this.setState({mediaId: id})
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
     if(window.confirm("Voulez-vous valider les modifications ?")){
+      e.preventDefault()
       axios.put(`/expertise/edit/1`, this.state)
       .then((res) => alert("Modifications effectuées"))
       .catch((err) => alert("Erreur lors de la sauvegarde des modifications"))
@@ -118,7 +119,7 @@ export default class Expertise extends Component {
             <p className="ImageSelected">Média selectionné : {this.state.mediaId} </p>
 
             <button
-              onClick={(e) => this.handleSubmit()}
+              onClick={(e) => this.handleSubmit(e)}
               className="btn btn-outline-dark"
             >Modifier</button>
           
