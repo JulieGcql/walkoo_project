@@ -9,7 +9,7 @@ module.exports = {
       isAdmin: req.user.isAdmin
     }
     /* Signin jwt with your SECRET key */
-    const token = jwt.sign(user, '6A576E5A7234753778214125442A472D4B614E645267556B58703273357638792F423F4528482B4D6251655368566D597133743677397A24432646294A404E63');
+    const token = jwt.sign(user, process.env.MY_SECRET_KEY);
     /* Return user and token in json response */
     res.json({user, token});
   },
