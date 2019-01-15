@@ -3,6 +3,8 @@ const fs = require('fs');
 const Media = models.Media;
 const Tag = models.Tag;
 
+
+
 module.exports = {
   index: function(req, res, next) {
     Media.findAll()
@@ -25,11 +27,12 @@ module.exports = {
   },
 
   create: function(req, res, next) {
+    const verbe = process.env.NODE_ENV === "production" ? "https" : "http"
     if(req.file){
       Media.create({
         name: req.file.originalname,
         type: 'file',
-        url: `${req.protocol}://${req.get('Host')}/uploads/${req.file.originalname}`
+        url: `${verbe}://${req.get('Host')}/uploads/${req.file.originalname}`
       })
       .then((newMedia) => {
         // si une liste d'id à été fourni alors on lie les tags correspondants au média
