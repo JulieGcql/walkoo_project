@@ -24,6 +24,7 @@ module.exports = {
   },
 
   create: function(req, res, next) {
+    let requestDemo = req.body.requestDemo === true ? "Oui" : "Non"
     Subscriber.create({
       firstName : req.body.firstName,
       companyName : req.body.companyName,
@@ -38,8 +39,26 @@ module.exports = {
         from: process.env.ADRESSE_MAIL, // Expediteur
         to: "contact.walkoo@gmail.com", // Destinataire
         subject: "Nouveau Contact", // Sujet
-        text: `Vous avez une nouvelle demande de contact de la part de ${req.body.firstName}, son mail est : ${req.body.email} et son numéro de téléphone est : ${req.body.phone}`, // plaintext body
-        html: `<p>Vous avez une nouvelle demande de contact de la part de <b>${req.body.firstName}</b>, son mail est : <b>${req.body.email}</b> et son numéro de téléphone est : <b>${req.body.phone}</b></p>` // html body
+        text: `Vous avez une nouvelle demande de contact : 
+          Nom : ${req.body.firstName}, 
+          Société : ${req.body.companyName}, 
+          Email : ${req.body.email}, 
+          Téléphone : ${req.body.phone}, 
+          Secteur d'activité : ${req.body.activitySector}, 
+          Demo : ${requestDemo}, 
+          Message : ${req.body.message}
+        `, // plaintext body
+        html: `<p>Vous avez une nouvelle demande de contact :</p>
+        <ul>
+          <li><p>Nom : <b>${req.body.firstName}</b></p></li>
+          <li><p>Société : <b>${req.body.companyName}</b></p></li>
+          <li><p>Email : <b>${req.body.email}</b></p></li>
+          <li><p>Téléphone : <b>${req.body.phone}</b></p></li>
+          <li><p>Secteur d'activité : <b>${req.body.activitySector}</b></p></li>
+          <li><p>Demo : <b>${requestDemo}</b></p></li>
+          <li><p>Message : <b>${req.body.message}</b></p></li>
+        </ul>
+        ` // html body
       }, (error, response) => {
         if(error){
           console.log(error);
