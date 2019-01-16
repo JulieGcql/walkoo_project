@@ -37,7 +37,7 @@ module.exports = {
     .then((newSubscriber) => {
       smtpTransport.sendMail({
         from: process.env.ADRESSE_MAIL, // Expediteur
-        to: "contact.walkoo@gmail.com", // Destinataire
+        to: process.env.ADRESSE_RECEPTION, // Destinataire
         subject: "Nouveau Contact", // Sujet
         text: `Vous avez une nouvelle demande de contact : 
           Nom : ${req.body.firstName}, 
