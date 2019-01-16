@@ -40,7 +40,7 @@ module.exports = {
         Realisation.findByPk(req.params.id)
         .then((realisation) => {
           if(realisation){
-            if(req.body.title && req.body.description && req.body.url){
+            if(req.body.title && req.body.description){
               realisation.title = req.body.title;
               realisation.description = req.body.description;
               realisation.url = req.body.url;

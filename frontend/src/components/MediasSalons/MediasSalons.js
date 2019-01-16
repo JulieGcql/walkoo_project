@@ -44,7 +44,7 @@ componentDidMount = () => {
                
 
           <div className="ListeMedia">
-          <h1 className="msTitle" >Média</h1>
+          <h1 className="msTitle" >Médias</h1>
           {
             this.state.events.filter((event) => {
               return event.type === 'media'
