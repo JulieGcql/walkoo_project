@@ -10,7 +10,7 @@ import Partenaires from '../../components/Partenaires/Partenaires';
 import Contact from '../../components/Contact/Contact';
 import Footer from '../../components/Footer/Footer';
 
-import MetaTags from 'react-meta-tags';
+import {Helmet} from "react-helmet";
 import axios from "axios";
 
 export default class Website extends Component {
@@ -31,12 +31,15 @@ render() {
 
     return(
         <div>
-            <MetaTags>
-                  <title>Walkoo</title>
-                  <meta name="description" content= {this.state.configurations.metaDescription} />
-                  <meta property="og:title" content= {this.state.configurations.metaTitle} />
-                  <meta property="og:image" content={this.state.configurations.metaImage} />
-              </MetaTags>
+
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Walkoo Agency</title>
+                <meta name="description" content={this.state.configurations.metaDescription} />
+                <meta property="og:title" content= {this.state.configurations.metaTitle} />
+                <meta property="og:image" content={this.state.configurations.metaImage} />
+
+            </Helmet>
 
             <Navbar/>
             <Accueil/>

@@ -42,7 +42,7 @@
 
     .expertSubtitle {
       grid-area: Subtitle;
-      text-align: center;
+      text-align: justify;
       font-size: 1.5vw;
       p{
       font-family: $condensed;
@@ -69,6 +69,7 @@
     grid-template-rows: auto auto 25vh auto;
     grid-template-areas: "Title" "Description" "Image" "Subtitle";
     height:auto;
+
   
 .expertImage {
       grid-area: Image;
@@ -85,8 +86,8 @@
     .expertDescription{
       margin-left:6vw;
       margin-right:6vw;
-      text-align: center;
-      font-size:4vw;
+      text-align: justify;
+      font-size:4.5vw;
       p {
         border-bottom:none;
         padding-bottom:0;
@@ -96,8 +97,8 @@
     .expertSubtitle {
       margin-left:6vw;
       margin-right:6vw;
-      text-align: center;
-      font-size:4vw;
+      text-align: justify;
+      font-size:4.5vw;
       padding-bottom:2vh;
     }
   }
