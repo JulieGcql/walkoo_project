@@ -4,29 +4,33 @@
 .technologie_container{
     scroll-margin-top: 3vw;
     height: auto;
-    margin: 0 3vw;
 
     .technologie-firstpart{
-        text-align: center;
+
         background-color: #F8F8F8;
-        padding: 2vw;
-        margin: 0 -3vw;
+        padding: 3vw 0vw;
+        text-align: justify;
+
 
         h1{
-        margin-top: 0px;
+        margin-bottom: 2vw;
         font-size: 3vw;
         color: $orange;
         font-family: $open;
+        text-align: center;
         }
-        p{
+        .subtitle{
+            p{
 
-        font-family: $condensed;
-        margin: 2vw 10vw;
-        font-size: 1.5vw;
+                font-family: $condensed;
+                margin: 2vw 10vw;
+                font-size: 1.5vw;
+                text-align: justify;
 
-       
-        
+            }
+
         }
+
 
     }
 
@@ -87,7 +91,7 @@
         margin: 0 2vw;
     
         .technologie-firstpart{
-            text-align: center;
+            text-align: justify;
             padding-top: 2vw;
             
     
@@ -96,10 +100,12 @@
             font-size: 8vw;
             font-family: $open;
             }
-            p{
-            margin: 5vw 5vw;
-            font-size: 4vw;
-            font-family: $condensed;
+            .subtitle {
+                p {
+                    margin: 5vw 8vw;
+                    font-size: 4.5vw;
+                    font-family: $condensed;
+                }
             }
     
         }
@@ -118,6 +124,7 @@
             display: grid;
             grid-template-columns: 1fr;
             grid-gap: 5vw;
+
             
             
             
@@ -161,7 +168,7 @@
     
                 h6{
                 margin: 0;
-                font-size: 3.5vw;
+                font-size: 4vw;
                 margin-top: -2vh;
                 font-family: $open;
                 padding: 0px 3vw;
@@ -170,7 +177,7 @@
                 
                 .text{
                 margin: 0 2vw;
-                font-size: 3.6vw;
+                font-size: 4.2vw;
                 align-self: center;
     
                 }

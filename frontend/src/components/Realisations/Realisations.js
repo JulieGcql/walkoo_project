@@ -54,11 +54,13 @@ export default class Realisations extends Component {
       adaptiveHeight: true,
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 425,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            rows: 2,
             adaptiveHeight: false,
+
 
           }
         }

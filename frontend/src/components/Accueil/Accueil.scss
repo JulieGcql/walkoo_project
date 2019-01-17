@@ -1,7 +1,8 @@
 @import '../../Variables.scss'; 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-$animation-size: 7vw;
+$animation-size: 7.3vw;
+$height : 7vw;
 
 body{
   overflow-x: hidden;
@@ -10,8 +11,6 @@ body{
 .containerAnim{
   justify-items: center;  
   scroll-margin-top: 100vh;
-  
-
 
 
   .Text1 { 
@@ -30,8 +29,6 @@ body{
     .logo {
       padding: 2em 5em;
       align-self: center;
-
-
     }
 
     .logo h1 {
@@ -61,17 +58,14 @@ body{
       left: 0;
       text-align: left;
       padding-left: 12px;
-  
-
 
       /*animation*/
 
-
-      -webkit-animation:move 3.5s;
-      -moz-animation:move 3.5s;
-      -ms-animation:move 3.5s;
-      -o-animation:move 3.5s;
-      animation:move 3.5s;
+      -webkit-animation:move 4s;
+      -moz-animation:move 4s;
+      -ms-animation:move 4s;
+      -o-animation:move 4s;
+      animation:move 4s;
       /*animation-iteration-count*/
       -webkit-animation-iteration-count:infinite;
       -moz-animation-iteration-count:infinite;
@@ -88,21 +82,25 @@ body{
 
     @-webkit-keyframes move {
       0%  { top: 0vw; }
+      10%  { top: 0vw; }
       40% { top: -$animation-size; }
       80% { top: -$animation-size * 2; }
     }
     @-moz-keyframes move {
       0%  { top: 0vw; }
+      10%  { top: 0vw; }
       40% { top: -$animation-size; }
       80% { top: -$animation-size * 2; }
     }
     @-o-keyframes move {
       0%  { top: 0vw; }
+      10%  { top: 0vw; }
       40% { top: -$animation-size; }
       80% { top: -$animation-size * 2; }
     }
     @keyframes move {
       0%  { top: 0vw; }
+      10%  { top: 0vw; }
       40% { top: -$animation-size; }
       80% { top: -$animation-size * 2; }
     }
@@ -119,10 +117,10 @@ body{
 
 
       /*animation*/
-      -webkit-animation:move2 3.5s;
-      -ms-animation:move2 3.5s;
-      -o-animation:move2 3.5s;
-      animation:move2 3.5s;
+      -webkit-animation:move2 4s;
+      -ms-animation:move2 4s;
+      -o-animation:move2 4s;
+      animation:move2 4s;
       /*animation-iteration-count*/
       -webkit-animation-iteration-count:infinite;
       -moz-animation-iteration-count:infinite;
@@ -137,24 +135,28 @@ body{
     }
     @-webkit-keyframes move2 {
       0%  { top: -$animation-size * 2; }
+      10%  { top: -$animation-size * 2; }
       40% { top: -$animation-size; }
       80% { top: -0vw; }
       100% { top: -$animation-size * 2; }
     }
     @-moz-keyframes move2 {
       0%  { top: -$animation-size * 2; }
+      10%  { top: -$animation-size * 2; }
       40% { top: -$animation-size; }
       80% { top: -0vw; }
       100% { top: -$animation-size * 2; }
     }
     @-o-keyframes move2 {
       0%  { top: -$animation-size * 2; }
+      10%  { top: -$animation-size * 2; }
       40% { top: -$animation-size; }
       80% { top: -0vw; }
       100% { top: -$animation-size * 2; }
     }
     @keyframes move2 {
       0%  { top: -$animation-size * 2; }
+      10%  { top: -$animation-size * 2; }
       40% { top: -$animation-size; }
       80% { top: -0vw; }
       100% { top: -$animation-size * 2; }
@@ -171,7 +173,6 @@ body{
   }
     .Text2 { 
       text-align: center;
-      height: 6vw;
       bottom: 1vw;
       margin-left: 15vw;
       margin-right: 15vw;
@@ -202,70 +203,8 @@ body{
     }
      
     }
-    
 
-    /* Safari 4.0 - 8.0 */
-    @-webkit-keyframes mymove 
-    {
-        0%   {bottom: 0vw;opacity:1}
-        10%  {bottom: 7vw;visibility:visible;}
-        46% {bottom: 1vw;opacity:1;}
-        51%{bottom:25vw;opacity:0.2;}
-        100%{bottom:25vw;opacity:0;}
-    }
-    
-    /* Standard syntax */
-    @keyframes mymove 
-    {
 
-      0%   {bottom: 0vw;opacity:1}
-      10%  {bottom: 7vw;visibility:visible;}
-      46% {bottom: 15vw;opacity:1;}
-      51%{bottom:25vw;opacity:0.2;}
-      100%{bottom:25vw;opacity:0;}
-    }
-    
-    @-webkit-keyframes mymove2 
-    {
-      
-      0%   {bottom: 0vw;opacity:1}
-        10%  {bottom: 7vw;visibility:visible;}
-        46% {bottom: 15vw;opacity:1;}
-        51%{bottom:25vw;opacity:0.2;}
-        100%{bottom:25vw;opacity:0;}
-  }
-    /* Standard syntax */
-    @keyframes mymove2 
-    {
-      
-      0%   {bottom: 0vw;opacity:1}
-        10%  {bottom: 7vw;visibility:visible;}
-        46% {bottom: 15vw;opacity:1;}
-        51%{bottom:25vw;opacity:0.2;}
-        100%{bottom:25vw;opacity:0;}
-  }
-    @-webkit-keyframes mymove3 
-    {
-      0%   {bottom: 0vw;opacity:1}
-        10%  {bottom: 7vw;visibility:visible;}
-        46% {bottom: 15vw;opacity:1;}
-        51%{bottom:25vw;opacity:0.2;}
-        100%{bottom:25vw;opacity:0;}
-  }
-    
-    /* Standard syntax */
-    @keyframes mymove3 
-    {
-      0%   {bottom: 0vw;opacity:1}
-      10%  {bottom: 7vw;visibility:visible;}
-      46% {bottom: 15vw;opacity:1;}
-      51%{bottom:25vw;opacity:0.2;}
-      100%{bottom:25vw;opacity:0;}
-  }
-        
-     
-
-  
 /*telport*/
 
 @media screen and (max-width: 425px) {
@@ -330,11 +269,11 @@ body{
      /*   !******************animation************!*/
 
 
-        -webkit-animation: move 3.5s;
-        -moz-animation: move 3.5s;
-        -ms-animation: move 3.5s;
-        -o-animation: move 3.5s;
-        animation: move 3.5s;
+        -webkit-animation: move 4s;
+        -moz-animation: move 4s;
+        -ms-animation: move 4s;
+        -o-animation: move 4s;
+        animation: move 4s;
 
       /*  animation-iteration-count*/
         -webkit-animation-iteration-count: infinite;
@@ -354,6 +293,9 @@ body{
         0% {
           top: 0vw;
         }
+      10% {
+          top: 0vw;
+        }
         40% {
           top: -$animation-size;
         }
@@ -363,6 +305,9 @@ body{
       }
       @-moz-keyframes move {
         0% {
+          top: 0vw;
+        }
+    10% {
           top: 0vw;
         }
         40% {
@@ -376,6 +321,9 @@ body{
         0% {
           top: 0vw;
         }
+    10% {
+          top: 0vw;
+        }
         40% {
           top: -$animation-size;
         }
@@ -385,6 +333,9 @@ body{
       }
       @keyframes move {
         0% {
+          top: 0vw;
+        }
+    10% {
           top: 0vw;
         }
         40% {
@@ -405,10 +356,10 @@ body{
         left: 0;
 
       /*  animation*/
-        -webkit-animation: move2 3.5s;
-        -ms-animation: move2 3.5s;
-        -o-animation: move2 3.5s;
-        animation: move2 3.5s;
+        -webkit-animation: move2 4s;
+        -ms-animation: move2 4s;
+        -o-animation: move2 4s;
+        animation: move2 4s;
 
        /* animation-iteration-count*/
 
@@ -427,66 +378,37 @@ body{
       }
 
       @-webkit-keyframes move2 {
-        0% {
-          top: -$animation-size * 2;
-        }
-        40% {
-          top: -$animation-size;
-        }
-        80% {
-          top: -0vw;
-        }
-        100% {
-          top: -$animation-size * 2;
-        }
+        0% {top: -$animation-size * 2;}
+        10%  {top: -$animation-size * 2;}
+        40% {top: -$animation-size;}
+        80% {top: -0vw;}
+        100% {top: -$animation-size * 2;}
       }
       @-moz-keyframes move2 {
-        0% {
-          top: -$animation-size * 2;
-        }
-        40% {
-          top: -$animation-size;
-        }
-        80% {
-          top: -0vw;
-        }
-        100% {
-          top: -$animation-size * 2;
-        }
+        0% {top: -$animation-size * 2;}
+        10%  {top: -$animation-size * 2;}
+        40% {top: -$animation-size;}
+        80% {top: -0vw;}
+        100% {top: -$animation-size * 2;}
       }
       @-o-keyframes move2 {
-        0% {
-          top: -$animation-size * 2;
-        }
-        40% {
-          top: -$animation-size;
-        }
-        80% {
-          top: -0vw;
-        }
-        100% {
-          top: -$animation-size * 2;
-        }
+        0% {top: -$animation-size * 2;}
+        10%  {top: -$animation-size * 2;}
+        40% {top: -$animation-size;}
+        80% {top: -0vw;}
+        100% {top: -$animation-size * 2;}
       }
       @keyframes move2 {
-        0% {
-          top: -$animation-size * 2;
-        }
-        40% {
-          top: -$animation-size;
-        }
-        80% {
-          top: -0vw;
-        }
-        100% {
-          top: -$animation-size * 2;
-        }
+        0% {top: -$animation-size * 2;}
+        10%  {top: -$animation-size * 2;}
+        40% {top: -$animation-size;}
+        80% {top: -0vw;}
+        100% {top: -$animation-size * 2;}
       }
     }
 
     .Text2 { 
       text-align: center;
-      height: 6vw;
       bottom: 1vw;
       margin-left: 15vw;
       margin-right: 15vw;
@@ -512,7 +434,6 @@ body{
       bottom: inherit;
       line-height: 6vw;
       margin-left: 25vw;
-      margin-top: 25vw;
 
       a {
         color: white;
