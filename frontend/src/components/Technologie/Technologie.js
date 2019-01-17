@@ -38,7 +38,7 @@ export default class Technologie extends Component {
       <div className="technologie_container" id="technologie">
        <div className="technologie-firstpart">
          <h1>Technologie</h1>
-         <div dangerouslySetInnerHTML={createMarkup(this.state.sectionTechnology.description)}></div>
+         <div className="subtitle" dangerouslySetInnerHTML={createMarkup(this.state.sectionTechnology.description)}></div>
         </div>
         <h3>{this.state.sectionTechnology.subtitle}</h3>
         <div className="technologie-secondpart">

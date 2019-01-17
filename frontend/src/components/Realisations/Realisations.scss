@@ -25,7 +25,7 @@
 
     p{
 
-        color: #1f1f1f;
+        color: white;
         font-family: $condensed;
         margin: 2vw 10vw;
         font-size: 1.8vw;
@@ -57,6 +57,7 @@
         
 
             h6{
+                color: white;
                 align-self: center;
                 font-size: 1.5vw;
                 margin: 0 1.5vw;
@@ -199,7 +200,7 @@
 }
 
 
-@media screen and(max-width:480px) {
+@media screen and(max-width:425px) {
     .realisations_container{
     scroll-margin-top: 0px;
 
@@ -224,12 +225,12 @@
 
             .case{
             
-                width: 45vw !important;
-                height: 45vw;
+                width: 75vw !important;
+                height: 75vw;
                 padding-bottom: 1vw;
 
                 h6{
-                    font-size: 3.5vw;
+                    font-size: 5.5vw;;
                 }
 
             
@@ -246,14 +247,14 @@
                     padding: 2vw 2.5vw;
                 
                     p{
-                        font-size: 2.9vw;
+                        font-size: 4.8vw;
                     }
                 }
         
                 a{
                     img{
-                        width: 6vw;
-                        height: 6vw;
+                        width: 8vw;
+                        height: 8vw;
                         
                     }
                     

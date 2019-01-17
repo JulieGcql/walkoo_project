@@ -194,7 +194,7 @@ export default class AdminConfigurations extends Component {
 
 {/* METATITLE */}
 
-          <label htmlFor="metaTitle">MetaTitre :</label>
+          <label htmlFor="metaTitle">MetaTitle :</label>
           <input
             className="form-control" 
             type="text"
@@ -214,18 +214,6 @@ export default class AdminConfigurations extends Component {
             onChange={(e) => this.handleChange(e)} 
             id="metaDescription"
             name="metaDescription"
-          />
-
-{/* METAKEYWORD */}
-
-          <label htmlFor="metaKeyword">MetaKeyword :</label>
-          <input
-            className="form-control" 
-            type="text"
-            value={this.state.metaKeyword}
-            onChange={(e) => this.handleChange(e)} 
-            id="metaKeyword"
-            name="metaKeyword"
           />
 
 {/* METAIMAGE */}

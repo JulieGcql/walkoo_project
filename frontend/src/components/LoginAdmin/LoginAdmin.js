@@ -86,7 +86,7 @@ class LoginAdmin extends Component {
 
             <div className="form-fields">
               <button className="btn btn-warning"
-              >Login In</button>   
+              >Login</button>   
             </div>
 
           </form>

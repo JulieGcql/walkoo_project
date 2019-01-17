@@ -81,8 +81,7 @@ export default class RealisationModal extends Component {
                   name="url" 
                   value={this.state.url}
                   onChange={(e) => this.handleChange(e)}
-                  className="form-control" 
-                  required 
+                  className="form-control"
                   ></input>
 
                 </form>
