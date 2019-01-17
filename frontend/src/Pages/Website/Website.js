@@ -28,15 +28,16 @@ export default class Website extends Component {
     };
 
 render() {
-
     return(
         <div>
 
             <Helmet>
-                <meta charSet="utf-8" />
-                <title>Walkoo Agency</title>
-                <meta name="description" content={this.state.configurations.metaDescription} />
-                <meta property="og:title" content= {this.state.configurations.metaTitle} />
+                
+                <title>{this.state.configurations.title}</title>
+                <meta property="og:description" content={this.state.configurations.metaDescription} />
+                <meta property="og:title" content={this.state.configurations.metaTitle} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://walkooagency.com/" />
                 <meta property="og:image" content={this.state.configurations.metaImage} />
 
             </Helmet>
