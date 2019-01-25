@@ -34,11 +34,7 @@ render() {
             <Helmet>
                 
                 <title>{this.state.configurations.title}</title>
-                <meta property="og:description" content={this.state.configurations.metaDescription} />
-                <meta property="og:title" content={this.state.configurations.metaTitle} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://walkooagency.com/" />
-                <meta property="og:image" content={this.state.configurations.metaImage} />
+                
 
             </Helmet>
 

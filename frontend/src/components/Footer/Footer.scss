@@ -82,6 +82,31 @@
             color:white;
         }
        }
+       .wild{
+           display:inline-block;
+           font-size: 1.1vw;
+         
+        
+        a{
+            text-decoration: none;
+            align-self: center;
+            color: white;
+            display: inline-block;
+            p{
+                margin-bottom: -0.2vw;
+                display: inline-block;
+                margin-right: 0.5vw;
+            }
+            img{
+                width: 1.8vw;
+                display:inline-block;
+            }
+            
+        }
+       
+       }
+
+    
 
         
 
@@ -161,6 +186,27 @@
            .walkoo_c{
             font-size: 2vw;
            }
+
+           .wild{
+            display:inline-block;
+            font-size: 1.1vw;
+          
+         
+         a{
+             p{
+                margin-right: 0.5vw;
+             }
+             
+             img{
+                 width: 2.6vw;
+                
+             }
+             
+         }
+        
+        }
+           
+           
 
         }
         .footer_social_icon {
