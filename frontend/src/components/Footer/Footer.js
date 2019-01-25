@@ -43,6 +43,15 @@ export default class Footer extends Component {
           <div className="footer_rgpd">
             <FooterModal config={this.state.configurations.rgpd}/>
             <p className="walkoo_c"> © WALKOO 2018 </p>
+            <div className="wild">
+              
+              <a href="https://wildcodeschool.fr/" rel="noopener noreferrer" target="_blank">
+              <p>Developpé par la Wild Code School </p>
+              <img src={require('./Pictures/logo_wild.png')} alt="logo Wild Code School"/>
+            </a>
+              
+            </div>
+
           </div>
           <div className="footer_social_icon">
            <a href={this.state.configurations.twitter} rel="noopener noreferrer" target="_blank">

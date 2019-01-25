@@ -192,41 +192,6 @@ export default class AdminConfigurations extends Component {
             name="linkedin"
           />
 
-{/* METATITLE */}
-
-          <label htmlFor="metaTitle">MetaTitle :</label>
-          <input
-            className="form-control" 
-            type="text"
-            value={this.state.metaTitle}
-            onChange={(e) => this.handleChange(e)} 
-            id="metaTitle"
-            name="metaTitle"
-          />
-
-{/* METADESCRIPTION */}
-
-          <label htmlFor="metaDescription">MetaDescription :</label>
-          <input
-            className="form-control" 
-            type="text"
-            value={this.state.metaDescription}
-            onChange={(e) => this.handleChange(e)} 
-            id="metaDescription"
-            name="metaDescription"
-          />
-
-{/* METAIMAGE */}
-
-          <label htmlFor="metaImage">MetaImage :</label>
-          <input
-            className="form-control" 
-            type="text"
-            value={this.state.metaImage}
-            onChange={(e) => this.handleChange(e)} 
-            id="metaImage"
-            name="metaImage"
-          />
 
 {/* RGPD */}
 
