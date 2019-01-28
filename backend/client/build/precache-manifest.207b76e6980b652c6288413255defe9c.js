@@ -32,6 +32,10 @@ self.__precacheManifest = [
     "url": "/static/media/logo_wild.3a275d72.png"
   },
   {
+    "revision": "d41f55a78e6f49a5512878df1737e58a",
+    "url": "/static/media/slick.d41f55a7.ttf"
+  },
+  {
     "revision": "ced611daf7709cc778da928fec876475",
     "url": "/static/media/slick.ced611da.eot"
   },
@@ -40,15 +44,11 @@ self.__precacheManifest = [
     "url": "/static/media/slick.b7c9e1e4.woff"
   },
   {
-    "revision": "d41f55a78e6f49a5512878df1737e58a",
-    "url": "/static/media/slick.d41f55a7.ttf"
-  },
-  {
     "revision": "5dc81b09a972bffa8267",
     "url": "/static/css/1.6e36e5e9.chunk.css"
   },
   {
-    "revision": "08ad8f320b605ab7388a0ba0154463fd",
+    "revision": "8d6d60d0a8138754cf0e5d667f87e1dd",
     "url": "/index.html"
   }
 ];
